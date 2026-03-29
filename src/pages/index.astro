@@ -1,1 +1,239 @@
-donecat
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Los Cabos Mexican Grill — Sealy, TX | Authentic Tex-Mex" description="Sizzling fajitas, hand-crafted margaritas, and scratch-made Tex-Mex in Sealy, TX.">
+
+<section class="hero">
+  <video class="hero-bg" autoplay muted loop playsinline poster="/images/hero-poster.jpg">
+    <source src="/video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1 class="hero-headline">FAJITA NIGHT<br><em>IS</em>HERE.</h1>
+      <div class="hero-ctas">
+        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884" target="_blank" rel="noopener" class="btn-primary">Order Online</a>
+        <a href="#menu" class="btn-outline">View Menu</a>
+        <a href="tel:+15126076232" class="btn-ghost">Call Now</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-item"><div class="proof-num">4.8</div><div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="proof-label">Google Rating</div></div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><div class="proof-num">1,725+</div><div class="proof-label">Happy Locals</div></div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><div class="proof-num">15<span class="proof-unit"> min</span></div><div class="proof-label">Avg. Pickup</div></div>
+      </div>
+    </div>
+    <div class="hero-info-card">
+      <div class="info-card-row"><span class="info-label">Hours</span><span class="info-value">Sun-Wed 11AM-9PM<br>Thu-Sat 11AM-10PM</span></div>
+      <div class="info-divider"></div>
+      <div class="info-card-row"><span class="info-label">Address</span><span class="info-value">6027 FM 3538 Rd<br>Sealy, TX 77474</span></div>
+      <div class="info-divider"></div>
+      <div class="info-card-row"><span class="info-label">Phone</span><span class="info-value"><a href="tel:+15126076232">(512) 607-6232</a></span></div>
+      <div class="info-divider"></div>
+      <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;">ORDER NOW &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="trust-item"><span>&#10003;</span><span>Made From Scratch</span></div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span>&#10003;</span><span>Margaritas Made Right</span></div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span>&#10003;</span><span>15-Minute Pickup</span></div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><span>&#10003;</span><span>Dine In or Carry Out</span></div>
+</section>
+
+<section class="atmosphere">
+  <div class="atm-img"><img src="/images/server.jpg" alt="Los Cabos hospitality" loading="lazy" /></div>
+  <div class="atm-text">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-heading">REAL FOOD.<br>REAL HOSPITALITY.</h2>
+    <p>Los Cabos has been feeding Austin County for years. From sizzling fajita platters to hand-crafted margaritas — every order comes out of a scratch kitchen that does not cut corners.</p>
+    <p style="margin-top:16px;font-style:italic;color:var(--text-muted);">Serving Sealy, Austin County &amp; beyond.</p>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="menu-header">
+    <div class="section-eyebrow">What We Are Known For</div>
+    <h2 class="section-heading">THE MENU</h2>
+  </div>
+  <div class="menu-tabs">
+    <button class="tab-btn active" data-tab="fajitas">Fajitas</button>
+    <button class="tab-btn" data-tab="apps">Appetizers</button>
+    <button class="tab-btn" data-tab="enchiladas">Enchiladas</button>
+    <button class="tab-btn" data-tab="drinks">Drinks</button>
+  </div>
+  <div class="menu-grid tab-content active" id="tab-fajitas">
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Fajitas al Carbon" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Fajitas al Carbon</div><div class="menu-card-desc">Beef or chicken. Served with guacamole, pico, rice, charro or black beans, and fresh homemade tortillas.</div><div class="menu-card-price">Beef Sm $16.99 / Med $19.95 · Chicken Sm $15.99 / Med $18.50</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Fajitas Mexicanas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Fajitas Mexicanas</div><div class="menu-card-desc">Sizzling fajitas topped with marinated sauce of onions, tomatoes, jalapenos, cilantro and mushrooms.</div><div class="menu-card-price">Beef Sm $17.95 / Med $19.50 · Chicken Sm $16.95 / Med $18.99</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Chipotle Fajitas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Chipotle Fajitas</div><div class="menu-card-desc">Fajitas tossed in chipotle butter sauce topped with Monterey Jack cheese.</div><div class="menu-card-price">Beef Sm $17.95 / Med $20.75 · Chicken Sm $16.95 / Med $18.50</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Fajitas Diablas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Fajitas Diablas</div><div class="menu-card-desc">Fajitas with diablo sauce made with tomatoes, onions, jalapenos, and buttered wine sauce.</div><div class="menu-card-price">Beef Sm $17.99 / Med $20.75 · Chicken Sm $16.50 / Med $19.50</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Trio Fajitas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Trio Fajitas</div><div class="menu-card-desc">Beef, chicken, and shrimp with Veracruz sauce of onions, tomato, poblano peppers, bell peppers and jalapenos.</div><div class="menu-card-price">Sm $20.99 / Med $23.95 / For Two $42.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Fajitas Rellenas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Fajitas Rellenas</div><div class="menu-card-desc">Beef and chicken fajitas topped with shrimp, mushrooms, pico and buttered wine sauce.</div><div class="menu-card-price">Sm $17.99 / Med $20.99 / For Two $39.00</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Fajitas Poblanas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Fajitas Poblanas</div><div class="menu-card-desc">Fajitas with poblano peppers, onions, mushrooms, cilantro, heavy cream and parmesan cheese.</div><div class="menu-card-price">Beef Sm $17.50 / Med $20.75 · Chicken Sm $16.50 / Med $19.50</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/fajitas.jpg" alt="Parilladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Parilladas (For 2-3)</div><div class="menu-card-desc">Choice of 4 meats: beef or chicken fajitas, quail, carnitas, BBQ ribs, shrimp or jalapeno sausage. With guacamole, pico, rice, beans and tortillas.</div><div class="menu-card-price">$54.00</div></div></div>
+  </div>
+  <div class="menu-grid tab-content" id="tab-apps">
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Chile Con Queso" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Chile Con Queso</div><div class="menu-card-desc">Classic queso dip served with chips.</div><div class="menu-card-price">Sm $7.85 / Lg $9.25</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Tex-Mex Queso" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Tex-Mex Queso</div><div class="menu-card-desc">Chile con queso and ground beef, topped with pico de gallo and guacamole.</div><div class="menu-card-price">Sm $8.35 / Lg $10.75</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Seafood Queso" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Seafood Queso</div><div class="menu-card-desc">Shrimp, crawfish and mushrooms sauteed in cream sauce, baked with Monterey Jack and Romano cheese.</div><div class="menu-card-price">$11.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Guacamole Mexicano" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Guacamole Mexicano</div><div class="menu-card-desc">Made to order with roasted jalapenos, tomatoes, onions, cilantro and lime juice.</div><div class="menu-card-price">$10.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Supreme Nachos" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Supreme Nachos</div><div class="menu-card-desc">Cheddar cheese, ground beef, beans, lettuce, tomatoes, sour cream, guacamole and sliced jalapenos.</div><div class="menu-card-price">Sm $9.55 / Lg $13.15</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="El Campo Nachos" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">El Campo Nachos</div><div class="menu-card-desc">Topped with chicken or beef fajitas, Monterey Jack cheese, beans, guacamole, lettuce and tomatoes.</div><div class="menu-card-price">Sm $10.75 / Lg $13.95 · Shrimp Lg $15.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Queso Flameado" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Queso Flameado</div><div class="menu-card-desc">Casserole of melted Monterey Jack cheese with beef, chicken or Mexican sausage.</div><div class="menu-card-price">$9.55</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Jalapenos del Monte" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Jalapenos del Monte</div><div class="menu-card-desc">Four jumbo jalapenos stuffed with whole shrimp and Monterey Jack cheese, fried golden brown.</div><div class="menu-card-price">$10.75</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Botana Mix" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Botana Mix</div><div class="menu-card-desc">Cheese quesadilla, nachos, mini chalupas, stuffed shrimp jalapeno, chicken fried burrito, guacamole and sour cream.</div><div class="menu-card-price">$15.99</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/queso.jpg" alt="Wings and Fries" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Wings and Fries</div><div class="menu-card-desc">Choice of chipotle, buffalo or BBQ.</div><div class="menu-card-price">$13.95</div></div></div>
+  </div>
+  <div class="menu-grid tab-content" id="tab-enchiladas">
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Enchiladas al Carbon" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Enchiladas al Carbon</div><div class="menu-card-desc">Two enchiladas with charbroiled beef or chicken in corn tortillas, topped with chili gravy and melted cheese. With guacamole and pico.</div><div class="menu-card-price">$18.35</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Enchiladas Poblanas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Enchiladas Poblanas</div><div class="menu-card-desc">Two enchiladas with charbroiled beef or chicken topped with poblano peppers, onions, mushrooms, cilantro, heavy cream and parmesan cheese.</div><div class="menu-card-price">$18.99</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Chipotle Enchiladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Chipotle Enchiladas</div><div class="menu-card-desc">Two enchiladas with charbroiled chicken or beef, topped with chipotle sauce and Monterey Jack cheese.</div><div class="menu-card-price">$17.99</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Seafood Enchilada" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Seafood Enchilada</div><div class="menu-card-desc">Two flour tortillas filled with shrimp and crab meat, topped with green sauce, Monterey Jack cheese, sour cream and avocado slices.</div><div class="menu-card-price">$18.99</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Cabos Enchiladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Cabos Enchiladas</div><div class="menu-card-desc">Two enchiladas filled with crab meat, topped with creamy seafood sauce of sauteed shrimp, crawfish, mushrooms and Monterey Jack cheese.</div><div class="menu-card-price">$18.35</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Nancy's Enchiladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Nancy's Enchiladas</div><div class="menu-card-desc">Two flour tortillas filled with chicken, topped with sour cream sauce, parmesan cheese and Monterey Jack cheese.</div><div class="menu-card-price">$17.99</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Spinach Enchiladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Spinach Enchiladas</div><div class="menu-card-desc">Two enchiladas filled with spinach, artichokes, mushrooms, onions and Monterey Jack cheese, topped with poblano cream sauce.</div><div class="menu-card-price">$15.50</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Carnitas Enchiladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Carnitas Enchiladas</div><div class="menu-card-desc">Two carnitas enchiladas topped with cilantro sauce, Jack cheese and avocado slices.</div><div class="menu-card-price">$16.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Enchiladas Verdes" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Enchiladas Verdes</div><div class="menu-card-desc">Two chicken enchiladas topped with cilantro sauce. Served with sour cream and guacamole on the side.</div><div class="menu-card-price">$13.55</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/enchiladas.jpg" alt="Beef or Cheese Enchiladas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Beef or Cheese Enchiladas</div><div class="menu-card-desc">Two enchiladas topped with chili gravy and cheese.</div><div class="menu-card-price">$12.95</div></div></div>
+  </div>
+  <div class="menu-grid tab-content" id="tab-drinks">
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="The Original Margarita" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">The Original Margarita</div><div class="menu-card-desc">House tequila plus triple sec. Frozen or on the rocks.</div><div class="menu-card-price">Reg $8.25 / Jumbo $12.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Flavored Margaritas" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Flavored Margaritas</div><div class="menu-card-desc">Strawberry, mango, peach, raspberry, jalapeno cucumber, pineapple, watermelon or prickly pear. Frozen or on the rocks.</div><div class="menu-card-price">Reg $9.25 / Jumbo $13.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Skinny Margarita" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Skinny Margarita</div><div class="menu-card-desc">Patron Silver tequila, fresh lime juice and agave nectar.</div><div class="menu-card-price">Reg $13.95 / Jumbo $16.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Platinum Margarita" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Platinum Margarita</div><div class="menu-card-desc">Patron Silver tequila and Cointreau. Frozen or on the rocks.</div><div class="menu-card-price">Reg $13.95 / Jumbo $16.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Sangria Margarita" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Sangria Margarita</div><div class="menu-card-desc">Cabos margarita mix and Spanish sangria wine. Frozen or on the rocks.</div><div class="menu-card-price">Reg $10.75 / Jumbo $13.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Michelada" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Michelada</div><div class="menu-card-desc">Beer, clamato, lime, hot sauce, tajin rim.</div><div class="menu-card-price">$6.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Ranch Water" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Ranch Water</div><div class="menu-card-desc">Patron Silver tequila with fresh lime and Topo Chico club soda.</div><div class="menu-card-price">$12.95</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Beer Rita" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Beer Rita</div><div class="menu-card-desc">Jumbo Cabos frozen margarita with your favorite beer.</div><div class="menu-card-price">$17.75</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Bottled Beer" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Bottled Beer</div><div class="menu-card-desc">Budweiser, Bud Light, Coors Light, Michelob Ultra, Miller Lite, Shiner, Corona, Dos XX, Modelo, Tecate, Pacifico.</div><div class="menu-card-price">From $4.75</div></div></div>
+    <div class="menu-card"><div class="menu-card-img"><img src="/images/michelada.jpg" alt="Margarita by the Jug" loading="lazy" /></div><div class="menu-card-body"><div class="menu-card-name">Margarita by the Jug</div><div class="menu-card-desc">Take it to go. Half gallon or gallon available.</div><div class="menu-card-price">Half Gal $35 / Gallon $60</div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:48px;"><a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884" target="_blank" rel="noopener" class="btn-primary">Order Now &rarr;</a></div>
+</section>
+
+<section class="catering-section" id="catering">
+  <div class="catering-img"><img src="/images/van.jpg" alt="Los Cabos catering" loading="lazy" /></div>
+  <div class="catering-text">
+    <div class="section-eyebrow">Events &amp; Catering</div>
+    <h2 class="section-heading">WE COME<br>TO YOU.</h2>
+    <p class="catering-sub">Real Tex-Mex. Your location. We handle everything from setup to the last tortilla.</p>
+    <ul class="catering-list">
+      <li>Weddings, corporate events &amp; private parties</li>
+      <li>Custom menus built around your event</li>
+      <li>Groups of 20 to 500+</li>
+      <li>Full setup and breakdown included</li>
+    </ul>
+    <a href="tel:+15126076232" class="btn-primary">Call to Book — (512) 607-6232</a>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="reviews-header">
+    <div class="section-eyebrow">Google Reviews</div>
+    <h2 class="section-heading" style="color:white;">WHAT OUR REGULARS<br>ARE SAYING</h2>
+    <div class="reviews-agg"><span class="reviews-score">4.8</span><div><div class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="reviews-count">Based on 1,725+ reviews</div></div></div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Best fajitas in Austin County. The sizzling platter comes out perfect every time."</p><div class="review-name">— Maria G.</div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"The margaritas are incredible and the queso is free during lunch. Service is always fast and friendly."</p><div class="review-name">— James T.</div></div>
+    <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Catered our company party and blew everyone away. Professional, on time, outstanding food."</p><div class="review-name">— Sandra R.</div></div>
+  </div>
+</section>
+
+<section class="find-section" id="find-us">
+  <div class="find-content">
+    <div><div class="section-eyebrow">Come In</div><h2 class="section-heading">FIND US</h2></div>
+    <div class="find-row"><span class="find-label">Address</span><span class="find-value">6027 FM 3538 Rd<br>Sealy, TX 77474</span></div>
+    <div class="find-row"><span class="find-label">Phone</span><span class="find-value"><a href="tel:+15126076232">(512) 607-6232</a></span></div>
+    <div class="find-row"><span class="find-label">Hours</span><span class="find-value">Sun-Wed: 11AM - 9PM<br>Thu-Sat: 11AM - 10PM</span></div>
+    <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474" target="_blank" rel="noopener" class="btn-primary" style="width:fit-content;">Get Directions &rarr;</a>
+  </div>
+  <div class="map-embed">
+    <iframe title="Los Cabos Sealy TX" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2!2d-96.1566!3d29.7810!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding-top:calc(var(--nav-h) + 38px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(14,11,8,.15) 0%,rgba(14,11,8,0) 20%,rgba(14,11,8,.5) 65%,rgba(14,11,8,.97) 100%),linear-gradient(to right,rgba(14,11,8,.4) 0%,rgba(14,11,8,0) 60%)}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 72px 72px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero-left{max-width:700px}
+.hero-headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(100px,14vw,180px);line-height:.88;text-transform:uppercase;color:white;letter-spacing:-.01em;margin-bottom:36px}
+.hero-headline em{color:var(--orange);font-style:italic;display:block}
+.hero-ctas{display:flex;gap:12px;margin-bottom:36px;flex-wrap:wrap}
+.hero-proof{display:flex;align-items:center;gap:24px}
+.proof-item{display:flex;flex-direction:column;gap:2px}
+.proof-sep{width:1px;height:36px;background:rgba(255,255,255,.2);flex-shrink:0}
+.proof-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;color:white;line-height:1}
+.proof-unit{font-size:15px;color:rgba(255,255,255,.5);font-weight:600}
+.proof-label{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;font-weight:600;white-space:nowrap}
+.proof-stars{color:var(--gold);font-size:11px;letter-spacing:1px}
+.hero-info-card{background:rgba(20,16,12,.88);border:1px solid rgba(244,98,31,.2);border-radius:10px;padding:28px 24px;min-width:230px;backdrop-filter:blur(16px);display:flex;flex-direction:column;gap:18px}
+.info-card-row{display:flex;flex-direction:column;gap:3px}
+.info-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.info-value{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:white;line-height:1.35}
+.info-value a{color:var(--orange);text-decoration:none}
+.info-divider{height:1px;background:rgba(255,255,255,.07)}
+.trust-bar{background:var(--nav-bg);padding:28px 72px;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;padding:8px 40px;color:rgba(255,255,255,.75);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.trust-sep{width:1px;height:28px;background:rgba(255,255,255,.12)}
+.atmosphere{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+.atm-img img{width:100%;height:100%;object-fit:cover}
+.atm-text{background:var(--bg2);padding:72px 64px;display:flex;flex-direction:column;justify-content:center}
+.atm-text p{color:var(--text-body);max-width:460px}
+.menu-section{padding:80px 72px;background:var(--bg)}
+.menu-header{margin-bottom:40px}
+.menu-tabs{display:flex;gap:4px;margin-bottom:40px;border-bottom:2px solid var(--border)}
+.tab-btn{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:10px 24px;background:none;border:none;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
+.tab-btn.active,.tab-btn:hover{color:var(--orange);border-bottom-color:var(--orange)}
+.tab-content{display:none;grid-template-columns:repeat(3,1fr);gap:24px}
+.tab-content.active{display:grid}
+.menu-card{background:white;border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.menu-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.menu-card-img{height:180px;overflow:hidden;background:var(--bg2)}
+.menu-card-img img{width:100%;height:100%;object-fit:cover}
+.menu-card-body{padding:16px 20px 20px}
+.menu-card-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--text-head);margin-bottom:4px}
+.menu-card-desc{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:12px}
+.menu-card-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--gold)}
+.catering-section{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:var(--bg2)}
+.catering-img img{width:100%;height:100%;object-fit:cover}
+.catering-text{padding:72px 64px;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.catering-sub{font-size:18px;color:var(--text-body);line-height:1.6;max-width:460px}
+.catering-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.catering-list li{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--text-head);padding-left:20px;position:relative}
+.catering-list li::before{content:"✓";position:absolute;left:0;color:var(--orange)}
+.reviews-section{padding:80px 72px;background:var(--nav-bg)}
+.reviews-header{margin-bottom:48px}
+.reviews-agg{display:flex;align-items:center;gap:16px;margin-top:16px}
+.reviews-score{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:56px;color:white;line-height:1}
+.reviews-stars{color:var(--gold);font-size:20px;letter-spacing:2px}
+.reviews-count{font-size:13px;color:rgba(255,255,255,.45);margin-top:2px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:28px}
+.review-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:12px}
+.review-text{color:rgba(255,255,255,.8);font-size:15px;line-height:1.65;margin-bottom:16px;font-style:italic}
+.review-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.find-section{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.find-content{background:var(--bg2);padding:72px 64px;display:flex;flex-direction:column;gap:24px;justify-content:center}
+.find-row{display:flex;flex-direction:column;gap:4px}
+.find-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted)}
+.find-value{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--text-head);line-height:1.4}
+.find-value a{color:var(--orange);text-decoration:none}
+.map-embed iframe{width:100%;height:100%;min-height:400px;border:0}
+@media(max-width:768px){.hero{height:100svh;max-height:100svh;padding-top:calc(58px + 36px)}.hero-content{grid-template-columns:1fr;padding:0 20px 80px}.hero-info-card{display:none}.hero-headline{font-size:clamp(54px,14.5vw,78px);margin-bottom:24px}.trust-bar{padding:20px;gap:0}.trust-sep{display:none}.trust-item{padding:8px 16px;font-size:12px}.atmosphere{grid-template-columns:1fr}.atm-img{height:300px}.atm-text{padding:48px 24px}.menu-section{padding:60px 20px}.tab-content.active{grid-template-columns:1fr 1fr;gap:16px}.catering-section{grid-template-columns:1fr}.catering-img{height:280px}.catering-text{padding:48px 24px}.reviews-section{padding:60px 20px}.reviews-grid{grid-template-columns:1fr;gap:16px}.find-section{grid-template-columns:1fr}.find-content{padding:48px 24px}.map-embed iframe{min-height:300px}}
+@media(max-width:480px){.tab-content.active{grid-template-columns:1fr}}
+</style>
+<script>
+const tabs=document.querySelectorAll('.tab-btn');
+const contents=document.querySelectorAll('.tab-content');
+tabs.forEach(btn=>{btn.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));contents.forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab)?.classList.add('active');});});
+</script>
