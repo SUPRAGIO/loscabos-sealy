@@ -3,11 +3,19 @@ export interface Props {
   title?: string;
   description?: string;
 }
-const { title = "Los Cabos Mexican Grill — Sealy, TX", description = "Sizzling fajitas, hand-crafted margaritas, and scratch-made Tex-Mex in Sealy, TX." } = Astro.props;
+const { title = "Los Cabos Mexican Grill â Sealy, TX", description = "Sizzling fajitas, hand-crafted margaritas, and scratch-made Tex-Mex in Sealy, TX." } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TX1CFVSTLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TX1CFVSTLQ');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
@@ -69,7 +77,7 @@ const { title = "Los Cabos Mexican Grill — Sealy, TX", description = "Sizzling
 </head>
 <body>
   <div class="order-bar">
-    <span>Order online — ready in 15 minutes.</span>
+    <span>Order online â ready in 15 minutes.</span>
     <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884" target="_blank" rel="noopener">ORDER PICKUP</a>
   </div>
   <nav>
