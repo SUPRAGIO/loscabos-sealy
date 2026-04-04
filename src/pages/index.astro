@@ -206,44 +206,40 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-/* ===== HERO ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(14,11,8,.1) 0%,rgba(14,11,8,0) 20%,rgba(14,11,8,.6) 65%,rgba(14,11,8,.97) 100%)}
 .hero-content{position:relative;z-index:2;width:100%;padding:0 72px 72px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
 .hero-left{max-width:700px}
-.hero-headline{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:clamp(80px,12vw,160px);line-height:.9;text-transform:uppercase;color:#ffffff;letter-spacing:-.01em;margin-bottom:32px}
+.hero-headline{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:clamp(80px,12vw,160px);line-height:.9;text-transform:uppercase;color:#fff;letter-spacing:-.01em;margin-bottom:32px}
 .hero-headline em{color:#F4621F;font-style:italic;display:block}
 .hero-ctas{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap}
 .hero-proof{display:flex;align-items:center;gap:24px}
 .proof-item{display:flex;flex-direction:column;gap:2px}
 .proof-sep{width:1px;height:36px;background:rgba(255,255,255,.2);flex-shrink:0}
-.proof-num{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:24px;color:#ffffff;line-height:1}
+.proof-num{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:24px;color:#fff;line-height:1}
 .proof-unit{font-size:14px;color:rgba(255,255,255,.5)}
 .proof-label{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;font-weight:600;white-space:nowrap}
 .proof-stars{color:#f5c518;font-size:11px;letter-spacing:1px}
 .hero-info-card{background:rgba(20,16,12,.9);border:1px solid rgba(244,98,31,.25);border-radius:10px;padding:28px 24px;min-width:230px;backdrop-filter:blur(16px);display:flex;flex-direction:column;gap:16px}
 .info-card-row{display:flex;flex-direction:column;gap:3px}
 .info-label{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.info-value{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:15px;color:#ffffff;line-height:1.35}
+.info-value{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:15px;color:#fff;line-height:1.35}
 .info-value a{color:#F4621F;text-decoration:none}
 .info-divider{height:1px;background:rgba(255,255,255,.08)}
-/* ===== TRUST BAR ===== */
-.trust-bar{background:#1A1410;padding:24px 72px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;color:#ffffff}
-.trust-item{display:flex;align-items:center;gap:10px;padding:8px 36px;color:#ffffff;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.trust-bar{background:#1A1410;padding:24px 72px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;padding:8px 36px;color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
 .trust-sep{width:1px;height:24px;background:rgba(255,255,255,.15)}
-/* ===== SHARED ===== */
 .section-eyebrow{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#F4621F;display:block;margin-bottom:8px}
-.section-heading{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:clamp(36px,5vw,54px);line-height:1;text-transform:uppercase;margin-bottom:0}
-/* ===== MENU ===== */
-.menu-section{padding:80px 72px;background:#f5f0ea;color:#1A1008}
+.section-heading{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:clamp(36px,5vw,54px);line-height:1;text-transform:uppercase;color:#1A1008;margin-bottom:0}
+.menu-section{padding:80px 72px;background:#f5f0ea}
 .menu-header{margin-bottom:36px}
 .menu-tabs{display:flex;gap:4px;margin-bottom:40px;border-bottom:2px solid #ddd;flex-wrap:wrap}
 .tab-btn{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;background:none;border:none;cursor:pointer;color:#888;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;white-space:nowrap}
 .tab-btn.active,.tab-btn:hover{color:#F4621F;border-bottom-color:#F4621F}
 .tc-grid{display:none;grid-template-columns:repeat(4,1fr);gap:24px}
 .tab-content.active{display:grid}
-.tc-card{background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);display:flex;flex-direction:column;color:#1A1008}
+.tc-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);display:flex;flex-direction:column}
 .tc-img{height:200px;overflow:hidden;background:#e8e0d8}
 .tc-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .tc-card:hover .tc-img img{transform:scale(1.04)}
@@ -251,23 +247,21 @@ import Layout from '../layouts/Layout.astro';
 .tc-name{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:19px;color:#1A1008;margin-bottom:6px;line-height:1.1}
 .tc-desc{font-size:13px;color:#555;line-height:1.5;margin-bottom:12px;flex:1}
 .tc-price{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:17px;color:#1A1008;margin-bottom:10px}
-.tc-select{width:100%;padding:7px 10px;border:2px solid #e0d8d0;border-radius:6px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:13px;color:#1A1008;background:#ffffff;cursor:pointer;margin-bottom:10px}
+.tc-select{width:100%;padding:7px 10px;border:2px solid #e0d8d0;border-radius:6px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:13px;color:#1A1008;background:#fff;cursor:pointer;margin-bottom:10px}
 .tc-select:focus{outline:none;border-color:#F4621F}
-.tc-order{display:block;background:#F4621F;color:#ffffff;text-align:center;padding:11px 18px;border-radius:50px;font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;margin-top:auto}
+.tc-order{display:block;background:#F4621F;color:#fff;text-align:center;padding:11px 18px;border-radius:50px;font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;margin-top:auto}
 .tc-order:hover{background:#d4521a}
-/* ===== CATERING ===== */
-.catering-section{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:#F5EFE6;color:#1A1008}
+.catering-section{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:#F5EFE6}
 .catering-img img{width:100%;height:100%;object-fit:cover}
 .catering-text{padding:72px 64px;display:flex;flex-direction:column;justify-content:center;gap:20px}
 .catering-sub{font-size:17px;color:#4A3728;line-height:1.6;max-width:460px}
 .catering-list{list-style:none;display:flex;flex-direction:column;gap:10px}
 .catering-list li{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:16px;color:#1A1008;padding-left:20px;position:relative}
-.catering-list li::before{content:"✓";position:absolute;left:0;color:#F4621F}
-/* ===== REVIEWS ===== */
-.reviews-section{padding:80px 72px;background:#1A1410;color:#ffffff}
+.reviews-section{padding:80px 72px;background:#1A1410}
+.reviews-section .section-heading{color:#fff}
 .reviews-header{margin-bottom:40px}
 .reviews-agg{display:flex;align-items:center;gap:16px;margin-top:16px}
-.reviews-score{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:56px;color:#ffffff;line-height:1}
+.reviews-score{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:56px;color:#fff;line-height:1}
 .reviews-stars{color:#f5c518;font-size:20px;letter-spacing:2px}
 .reviews-count{font-size:13px;color:rgba(255,255,255,.5);margin-top:2px}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -275,15 +269,13 @@ import Layout from '../layouts/Layout.astro';
 .review-stars{color:#f5c518;font-size:15px;letter-spacing:2px;margin-bottom:10px}
 .review-text{color:rgba(255,255,255,.85);font-size:15px;line-height:1.6;margin-bottom:14px;font-style:italic}
 .review-name{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-/* ===== FIND US ===== */
-.find-section{display:grid;grid-template-columns:1fr 1fr;min-height:440px;color:#1A1008}
+.find-section{display:grid;grid-template-columns:1fr 1fr;min-height:440px}
 .find-content{background:#F5EFE6;padding:72px 64px;display:flex;flex-direction:column;gap:20px;justify-content:center}
 .find-row{display:flex;flex-direction:column;gap:4px}
 .find-label{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#9E8472}
 .find-value{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:16px;color:#1A1008;line-height:1.4}
 .find-value a{color:#F4621F;text-decoration:none}
 .map-embed iframe{width:100%;height:100%;min-height:400px;border:0}
-/* ===== RESPONSIVE ===== */
 @media(max-width:1100px){.tc-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){
   .hero-content{grid-template-columns:1fr;padding:0 20px 60px}
