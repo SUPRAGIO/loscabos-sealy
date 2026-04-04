@@ -119,15 +119,22 @@ const { title = "Los Cabos Mexican Grill → Sealy, TX", description = "Sizzling
   </div>
 
 <script>
+window.dataLayer = window.dataLayer || [];
+function fireOrderEvent(label){
+  window.dataLayer.push({'event':'order_now_click','event_category':'Outbound','event_label':label,'value':1});
+  if(typeof gtag !== 'undefined'){
+    gtag('event','order_now_click',{'event_category':'Outbound','event_label':label,'value':1});
+  }
+}
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('a[href*="skytab"]').forEach(function(link){
     link.addEventListener('click',function(){
       var label = 'Order Now';
-      var card = link.closest('.tc-body');
-      if(card){ var name = card.querySelector('.tc-name'); if(name) label = name.textContent.trim(); }
-      if(typeof gtag !== 'undefined'){
-        gtag('event','order_now_click',{'event_category':'Outbound','event_label':label,'value':1});
-      }
+      var body = link.closest('.tc-body');
+      if(body){ var n = body.querySelector('.tc-name'); if(n) label = n.textContent.trim(); }
+      var btn = link.closest('.hero-ctas, nav');
+      if(btn) label = link.textContent.trim() + ' (Nav/Hero)';
+      fireOrderEvent(label);
     });
   });
 });
