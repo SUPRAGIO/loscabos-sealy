@@ -264,9 +264,9 @@ import Layout from '../layouts/Layout.astro';
 .section-heading{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:clamp(36px,5vw,54px);line-height:1;text-transform:uppercase;color:#1A1008;margin-bottom:0}
 .menu-section{padding:80px 72px;background:#f5f0ea}
 .menu-header{margin-bottom:36px}
-.menu-tabs{display:flex;gap:4px;margin-bottom:40px;border-bottom:2px solid #ddd;flex-wrap:wrap}
-.tab-btn{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;background:none;border:none;cursor:pointer;color:#888;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;white-space:nowrap}
-.tab-btn.active,.tab-btn:hover{color:#F4621F;border-bottom-color:#F4621F}
+.menu-tabs{display:flex;gap:0;margin-bottom:48px;flex-wrap:wrap;border-bottom:none}
+.tab-btn{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:16px;letter-spacing:.08em;text-transform:uppercase;padding:14px 24px;background:none;border:none;cursor:pointer;color:#bbb;border-bottom:4px solid transparent;transition:all .2s;white-space:nowrap;line-height:1}
+.tab-btn.active{color:#1A1008;border-bottom:4px solid #F4621F;background:rgba(244,98,31,.06)}.tab-btn:hover{color:#F4621F;border-bottom:4px solid rgba(244,98,31,.3)}
 .tc-grid{display:none;grid-template-columns:repeat(4,1fr);gap:24px}
 .tab-content.active{display:grid}
 .tc-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);display:flex;flex-direction:column}
