@@ -508,4 +508,38 @@ import Layout from '../layouts/Layout.astro';
 const tabs=document.querySelectorAll('.tab-btn');
 const contents=document.querySelectorAll('.tab-content');
 tabs.forEach(btn=>{btn.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));contents.forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab)?.classList.add('active');});});
+
+// GA4 outbound click tracking for all Order Now links
+document.addEventListener('DOMContentLoaded',function(){
+  const skytabUrl = 'skytab.com';
+  document.querySelectorAll('a[href*="skytab"]').forEach(function(link){
+    link.addEventListener('click',function(){
+      const label = link.closest('.tc-card') 
+        ? link.closest('.tc-body')?.querySelector('.tc-name')?.textContent?.trim() 
+        : link.textContent?.trim();
+      if(typeof gtag !== 'undefined'){
+        gtag('event','order_now_click',{
+          'event_category':'Outbound',
+          'event_label': label || 'Order Now',
+          'transport_type':'beacon',
+          'value':1
+        });
+      }
+    });
+  });
+
+  // Also track hero CTA buttons
+  document.querySelectorAll('.btn-primary, .btn-nav-order').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(typeof gtag !== 'undefined'){
+        gtag('event','order_now_click',{
+          'event_category':'Outbound',
+          'event_label': btn.textContent?.trim() + ' (Hero/Nav)',
+          'transport_type':'beacon',
+          'value':1
+        });
+      }
+    });
+  });
+});
 </script>
