@@ -144,31 +144,69 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
 
-<footer style="background:#0f0d0b;color:rgba(255,255,255,0.45);font-family:'Barlow',sans-serif;font-size:12px;padding:40px 72px;border-top:1px solid rgba(255,255,255,0.08);">
-  <div style="max-width:1400px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:32px;">
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;">Los Cabos Mexican Grill</div>
-        <div>6027 FM 3538 Rd, Sealy, TX 77474</div>
-        <div style="margin-top:4px;">(512) 607-6232</div>
-        <div style="margin-top:4px;">Sun&ndash;Wed 11AM&ndash;9PM &middot; Thu&ndash;Sat 11AM&ndash;10PM</div>
-      </div>
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;">Legal</div>
-        <div>Los Cabos Mexican Grill complies with the Texas Alcoholic Beverage Code. Alcohol service is limited to guests 21 and older with valid government-issued ID. We reserve the right to refuse service.</div>
-        <div style="margin-top:8px;">This establishment is a food service facility permitted by the Texas Department of State Health Services (DSHS) under the Texas Food Establishment Rules (TFER).</div>
-      </div>
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;">Notices</div>
-        <div>Menu prices and availability are subject to change without notice. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have a medical condition.</div>
-        <div style="margin-top:8px;">If you have a food allergy or dietary restriction, please inform your server before ordering.</div>
-      </div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" style="height:80px;width:auto;filter:brightness(1);" />
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <div>&copy; 2025 Los Cabos Mexican Grill &mdash; Sealy, TX. All rights reserved.</div>
-      <div>Website by <a href="https://suprareachmarketing.com" target="_blank" rel="noopener" style="color:#F4621F;text-decoration:none;">SupraReach Marketing</a></div>
+
+    <!-- Tagline -->
+    <p class="footer-tagline">Sizzling fajitas. Hand-crafted margaritas. Sealy&rsquo;s favorite Tex-Mex since day one.</p>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <a href="https://www.facebook.com/people/Los-Cabos-Mexican-Grill-Sealy/61571457067942/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/loscabossealy/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
     </div>
+
+    <!-- Nav Links -->
+    <nav class="footer-nav">
+      <a href="/menu">Menu</a>
+      <a href="/#catering">Catering</a>
+      <a href="/#find-us">Find Us</a>
+      <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener">Order Online</a>
+    </nav>
+
+    <!-- Legal -->
+    <div class="footer-legal">
+      <p>Alcohol service limited to guests 21+ with valid ID. We comply with the Texas Alcoholic Beverage Code and reserve the right to refuse service.</p>
+      <p>Permitted food service facility under the Texas Department of State Health Services (DSHS) &mdash; Texas Food Establishment Rules (TFER).</p>
+      <p>Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness. Please inform your server of any food allergies.</p>
+      <p>Menu prices and availability subject to change without notice.</p>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <span>&copy; 2025 Los Cabos Mexican Grill &mdash; Sealy, TX. All rights reserved.</span>
+      <span>POWERED BY <a href="https://suprareachmarketing.com" target="_blank" rel="noopener">SUPRAREACH MARKETING</a></span>
+    </div>
+
   </div>
 </footer>
+
+<style>
+.site-footer{background:#0f0d0b;color:rgba(255,255,255,0.5);font-family:'Barlow',sans-serif;font-size:13px;text-align:center;padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.08)}
+.footer-inner{max-width:860px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px}
+.footer-logo img{opacity:.9}
+.footer-tagline{font-size:15px;color:rgba(255,255,255,0.6);max-width:480px;line-height:1.6}
+.footer-social{display:flex;gap:20px;align-items:center}
+.footer-social a{color:rgba(255,255,255,0.5);transition:color .2s;display:flex}
+.footer-social a:hover{color:#F4621F}
+.footer-nav{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.footer-nav a{color:rgba(255,255,255,0.55);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
+.footer-nav a:hover{color:#F4621F}
+.footer-legal{max-width:640px;display:flex;flex-direction:column;gap:8px;color:rgba(255,255,255,0.3);font-size:11px;line-height:1.6;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px}
+.footer-bottom{width:100%;display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;font-size:11px;color:rgba(255,255,255,0.3)}
+.footer-bottom a{color:#F4621F;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.1em}
+.footer-bottom a:hover{text-decoration:underline}
+@media(max-width:768px){.footer-nav{gap:16px}.footer-bottom{flex-direction:column;gap:8px}.site-footer{padding:40px 24px 32px}}
+</style>
 </body>
 </html>
