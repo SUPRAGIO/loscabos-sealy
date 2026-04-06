@@ -145,18 +145,18 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
 
+
+
+
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <!-- Logo -->
     <div class="footer-logo">
-      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" style="height:80px;width:auto;filter:brightness(1);" />
+      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" style="height:80px;width:auto;" />
     </div>
 
-    <!-- Tagline -->
     <p class="footer-tagline">Sizzling fajitas. Hand-crafted margaritas. Sealy&rsquo;s favorite Tex-Mex since day one.</p>
 
-    <!-- Social Icons -->
     <div class="footer-social">
       <a href="https://www.facebook.com/people/Los-Cabos-Mexican-Grill-Sealy/61571457067942/" target="_blank" rel="noopener" aria-label="Facebook">
         <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -164,9 +164,11 @@ document.addEventListener('DOMContentLoaded',function(){
       <a href="https://www.instagram.com/loscabossealy/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       </a>
+      <a href="https://www.tiktok.com/@loscabossealy" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+      </a>
     </div>
 
-    <!-- Nav Links -->
     <nav class="footer-nav">
       <a href="/menu">Menu</a>
       <a href="/#catering">Catering</a>
@@ -174,7 +176,6 @@ document.addEventListener('DOMContentLoaded',function(){
       <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener">Order Online</a>
     </nav>
 
-    <!-- Legal -->
     <div class="footer-legal">
       <p>Alcohol service limited to guests 21+ with valid ID. We comply with the Texas Alcoholic Beverage Code and reserve the right to refuse service.</p>
       <p>Permitted food service facility under the Texas Department of State Health Services (DSHS) &mdash; Texas Food Establishment Rules (TFER).</p>
@@ -182,7 +183,6 @@ document.addEventListener('DOMContentLoaded',function(){
       <p>Menu prices and availability subject to change without notice.</p>
     </div>
 
-    <!-- Bottom Bar -->
     <div class="footer-bottom">
       <span>&copy; 2025 Los Cabos Mexican Grill &mdash; Sealy, TX. All rights reserved.</span>
       <span>POWERED BY <a href="https://suprareachmarketing.com" target="_blank" rel="noopener">SUPRAREACH MARKETING</a></span>
@@ -192,18 +192,18 @@ document.addEventListener('DOMContentLoaded',function(){
 </footer>
 
 <style>
-.site-footer{background:#0f0d0b;color:rgba(255,255,255,0.5);font-family:'Barlow',sans-serif;font-size:13px;text-align:center;padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.08)}
-.footer-inner{max-width:860px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px}
-.footer-logo img{opacity:.9}
-.footer-tagline{font-size:15px;color:rgba(255,255,255,0.6);max-width:480px;line-height:1.6}
-.footer-social{display:flex;gap:20px;align-items:center}
-.footer-social a{color:rgba(255,255,255,0.5);transition:color .2s;display:flex}
+.site-footer{background:#0f0d0b;color:rgba(255,255,255,0.45);font-family:'Barlow',sans-serif;font-size:13px;text-align:center;padding:60px 40px 40px;border-top:1px solid rgba(255,255,255,0.08)}
+.footer-inner{max-width:860px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px;width:100%}
+.footer-tagline{font-size:15px;color:rgba(255,255,255,0.6);max-width:480px;line-height:1.6;margin:0}
+.footer-social{display:flex;gap:24px;align-items:center;justify-content:center}
+.footer-social a{color:rgba(255,255,255,0.5);transition:color .2s;display:flex;align-items:center;justify-content:center}
 .footer-social a:hover{color:#F4621F}
-.footer-nav{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.footer-nav{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;align-items:center}
 .footer-nav a{color:rgba(255,255,255,0.55);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
 .footer-nav a:hover{color:#F4621F}
-.footer-legal{max-width:640px;display:flex;flex-direction:column;gap:8px;color:rgba(255,255,255,0.3);font-size:11px;line-height:1.6;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px}
-.footer-bottom{width:100%;display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;font-size:11px;color:rgba(255,255,255,0.3)}
+.footer-legal{max-width:640px;width:100%;display:flex;flex-direction:column;gap:8px;color:rgba(255,255,255,0.3);font-size:11px;line-height:1.6;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;text-align:center}
+.footer-legal p{margin:0}
+.footer-bottom{width:100%;display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;font-size:11px;color:rgba(255,255,255,0.3);text-align:center}
 .footer-bottom a{color:#F4621F;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.1em}
 .footer-bottom a:hover{text-decoration:underline}
 @media(max-width:768px){.footer-nav{gap:16px}.footer-bottom{flex-direction:column;gap:8px}.site-footer{padding:40px 24px 32px}}
