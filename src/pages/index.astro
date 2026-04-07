@@ -96,29 +96,48 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
   <section class="catering-section" id="catering">
-  <div class="catering-split">
-    <div class="catering-left">
+  <div class="catering-inner">
+
+    <!-- Header -->
+    <div class="catering-header">
       <div class="section-eyebrow">Events &amp; Catering</div>
-      <h2 class="section-heading">WE COME<br>TO YOU.</h2>
-      <p class="catering-desc">From backyard gatherings to corporate events, Los Cabos brings the full experience to you. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
-      <div class="catering-stats">
-        <div class="catering-stat">
-          <span class="stat-num">25+</span>
-          <span class="stat-label">Guests Minimum</span>
-        </div>
-        
+      <h2 class="section-heading">WE COME TO YOU.</h2>
+      <p class="catering-intro">From backyard cookouts to corporate events &mdash; Los Cabos brings the full experience to you. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
+    </div>
+
+    <!-- 3 Step Funnel -->
+    <div class="catering-steps">
+      <div class="catering-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Tell Us About Your Event</div>
+        <div class="step-desc">Group size, date, location, and any special requests. We handle the rest.</div>
+      </div>
+      <div class="catering-step-arrow">&#8594;</div>
+      <div class="catering-step">
+        <div class="step-num">02</div>
+        <div class="step-title">We Build Your Menu</div>
+        <div class="step-desc">Choose from our full menu. Fajitas, enchiladas, sides, drinks &mdash; customized for your crowd.</div>
+      </div>
+      <div class="catering-step-arrow">&#8594;</div>
+      <div class="catering-step">
+        <div class="step-num">03</div>
+        <div class="step-title">We Show Up &amp; Serve</div>
+        <div class="step-desc">Hot, fresh, and on time. You enjoy the party. We handle the food.</div>
       </div>
     </div>
-    <div class="catering-right">
-      <div class="catering-card">
-        <div class="catering-card-icon" style="display:flex;justify-content:center;align-items:center;"><img src="/images/logo.png" alt="Los Cabos Mexican Grill" style="height:80px;width:auto;"/></div>
-        <h3 class="catering-card-heading">Book Your Event</h3>
-        <p class="catering-card-sub">Ready to bring Los Cabos to your next event? Give us a call and let&rsquo;s make it happen.</p>
-        <a href="tel:+15126076232" class="catering-card-phone">(512) 607-6232</a>
-        <div class="catering-card-hours">Available during business hours<br>Sun&ndash;Wed 11AM&ndash;9PM &middot; Thu&ndash;Sat 11AM&ndash;10PM</div>
-        <a href="tel:+15126076232" class="catering-card-btn">CALL TO BOOK CATERING</a>
+
+    <!-- CTA Card -->
+    <div class="catering-cta-row">
+      <div class="catering-cta-card">
+        <img src="/images/logo.png" alt="Los Cabos Mexican Grill" style="height:70px;width:auto;margin-bottom:16px;" />
+        <h3 class="catering-cta-heading">Ready to Book?</h3>
+        <p class="catering-cta-sub">Minimum 25 guests. Call us during business hours to get started.</p>
+        <a href="tel:+15126076232" class="catering-cta-phone">(512) 607-6232</a>
+        <div class="catering-cta-hours">Sun&ndash;Wed 11AM&ndash;9PM &middot; Thu&ndash;Sat 11AM&ndash;10PM</div>
+        <a href="tel:+15126076232" class="catering-cta-btn">CALL TO BOOK CATERING</a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -248,6 +267,34 @@ import Layout from '../layouts/Layout.astro';
   .catering-card-btn{display:block;background:#F4621F;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:4px;text-decoration:none;transition:background .2s}
   .catering-card-btn:hover{background:#D94E0E}
   @media(max-width:900px){.catering-split{grid-template-columns:1fr}.catering-section{padding:60px 24px}.catering-stats{gap:24px}.stat-num{font-size:36px}}
+
+  .catering-section{background:#1A1410;padding:80px 40px;display:flex;justify-content:center}
+  .catering-inner{max-width:1000px;width:100%;display:flex;flex-direction:column;align-items:center;gap:56px}
+  .catering-header{text-align:center;max-width:680px}
+  .catering-header .section-eyebrow{color:#F4621F}
+  .catering-header .section-heading{color:white}
+  .catering-intro{font-family:'Barlow',sans-serif;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;margin-top:16px}
+  .catering-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:16px;width:100%}
+  .catering-step{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 24px;text-align:center}
+  .catering-step-arrow{font-size:28px;color:#F4621F;font-weight:900;text-align:center}
+  .step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;color:#F4621F;line-height:1;margin-bottom:12px}
+  .step-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.06em;color:white;margin-bottom:10px}
+  .step-desc{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6}
+  .catering-cta-row{display:flex;justify-content:center;width:100%}
+  .catering-cta-card{background:#F4621F;border-radius:16px;padding:40px 48px;text-align:center;max-width:480px;width:100%}
+  .catering-cta-heading{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:white;margin-bottom:10px}
+  .catering-cta-sub{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:20px}
+  .catering-cta-phone{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:white;text-decoration:none;margin-bottom:8px;letter-spacing:.04em}
+  .catering-cta-phone:hover{opacity:.85}
+  .catering-cta-hours{font-family:'Barlow',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.7}
+  .catering-cta-btn{display:block;background:#1A1410;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:4px;text-decoration:none;transition:background .2s}
+  .catering-cta-btn:hover{background:#0f0d0b}
+  @media(max-width:900px){
+    .catering-steps{grid-template-columns:1fr;gap:12px}
+    .catering-step-arrow{transform:rotate(90deg)}
+    .catering-section{padding:60px 24px}
+    .catering-cta-card{padding:32px 24px}
+  }
 </style>
 <style is:global>
 .menu-tabs { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:0 !important; border-bottom:3px solid #e8e0d8 !important; margin-bottom:48px !important; }
