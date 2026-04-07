@@ -96,18 +96,36 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
   <section class="catering-section" id="catering">
-  <div class="catering-img"><video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"><source src="/video/catering.mp4" type="video/mp4"></video></div>
-  <div class="catering-text">
-    <div class="section-eyebrow">Events &amp; Catering</div>
-    <h2 class="section-heading">WE COME<br>TO YOU.</h2>
-    <p class="catering-sub">Real Tex-Mex. Your location. We handle everything from setup to the last tortilla.</p>
-    <ul class="catering-list">
-      <li>Weddings, corporate events &amp; private parties</li>
-      <li>Custom menus built around your event</li>
-      <li>Groups of 25 to 500+</li>
-      <li>Full setup and breakdown included</li>
-    </ul>
-    <a href="tel:+15126076232" class="btn-primary">Call to Book - (512) 607-6232</a>
+  <div class="catering-split">
+    <div class="catering-left">
+      <div class="section-eyebrow">Events &amp; Catering</div>
+      <h2 class="section-heading">WE COME<br>TO YOU.</h2>
+      <p class="catering-desc">From backyard gatherings to corporate events, Los Cabos brings the full experience to you. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
+      <div class="catering-stats">
+        <div class="catering-stat">
+          <span class="stat-num">25+</span>
+          <span class="stat-label">Guests Minimum</span>
+        </div>
+        <div class="catering-stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Max Capacity</span>
+        </div>
+        <div class="catering-stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Years Serving Texas</span>
+        </div>
+      </div>
+    </div>
+    <div class="catering-right">
+      <div class="catering-card">
+        <div class="catering-card-icon">&#127860;</div>
+        <h3 class="catering-card-heading">Book Your Event</h3>
+        <p class="catering-card-sub">Ready to bring Los Cabos to your next event? Give us a call and let&rsquo;s make it happen.</p>
+        <a href="tel:+15126076232" class="catering-card-phone">(512) 607-6232</a>
+        <div class="catering-card-hours">Available during business hours<br>Sun&ndash;Wed 11AM&ndash;9PM &middot; Thu&ndash;Sat 11AM&ndash;10PM</div>
+        <a href="tel:+15126076232" class="catering-card-btn">CALL TO BOOK CATERING</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -217,6 +235,26 @@ import Layout from '../layouts/Layout.astro';
     .featured-grid{grid-template-columns:1fr;gap:20px}
     .featured-img{height:180px}
   }
+
+  .catering-section{background:#f5f0ea;padding:80px 72px}
+  .catering-split{display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;max-width:1400px;margin:0 auto}
+  .catering-left{}
+  .catering-desc{font-family:'Barlow',sans-serif;font-size:17px;color:#4A3728;line-height:1.7;margin:20px 0 40px}
+  .catering-stats{display:flex;gap:40px}
+  .catering-stat{display:flex;flex-direction:column}
+  .stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;color:#F4621F;line-height:1}
+  .stat-label{font-family:'Barlow',sans-serif;font-size:13px;color:#4A3728;margin-top:4px}
+  .catering-right{}
+  .catering-card{background:#1A1410;border-radius:16px;padding:40px;text-align:center;color:white}
+  .catering-card-icon{font-size:48px;margin-bottom:16px}
+  .catering-card-heading{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
+  .catering-card-sub{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:24px}
+  .catering-card-phone{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:#F4621F;text-decoration:none;margin-bottom:12px;letter-spacing:.04em}
+  .catering-card-phone:hover{color:white}
+  .catering-card-hours{font-family:'Barlow',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:28px}
+  .catering-card-btn{display:block;background:#F4621F;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:4px;text-decoration:none;transition:background .2s}
+  .catering-card-btn:hover{background:#D94E0E}
+  @media(max-width:900px){.catering-split{grid-template-columns:1fr}.catering-section{padding:60px 24px}.catering-stats{gap:24px}.stat-num{font-size:36px}}
 </style>
 <style is:global>
 .menu-tabs { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:0 !important; border-bottom:3px solid #e8e0d8 !important; margin-bottom:48px !important; }
