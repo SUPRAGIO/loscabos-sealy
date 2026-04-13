@@ -324,7 +324,7 @@ function goToStep(n) {
       (evtype?'<div><strong>Event Type:</strong> '+evtype+'</div>':'') +
       '</div>' +
       '<div style="border-top:1px solid #eee;padding-top:16px;margin-bottom:12px;"><strong>Package:</strong> '+pkg.value+'</div>' +
-      (addons.length?'<div><strong>Add-ons:</strong><ul style='margin:8px 0 0 20px;'><li>'+addons.join('</li><li>')+'</li></ul></div>':'') +
+      (addons.length?'<div><strong>Add-ons:</strong><ul style="margin:8px 0 0 20px;"><li>'+addons.join('</li><li>')+'</li></ul></div>':'') +
       (notes?'<div style="margin-top:12px;"><strong>Notes:</strong> '+notes+'</div>':'');
   }
   document.querySelectorAll('.form-step').forEach(s=>s.style.display='none');
