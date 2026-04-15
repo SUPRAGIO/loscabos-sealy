@@ -175,7 +175,7 @@ const {
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo { height: 40px; width: auto; display: block; }
     .nav-location { display: none; }
-    .nav-links { display: none; }
+    .nav-links { display: none !important; }
     .nav-hamburger {
       display: flex;
       background: none;
@@ -392,9 +392,7 @@ const {
         color: rgba(255,255,255,0.45);
       }
       .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 32px;
+        display: none !important;
       }
       .nav-links a {
         font-family: 'Barlow Condensed', sans-serif;
@@ -408,7 +406,7 @@ const {
       }
       .nav-links a:hover { color: #fff; }
       .btn-nav-order {
-        display: inline-block;
+        display: none;
         background: var(--orange);
         color: #fff;
         font-family: 'Barlow Condensed', sans-serif;
