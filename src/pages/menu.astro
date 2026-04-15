@@ -396,7 +396,29 @@ import Layout from '../layouts/Layout.astro';
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
 
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const target = btn.getAttribute('data-tab');
+
+      // Update buttons
+      tabBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      // Update content grids
+      tabContents.forEach(function (tc) {
+        if (tc.id === 'tab-' + target) {
+          tc.classList.add('active');
+        } else {
+          tc.classList.remove('active');
+        }
+      });
+    });
+  });
+});
 </script>
 
 
