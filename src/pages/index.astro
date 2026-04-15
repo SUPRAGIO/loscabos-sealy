@@ -95,49 +95,45 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-  <section id="catering" style="background:#f5f0ea;width:100%;box-sizing:border-box;">
-  <div class="catering-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:500px;">
+  <section id="catering" class="cat-section">
+  <div class="cat-grid">
 
-    <!-- LEFT: Story + Steps -->
-    <div class="catering-left-col" style="padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:28px;">
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#F4621F;margin-bottom:12px;">Events &amp; Catering</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);color:#1C1410;line-height:1;text-transform:uppercase;margin-bottom:16px;">WE COME<br>TO YOU.</h2>
-        <p style="font-family:'Barlow',sans-serif;font-size:16px;color:#4A3728;line-height:1.7;">Los Cabos brings the full experience to your event. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="display:flex;align-items:flex-start;gap:16px;">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:#F4621F;line-height:1;min-width:36px;">01</div>
+    <div class="cat-left">
+      <div class="cat-eyebrow">Events &amp; Catering</div>
+      <h2 class="cat-heading">WE COME<br>TO YOU.</h2>
+      <p class="cat-desc">Los Cabos brings the full experience to your event. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
+      <div class="cat-steps">
+        <div class="cat-step">
+          <div class="cat-step-num">01</div>
           <div>
-            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.06em;color:#1C1410;margin-bottom:2px;">Tell us about your event</div>
-            <div style="font-family:'Barlow',sans-serif;font-size:14px;color:#4A3728;">Group size, date, location, and any special requests.</div>
+            <div class="cat-step-title">Tell us about your event</div>
+            <div class="cat-step-desc">Group size, date, location, and any special requests.</div>
           </div>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:16px;">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:#F4621F;line-height:1;min-width:36px;">02</div>
+        <div class="cat-step">
+          <div class="cat-step-num">02</div>
           <div>
-            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.06em;color:#1C1410;margin-bottom:2px;">We build your menu</div>
-            <div style="font-family:'Barlow',sans-serif;font-size:14px;color:#4A3728;">Fajitas, enchiladas, sides &mdash; customized for your crowd.</div>
+            <div class="cat-step-title">We build your menu</div>
+            <div class="cat-step-desc">Fajitas, enchiladas, sides &mdash; customized for your crowd.</div>
           </div>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:16px;">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:#F4621F;line-height:1;min-width:36px;">03</div>
+        <div class="cat-step">
+          <div class="cat-step-num">03</div>
           <div>
-            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.06em;color:#1C1410;margin-bottom:2px;">We show up &amp; serve</div>
-            <div style="font-family:'Barlow',sans-serif;font-size:14px;color:#4A3728;">Hot, fresh, and on time. You enjoy the party.</div>
+            <div class="cat-step-title">We show up &amp; serve</div>
+            <div class="cat-step-desc">Hot, fresh, and on time. You enjoy the party.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: Dark contact card -->
-    <div style=";padding:72px 56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;">
-      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" style="height:80px;width:auto;" />
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:white;">Ready to Book?</div>
-      <div style="font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;max-width:280px;">Minimum 25 guests. Call us during business hours to get started.</div>
-      <a href="tel:+15126076232" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;color:#F4621F;text-decoration:none;letter-spacing:.02em;">(512) 607-6232</a>
-      <div style="font-family:'Barlow',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8;">Sun&ndash;Wed 11AM&ndash;9PM<br>Thu&ndash;Sat 11AM&ndash;10PM</div>
-      <a href="/catering" style="display:block;width:100%;max-width:280px;background:#F4621F;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:4px;text-decoration:none;text-align:center;">CATERING REQUEST</a>
+    <div class="cat-right">
+      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="cat-logo" />
+      <div class="cat-book-title">Ready to Book?</div>
+      <div class="cat-book-sub">Minimum 25 guests. Call us during business hours to get started.</div>
+      <a href="tel:+15126076232" class="cat-phone">(512) 607-6232</a>
+      <div class="cat-hours">Sun&ndash;Wed 11AM&ndash;9PM<br>Thu&ndash;Sat 11AM&ndash;10PM</div>
+      <a href="/catering" class="cat-btn">CATERING REQUEST</a>
     </div>
 
   </div>
@@ -267,32 +263,32 @@ import Layout from '../layouts/Layout.astro';
   @media(max-width:900px){
   }
 
-  .catering-section{;padding:80px 40px;width:100%;box-sizing:border-box}
-  .catering-inner{max-width:960px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:56px;text-align:center}
-  .catering-header{width:100%}
+  
+  
+  
   .catering-header .section-eyebrow{color:#F4621F}
   .catering-header .section-heading{color:white}
-  .catering-intro{font-family:'Barlow',sans-serif;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto}
-  .catering-steps{display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%}
-  .catering-step{flex:1;padding:28px 20px;text-align:center}
-  .catering-step-arrow{font-size:28px;color:#F4621F;font-weight:900;padding-top:40px;flex-shrink:0}
+  
+  
+  
+  
   .step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;color:#F4621F;line-height:1;margin-bottom:12px}
   .step-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.06em;color:white;margin-bottom:10px}
   .step-desc{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6}
-  .catering-cta-row{display:flex;justify-content:center;width:100%}
-  .catering-cta-card{background:#F4621F;border-radius:16px;padding:40px 48px;text-align:center;max-width:440px;width:100%}
-  .catering-cta-heading{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:white;margin-bottom:10px}
-  .catering-cta-sub{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:20px}
-  .catering-cta-phone{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:white;text-decoration:none;margin-bottom:8px;letter-spacing:.04em}
+  
+  
+  
+  
+  
   .catering-cta-phone:hover{opacity:.85}
-  .catering-cta-hours{font-family:'Barlow',sans-serif;font-size:12px;color:rgba(255,255,255,0.75);margin-bottom:24px;line-height:1.7}
-  .catering-cta-btn{display:block;;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:4px;text-decoration:none}
+  
+  
   .catering-cta-btn:hover{background:#0f0d0b}
   @media(max-width:768px){
-    .catering-steps{flex-direction:column;align-items:center}
-    .catering-step-arrow{transform:rotate(90deg);padding:0}
-    .catering-section{padding:60px 24px}
-    .catering-cta-card{padding:32px 24px}
+    
+    
+    
+    
   }
 
 @media(max-width:768px){
@@ -320,11 +316,11 @@ import Layout from '../layouts/Layout.astro';
   .btn-secondary-menu{padding:12px 24px;font-size:13px;}
 
   /* Catering */
-  .catering-section{padding:48px 20px;}
+  
   #catering > div{grid-template-columns:1fr;}
   #catering > div > div:first-child{padding:40px 24px;}
   #catering > div > div:last-child{padding:40px 24px;}
-  .catering-cta-phone{font-size:28px;}
+  
 
   /* Reviews */
   .reviews-section{padding:48px 20px;}
@@ -390,8 +386,8 @@ import Layout from '../layouts/Layout.astro';
   #catering{padding:48px 0;}
   #catering > div{grid-template-columns:1fr;width:100%;}
   #catering > div > div{padding:40px 20px;width:100%;}
-  .catering-cta-phone{font-size:28px;}
-  .catering-cta-btn{width:100%;}
+  
+  
 
   /* Reviews */
   .reviews-inner{padding:48px 20px;}
@@ -434,7 +430,7 @@ import Layout from '../layouts/Layout.astro';
 .featured-section{background:#f5f0ea;}
 .featured-name{color:#1C1410 !important;}
 .featured-desc{color:#2A1F18 !important;}
-.catering-intro{color:#2A1F18;}
+
 .step-title{color:#1C1410;}
 .reviews-section .review-text{color:#f5f0ea;}
 .find-us-section .section-heading{color:#1C1410;}
@@ -459,11 +455,11 @@ import Layout from '../layouts/Layout.astro';
 }
 
 @media(max-width:768px){
-  .catering-grid{grid-template-columns:1fr !important;min-height:auto !important;}
-  .catering-left-col{padding:40px 20px !important;}
+  
+  
   .catering-left-col h2{font-size:clamp(36px,10vw,52px) !important;color:#1C1410 !important;}
   .catering-left-col p{font-size:15px !important;color:#2A1F18 !important;}
-  .catering-right-col{padding:40px 20px !important;width:100% !important;}
+  
   .catering-right-col img{height:60px !important;}
 }
 
@@ -474,6 +470,36 @@ import Layout from '../layouts/Layout.astro';
 .featured-section .section-eyebrow{color:#F4621F !important;}
 .menu-cta-heading{color:white !important;}
 .menu-cta-sub{color:rgba(255,255,255,0.75) !important;}
+
+.cat-section{background:#f5f0ea;width:100%;box-sizing:border-box;}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px;}
+.cat-left{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:28px;background:#f5f0ea;}
+.cat-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#F4621F;margin-bottom:4px;}
+.cat-heading{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);color:#1C1410;line-height:1;text-transform:uppercase;margin-bottom:16px;}
+.cat-desc{font-family:'Barlow',sans-serif;font-size:16px;color:#4A3728;line-height:1.7;}
+.cat-steps{display:flex;flex-direction:column;gap:16px;}
+.cat-step{display:flex;align-items:flex-start;gap:16px;}
+.cat-step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:#F4621F;line-height:1;min-width:36px;flex-shrink:0;}
+.cat-step-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.06em;color:#1C1410;margin-bottom:2px;}
+.cat-step-desc{font-family:'Barlow',sans-serif;font-size:14px;color:#4A3728;}
+.cat-right{background:#1A1410;padding:72px 56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;}
+.cat-logo{height:80px;width:auto;}
+.cat-book-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:white;}
+.cat-book-sub{font-family:'Barlow',sans-serif;font-size:14px;color:rgba(255,255,255,0.65);line-height:1.6;max-width:280px;}
+.cat-phone{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;color:#F4621F;text-decoration:none;letter-spacing:.02em;}
+.cat-phone:hover{color:white;}
+.cat-hours{font-family:'Barlow',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8;}
+.cat-btn{display:block;width:100%;max-width:280px;background:#F4621F;color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:4px;text-decoration:none;text-align:center;}
+.cat-btn:hover{background:#D94E0E;}
+@media(max-width:768px){
+  .cat-grid{grid-template-columns:1fr;}
+  .cat-left{padding:48px 20px;}
+  .cat-right{padding:48px 20px;}
+  .cat-heading{font-size:clamp(36px,10vw,52px);}
+  .cat-phone{font-size:32px;}
+  .cat-btn{max-width:100%;}
+  .cat-logo{height:64px;}
+}
 </style>
 <style is:global>
 .menu-tabs { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:0 !important; border-bottom:3px solid #e8e0d8 !important; margin-bottom:48px !important; }
