@@ -230,7 +230,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style is:global>
 /* ================================================================
-   INDEX.ASTRO — MOBILE-FIRST
+   INDEX.ASTRO â MOBILE-FIRST
    Base = 320px+  |  sm = 600px+  |  lg = 900px+  |  xl = 1200px+
    Chrome mobile:  announce 32px + nav 58px = 90px total
    Chrome desktop: announce 36px + nav 78px = 114px total
@@ -560,9 +560,7 @@ import Layout from '../layouts/Layout.astro';
   .find-section { flex-direction: row; }
   .find-content { flex: 1; padding: 52px 40px; }
   .map-embed { flex: 1; min-height: 360px; }
-  .reviews-carousel { gap: 20px; }
-  .review-card { min-width: calc(50% - 10px); }
-  .reviews-dots { display: none; }
+  /* reviews stay 1-up below 900px */
 }
 
 /* ================================================================
@@ -611,7 +609,10 @@ import Layout from '../layouts/Layout.astro';
   .cat-phone { font-size: 40px; }
   .cat-logo { height: 80px; }
   .reviews-section { padding: 80px 72px; }
-  .review-card { min-width: calc(33.333% - 14px); padding: 32px 28px; }
+  /* Reviews 3-up at desktop */
+  .reviews-carousel { gap: 24px; flex-wrap: wrap; transform: none !important; }
+  .review-card { min-width: 0; flex: 1 1 calc(33.333% - 16px); padding: 32px 28px; }
+  .reviews-dots { display: none; }
   .find-content { padding: 72px 64px; }
   .map-embed { min-height: 440px; }
 }
@@ -632,7 +633,7 @@ let autoTimer;
 function goToReview(n) {
   currentReview = n;
   const carousel = document.getElementById('reviewsCarousel');
-  if (carousel && window.innerWidth < 600) {
+  if (carousel && window.innerWidth < 900) {
     carousel.style.transform = 'translateX(-' + (n * 100) + '%)';
     document.querySelectorAll('.reviews-dot').forEach((d, i) => d.classList.toggle('active', i === n));
   }
@@ -641,7 +642,7 @@ function goToReview(n) {
 }
 function startAuto() {
   autoTimer = setInterval(() => {
-    if (window.innerWidth < 600) { currentReview = (currentReview + 1) % totalReviews; goToReview(currentReview); }
+    if (window.innerWidth < 900) { currentReview = (currentReview + 1) % totalReviews; goToReview(currentReview); }
   }, 4000);
 }
 document.addEventListener('DOMContentLoaded', function () {
