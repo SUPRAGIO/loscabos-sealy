@@ -87,52 +87,60 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ===== FEATURED DISHES ===== -->
+<!-- ===== FAMILY PACKS ===== -->
 <section class="featured-section">
   <div class="featured-inner">
-    <span class="idx-eyebrow">House Favorites</span>
-    <h2 class="idx-heading">WHAT WE&rsquo;RE KNOWN FOR</h2>
-    <div class="featured-grid">
-      <article class="featured-card">
-        <div class="featured-img">
-          <img src="/images/fajitas.jpg" alt="Fajitas Mexicanas" loading="lazy" />
+    <span class="idx-eyebrow">Feed the Whole Crew</span>
+    <h2 class="idx-heading">FAMILY PACKS<br>AVAILABLE!</h2>
+    <p class="fp-intro">Bring Los Cabos home. Our family packs are packed with flavor, ready to feed 4&ndash;6 people, and perfect for any night you don&rsquo;t feel like cooking.</p>
+    <div class="fp-grid">
+
+      <article class="fp-card">
+        <div class="fp-card-header">
+          <div class="fp-badge">Pack #1</div>
+          <div class="fp-price">$74.95</div>
         </div>
-        <div class="featured-body">
-          <h3 class="featured-name">Fajitas Mexicanas</h3>
-          <p class="featured-desc">Sizzling beef or chicken fajitas topped with our signature sauce of onions, tomatoes, jalape&ntilde;os, cilantro and mushrooms. Served with all the fixings.</p>
-          <div class="featured-price">From $16.95</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="featured-order">Order Now</a>
-        </div>
-      </article>
-      <article class="featured-card">
-        <div class="featured-img">
-          <img src="/images/ribeye.jpg" alt="Ribeye 12oz" loading="lazy" />
-        </div>
-        <div class="featured-body">
-          <h3 class="featured-name">Ribeye 12oz</h3>
-          <p class="featured-desc">Our most flavorful steak. 12oz ribeye served with your choice of side and Caesar or dinner salad. A Los Cabos classic.</p>
-          <div class="featured-price">$28.99</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="featured-order">Order Now</a>
+        <div class="fp-card-body">
+          <h3 class="fp-name">The Classic Family Feast</h3>
+          <p class="fp-desc">The perfect spread for your family dinner. Includes a generous portion of our tender beef and chicken fajitas, served with Mexican rice and your choice of refried, charro, or black beans. We include all the fixings: our homemade guacamole, fresh pico de gallo, sour cream, and your choice of tortillas. Finished with crispy chips, signature red and green salsas, and a bowl of our creamy chile con queso.</p>
+          <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
+          <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
         </div>
       </article>
-      <article class="featured-card">
-        <div class="featured-img">
-          <img src="/images/MenuItems.jpg" alt="Cabos Seafood Platter" loading="lazy" />
+
+      <article class="fp-card">
+        <div class="fp-card-header">
+          <div class="fp-badge">Pack #2</div>
+          <div class="fp-price">$92.95</div>
         </div>
-        <div class="featured-body">
-          <h3 class="featured-name">Cabos Seafood Platter</h3>
-          <p class="featured-desc">Fried shrimp, fried catfish, stuffed jalape&ntilde;o shrimp, wrapped shrimp and chicken brochette. Served with French fries. A house favorite.</p>
-          <div class="featured-price">$19.50</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="featured-order">Order Now</a>
+        <div class="fp-card-body">
+          <h3 class="fp-name">The Premium Feast</h3>
+          <p class="fp-desc">When you want it all! This premium feast features our sizzlin&rsquo; beef and chicken fajitas, savory ribs, and our signature shrimp brochette. Accompanied by Mexican rice and your choice of beans. Complete with homemade guacamole, pico de gallo, sour cream, and fresh tortillas. Plus plenty of chips, our signature red and green salsas, and a large helping of chile con queso for the ultimate Los Cabos experience.</p>
+          <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
+          <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
         </div>
       </article>
+
+      <article class="fp-card">
+        <div class="fp-card-header">
+          <div class="fp-badge">Pack #3</div>
+          <div class="fp-price">$53.95</div>
+        </div>
+        <div class="fp-card-body">
+          <h3 class="fp-name">The Enchilada Lover&rsquo;s Dream</h3>
+          <p class="fp-desc">Enjoy 12 of our hand-rolled enchiladas with your choice of savory ground beef, shredded chicken, or melty cheese &mdash; each topped with our rich chili gravy and extra melted cheese. Comes ready to serve with a quart of Mexican rice, a quart of your favorite beans, plenty of chips, our signature red salsa, and a large homemade chile con queso to round out the meal.</p>
+          <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
+          <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
+        </div>
+      </article>
+
     </div>
     <div class="featured-cta">
+      <p class="fp-menu-sub">Hungry for more? Explore our full menu of fajitas, enchiladas, seafood, steaks, and hand-crafted margaritas.</p>
       <a href="/menu" class="btn-outline-dark">See Everything on the Menu &rarr;</a>
     </div>
   </div>
 </section>
-
 <!-- ===== CATERING ===== -->
 <section class="cat-section" id="catering">
   <div class="cat-grid">
@@ -426,6 +434,121 @@ import Layout from '../layouts/Layout.astro';
   line-height: 1.5;
 }
 
+
+/* ----- FAMILY PACKS ----- */
+.fp-intro {
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  color: #4A3728;
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+.fp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+.fp-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.13);
+}
+.fp-card-header {
+  background: #1A1410;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fp-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.fp-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: #F4621F;
+  line-height: 1;
+}
+.fp-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.fp-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #1C1410;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.fp-desc {
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  color: #4A3728;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.fp-serves {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #9E8472;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.fp-order {
+  display: block;
+  text-align: center;
+  background: #F4621F;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+.fp-order:hover { background: #D94E0E; }
+.fp-menu-sub {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  color: #4A3728;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ----- FEATURED ----- */
 .featured-section { background: #f5f0ea; padding: 52px 20px; }
 .featured-inner { max-width: 1200px; margin: 0 auto; }
@@ -554,6 +677,7 @@ import Layout from '../layouts/Layout.astro';
   .trust-item { padding: 8px 20px; font-size: 13px; }
   .menu-cta-section { min-height: 400px; }
   .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .fp-grid { grid-template-columns: repeat(2, 1fr); }
   .cat-grid { flex-direction: row; }
   .cat-left { flex: 1; padding: 52px 32px; }
   .cat-right { flex: 0 0 300px; padding: 52px 32px; }
@@ -602,6 +726,7 @@ import Layout from '../layouts/Layout.astro';
   .menu-cta-section { min-height: 480px; }
   .menu-cta-content { padding: 72px 40px; }
   .featured-section { padding: 80px clamp(32px, 5vw, 72px); }
+  .fp-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .featured-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .featured-img { height: 220px; }
   .cat-left { padding: clamp(48px, 6vw, 72px) clamp(32px, 4vw, 56px); }
