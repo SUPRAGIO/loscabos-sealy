@@ -96,10 +96,10 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
   <section id="catering" style="background:#f5f0ea;width:100%;box-sizing:border-box;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:500px;">
+  <div class="catering-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:500px;">
 
     <!-- LEFT: Story + Steps -->
-    <div style="padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:28px;">
+    <div class="catering-left-col" style="padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:28px;">
       <div>
         <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#F4621F;margin-bottom:12px;">Events &amp; Catering</div>
         <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);color:#1C1410;line-height:1;text-transform:uppercase;margin-bottom:16px;">WE COME<br>TO YOU.</h2>
@@ -457,6 +457,23 @@ import Layout from '../layouts/Layout.astro';
   .reviews-carousel .review-card{min-width:calc(33.333% - 16px);}
   .reviews-dots{display:none;}
 }
+
+@media(max-width:768px){
+  .catering-grid{grid-template-columns:1fr !important;min-height:auto !important;}
+  .catering-left-col{padding:40px 20px !important;}
+  .catering-left-col h2{font-size:clamp(36px,10vw,52px) !important;color:#1C1410 !important;}
+  .catering-left-col p{font-size:15px !important;color:#2A1F18 !important;}
+  .catering-right-col{padding:40px 20px !important;width:100% !important;}
+  .catering-right-col img{height:60px !important;}
+}
+
+/* Cream background text - force dark colors */
+.featured-name{color:#1C1410 !important;}
+.featured-desc{color:#2A1F18 !important;}
+.featured-section .section-heading{color:#1C1410 !important;}
+.featured-section .section-eyebrow{color:#F4621F !important;}
+.menu-cta-heading{color:white !important;}
+.menu-cta-sub{color:rgba(255,255,255,0.75) !important;}
 </style>
 <style is:global>
 .menu-tabs { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:0 !important; border-bottom:3px solid #e8e0d8 !important; margin-bottom:48px !important; }
