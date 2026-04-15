@@ -154,21 +154,28 @@ import Layout from '../layouts/Layout.astro';
         <div class="reviews-count">Based on Google Reviews</div>
       </div>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Food was out quick and it was phenomenal. Will definitely be going back."</p>
-        <div class="review-name">Brandin S. &mdash; <span style="opacity:.5;font-size:12px;">19 hours ago</span></div>
+    <div class="reviews-carousel-wrap">
+      <div class="reviews-carousel" id="reviewsCarousel">
+        <div class="review-card">
+          <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Food was out quick and it was phenomenal. Will definitely be going back."</p>
+          <div class="review-name">Brandin S. &mdash; <span style="opacity:.5;font-size:12px;">19 hours ago</span></div>
+        </div>
+        <div class="review-card">
+          <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Best food, service, and price for a meal that I've had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn't finish half."</p>
+          <div class="review-name">Larsen Trucking &mdash; <span style="opacity:.5;font-size:12px;">3 weeks ago</span></div>
+        </div>
+        <div class="review-card">
+          <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit."</p>
+          <div class="review-name">Lashay C. &mdash; <span style="opacity:.5;font-size:12px;">3 weeks ago &middot; Local Guide</span></div>
+        </div>
       </div>
-      <div class="review-card">
-        <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Best food, service, and price for a meal that I've had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn't finish half."</p>
-        <div class="review-name">Larsen Trucking &mdash; <span style="opacity:.5;font-size:12px;">3 weeks ago</span></div>
-      </div>
-      <div class="review-card">
-        <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit."</p>
-        <div class="review-name">Lashay C. &mdash; <span style="opacity:.5;font-size:12px;">3 weeks ago &middot; Local Guide</span></div>
+      <div class="reviews-dots">
+        <span class="reviews-dot active" onclick="goToReview(0)"></span>
+        <span class="reviews-dot" onclick="goToReview(1)"></span>
+        <span class="reviews-dot" onclick="goToReview(2)"></span>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
@@ -436,6 +443,20 @@ import Layout from '../layouts/Layout.astro';
 .find-us-section .info-value a{color:#F4621F;}
 .find-us-hours .day{color:#1C1410;}
 .find-us-hours .time{color:#2A1F18;}
+
+.reviews-carousel-wrap{width:100%;overflow:hidden;position:relative;}
+.reviews-carousel{display:flex;transition:transform .4s ease;width:100%;}
+.reviews-carousel .review-card{min-width:100%;flex-shrink:0;padding:32px;}
+.reviews-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;}
+.reviews-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:background .2s;}
+.reviews-dot.active{background:#F4621F;}
+
+/* Desktop shows all 3 */
+@media(min-width:769px){
+  .reviews-carousel{flex-wrap:nowrap;gap:24px;}
+  .reviews-carousel .review-card{min-width:calc(33.333% - 16px);}
+  .reviews-dots{display:none;}
+}
 </style>
 <style is:global>
 .menu-tabs { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:0 !important; border-bottom:3px solid #e8e0d8 !important; margin-bottom:48px !important; }
@@ -448,6 +469,53 @@ import Layout from '../layouts/Layout.astro';
 .tc-grid { justify-items: center; }
 .tc-card { width: 100%; }
 </style>
+
+<script>
+let currentReview = 0;
+const totalReviews = 3;
+let autoTimer;
+
+function goToReview(n) {
+  currentReview = n;
+  const carousel = document.getElementById('reviewsCarousel');
+  if(carousel && window.innerWidth < 769) {
+    carousel.style.transform = 'translateX(-' + (n * 100) + '%)';
+    document.querySelectorAll('.reviews-dot').forEach((d,i) => {
+      d.classList.toggle('active', i === n);
+    });
+  }
+  clearInterval(autoTimer);
+  startAuto();
+}
+
+function startAuto() {
+  autoTimer = setInterval(() => {
+    if(window.innerWidth < 769) {
+      currentReview = (currentReview + 1) % totalReviews;
+      goToReview(currentReview);
+    }
+  }, 4000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  startAuto();
+  
+  // Touch swipe support
+  const carousel = document.getElementById('reviewsCarousel');
+  if(carousel) {
+    let startX = 0;
+    carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearInterval(autoTimer); });
+    carousel.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50) {
+        if(diff > 0) currentReview = Math.min(currentReview + 1, totalReviews - 1);
+        else currentReview = Math.max(currentReview - 1, 0);
+        goToReview(currentReview);
+      }
+    });
+  }
+});
+</script>
 </Layout>
 
 <style>
