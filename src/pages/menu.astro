@@ -421,4 +421,25 @@ import Layout from '../layouts/Layout.astro';
 @media(max-width:480px){
   .tc-grid{grid-template-columns:1fr;}
 }
+
+<style>
+html,body{overflow-x:hidden;}
+*{box-sizing:border-box;}
+@media(max-width:768px){
+  .menu-tabs{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;}
+  .menu-tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{white-space:nowrap;font-size:11px;padding:8px 12px;flex-shrink:0;}
+  .menu-section{padding:40px 16px;}
+  .tc-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .tc-img{height:130px;}
+  .tc-name{font-size:13px;}
+  .tc-desc{font-size:11px;}
+  .tc-body{padding:10px;}
+  .menu-page-header{padding:40px 20px 0;}
+  .menu-page-header h1{font-size:clamp(36px,10vw,56px);}
+}
+@media(max-width:390px){
+  .tc-grid{grid-template-columns:1fr;}
+}
+</style>
 </Layout>
