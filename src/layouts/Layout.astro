@@ -148,7 +148,23 @@ const { title = "Los Cabos Mexican Grill → Sealy, TX", description = "Sizzling
       .footer-links{gap:24px;flex-wrap:wrap;justify-content:center}
       .mob-bar{display:flex}
     }
-  </style>
+  
+@media(max-width:768px){
+  .announce-bar{font-size:11px;padding:8px 12px;gap:8px;flex-wrap:wrap;text-align:center;}
+  .announce-bar .btn-announce{font-size:10px;padding:5px 12px;}
+  nav{padding:0 16px;height:56px;top:34px;}
+  .nav-logo{height:40px;}
+  .nav-links{gap:12px;}
+  .nav-links a{font-size:11px;letter-spacing:.06em;}
+  .btn-nav-order{font-size:11px;padding:8px 14px;}
+  .site-footer{padding:40px 20px 32px;}
+  .footer-inner{gap:20px;}
+  .footer-tagline{font-size:14px;}
+  .footer-nav{gap:12px;flex-wrap:wrap;}
+  .footer-nav a{font-size:12px;}
+  .footer-bottom{flex-direction:column;gap:6px;font-size:10px;}
+}
+</style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
