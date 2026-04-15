@@ -104,6 +104,7 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="fp-name">Family Pack #1</h3>
           <p class="fp-desc">The perfect spread for your family dinner. Includes a generous portion of our tender beef and chicken fajitas, served with Mexican rice and your choice of refried, charro, or black beans. We include all the fixings: our homemade guacamole, fresh pico de gallo, sour cream, and your choice of tortillas. Finished with crispy chips, signature red and green salsas, and a bowl of our creamy chile con queso.</p>
           <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
+          <div class="fp-togo">&#128718; To-Go Only</div>
           <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
         </div>
       </article>
@@ -117,6 +118,7 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="fp-name">Family Pack #2</h3>
           <p class="fp-desc">When you want it all! This premium feast features our sizzlin&rsquo; beef and chicken fajitas, savory ribs, and our signature shrimp brochette. Accompanied by Mexican rice and your choice of beans. Complete with homemade guacamole, pico de gallo, sour cream, and fresh tortillas. Plus plenty of chips, our signature red and green salsas, and a large helping of chile con queso for the ultimate Los Cabos experience.</p>
           <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
+          <div class="fp-togo">&#128718; To-Go Only</div>
           <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
         </div>
       </article>
@@ -130,6 +132,7 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="fp-name">Family Pack #3</h3>
           <p class="fp-desc">Enjoy 12 of our hand-rolled enchiladas with your choice of savory ground beef, shredded chicken, or melty cheese &mdash; each topped with our rich chili gravy and extra melted cheese. Comes ready to serve with a quart of Mexican rice, a quart of your favorite beans, plenty of chips, our signature red salsa, and a large homemade chile con queso to round out the meal.</p>
           <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
+          <div class="fp-togo">&#128718; To-Go Only</div>
           <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
         </div>
       </article>
@@ -538,6 +541,20 @@ import Layout from '../layouts/Layout.astro';
   margin-top: auto;
 }
 .fp-order:hover { background: #D94E0E; }
+.fp-togo {
+  display: inline-block;
+  background: #1A1410;
+  color: #F4621F;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(244,98,31,0.3);
+}
 .fp-menu-sub {
   font-family: 'Barlow', sans-serif;
   font-size: 15px;
