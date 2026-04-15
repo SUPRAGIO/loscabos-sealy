@@ -14,9 +14,10 @@ import Layout from '../layouts/Layout.astro';
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-left">
-      <h1 class="hero-headline">FAJITA NIGHT<br><em>IS</em> HERE</h1>
+      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="hero-logo" loading="eager" />
+        <h1 class="hero-headline">FAJITA NIGHT<br><em>IS</em> HERE</h1>
       <div class="hero-ctas">
-        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">Order Online</a>
+        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">&#128293; Order Online &mdash; 15 Min</a>
         <a href="#menu" class="btn-outline">View Menu</a>
         <a href="tel:+15126076232" class="btn-ghost">Call Now</a>
       </div>
@@ -83,6 +84,7 @@ import Layout from '../layouts/Layout.astro';
     <span class="idx-eyebrow">Fresh. Scratch-Made. Every Day.</span>
     <h2 class="menu-cta-heading">EXPLORE THE MENU</h2>
     <p class="menu-cta-sub">From sizzling fajitas to hand-crafted margaritas &mdash; something for everyone at the table.</p>
+      <p class="menu-cta-urgency">&#128338; Order online &mdash; ready for pickup in 15 minutes</p>
     <a href="/menu" class="btn-primary" style="display:block;max-width:280px;margin:0 auto;text-align:center;">VIEW FULL MENU &rarr;</a>
   </div>
 </section>
@@ -105,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="fp-desc">The perfect spread for your family dinner. Includes a generous portion of our tender beef and chicken fajitas, served with Mexican rice and your choice of refried, charro, or black beans. We include all the fixings: our homemade guacamole, fresh pico de gallo, sour cream, and your choice of tortillas. Finished with crispy chips, signature red and green salsas, and a bowl of our creamy chile con queso.</p>
           <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
           <div class="fp-togo">&#128718; To-Go Only</div>
-          <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">&#128293; Order Online Now &rarr;</a>
         </div>
       </article>
 
@@ -119,7 +121,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="fp-desc">When you want it all! This premium feast features our sizzlin&rsquo; beef and chicken fajitas, savory ribs, and our signature shrimp brochette. Accompanied by Mexican rice and your choice of beans. Complete with homemade guacamole, pico de gallo, sour cream, and fresh tortillas. Plus plenty of chips, our signature red and green salsas, and a large helping of chile con queso for the ultimate Los Cabos experience.</p>
           <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
           <div class="fp-togo">&#128718; To-Go Only</div>
-          <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">&#128293; Order Online Now &rarr;</a>
         </div>
       </article>
 
@@ -133,7 +135,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="fp-desc">Enjoy 12 of our hand-rolled enchiladas with your choice of savory ground beef, shredded chicken, or melty cheese &mdash; each topped with our rich chili gravy and extra melted cheese. Comes ready to serve with a quart of Mexican rice, a quart of your favorite beans, plenty of chips, our signature red salsa, and a large homemade chile con queso to round out the meal.</p>
           <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
           <div class="fp-togo">&#128718; To-Go Only</div>
-          <a href="tel:+15126076232" class="fp-order">Call to Order &rarr;</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">&#128293; Order Online Now &rarr;</a>
         </div>
       </article>
 
@@ -180,8 +182,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="reviews-count">Based on Google Reviews</div>
       </div>
     </div>
-    <div class="reviews-carousel-wrap">
-      <div class="reviews-carousel" id="reviewsCarousel">
+    <div class="reviews-grid-wrap">
+      <div class="reviews-grid-inner" id="reviewsCarousel">
         <div class="review-card">
           <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">&ldquo;Food was out quick and it was phenomenal. Will definitely be going back.&rdquo;</p>
@@ -198,7 +200,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="review-name">Lashay C. &mdash; <span class="review-time">3 weeks ago &middot; Local Guide</span></div>
         </div>
       </div>
-      <div class="reviews-dots">
+      <div class="reviews-dots" style="display:none;">
         <button class="reviews-dot active" onclick="goToReview(0)" aria-label="Review 1"></button>
         <button class="reviews-dot" onclick="goToReview(1)" aria-label="Review 2"></button>
         <button class="reviews-dot" onclick="goToReview(2)" aria-label="Review 3"></button>
@@ -248,6 +250,37 @@ import Layout from '../layouts/Layout.astro';
    Mob-bar: 52px fixed bottom (mobile only)
    All selectors prefixed with idx- or use unique names
 ================================================================ */
+
+
+/* ----- HERO LOGO ----- */
+.hero-logo {
+  height: 72px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
+}
+
+/* ----- REVIEWS GRID (replaces carousel on mobile) ----- */
+.reviews-grid-wrap {
+  width: 100%;
+}
+.reviews-grid-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ----- MENU CTA URGENCY ----- */
+.menu-cta-urgency {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.65);
+  margin-top: -12px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
 
 /* ----- INDEX-SPECIFIC EYEBROW + HEADING ----- */
 .idx-eyebrow {
@@ -753,7 +786,7 @@ import Layout from '../layouts/Layout.astro';
   .cat-logo { height: 80px; }
   .reviews-section { padding: 80px 72px; }
   /* Reviews 3-up at desktop */
-  .reviews-carousel { gap: 24px; flex-wrap: wrap; transform: none !important; }
+  .reviews-grid-inner { gap: 24px; flex-wrap: wrap; transform: none !important; }
   .review-card { min-width: 0; flex: 1 1 calc(33.333% - 16px); padding: 32px 28px; }
   .reviews-dots { display: none; }
   .find-content { padding: 72px 64px; }
