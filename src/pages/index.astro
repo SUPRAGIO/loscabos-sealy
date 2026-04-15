@@ -8,26 +8,18 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <video
-    autoplay muted loop playsinline
-    class="hero-video"
-    poster="/images/hero-poster.jpg"
-  >
+  <video autoplay muted loop playsinline class="hero-video" poster="/images/hero-poster.jpg">
     <source src="/video/hero.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
     <div class="hero-left">
       <h1 class="hero-headline">FAJITA NIGHT<br><em>IS</em> HERE.</h1>
-
       <div class="hero-ctas">
-        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
-           target="_blank" rel="noopener" class="btn-primary">Order Online</a>
+        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">Order Online</a>
         <a href="#menu" class="btn-outline">View Menu</a>
         <a href="tel:+15126076232" class="btn-ghost">Call Now</a>
       </div>
-
       <div class="hero-proof">
         <div class="proof-item">
           <div class="proof-num">4.8</div>
@@ -46,8 +38,6 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-
-    <!-- Info card: visible on desktop only via CSS -->
     <aside class="hero-info-card">
       <div class="info-card-row">
         <span class="info-label">Hours</span>
@@ -67,8 +57,7 @@ import Layout from '../layouts/Layout.astro';
         </span>
       </div>
       <div class="info-divider"></div>
-      <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
-         target="_blank" rel="noopener" class="btn-primary btn-full">ORDER NOW &rarr;</a>
+      <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;">ORDER NOW &rarr;</a>
     </aside>
   </div>
 </section>
@@ -91,19 +80,18 @@ import Layout from '../layouts/Layout.astro';
     <div class="menu-cta-overlay"></div>
   </div>
   <div class="menu-cta-content">
-    <span class="eyebrow">Fresh. Scratch-Made. Every Day.</span>
+    <span class="idx-eyebrow">Fresh. Scratch-Made. Every Day.</span>
     <h2 class="menu-cta-heading">EXPLORE THE MENU</h2>
     <p class="menu-cta-sub">From sizzling fajitas to hand-crafted margaritas &mdash; something for everyone at the table.</p>
-    <a href="/menu" class="btn-primary">VIEW FULL MENU &rarr;</a>
+    <a href="/menu" class="btn-primary" style="display:block;max-width:280px;margin:0 auto;text-align:center;">VIEW FULL MENU &rarr;</a>
   </div>
 </section>
 
 <!-- ===== FEATURED DISHES ===== -->
 <section class="featured-section">
   <div class="featured-inner">
-    <span class="eyebrow">House Favorites</span>
-    <h2 class="section-heading">WHAT WE&rsquo;RE KNOWN FOR</h2>
-
+    <span class="idx-eyebrow">House Favorites</span>
+    <h2 class="idx-heading">WHAT WE&rsquo;RE KNOWN FOR</h2>
     <div class="featured-grid">
       <article class="featured-card">
         <div class="featured-img">
@@ -113,11 +101,9 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="featured-name">Fajitas Mexicanas</h3>
           <p class="featured-desc">Sizzling beef or chicken fajitas topped with our signature sauce of onions, tomatoes, jalape&ntilde;os, cilantro and mushrooms. Served with all the fixings.</p>
           <div class="featured-price">From $16.95</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
-             target="_blank" rel="noopener" class="featured-order">Order Now</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="featured-order">Order Now</a>
         </div>
       </article>
-
       <article class="featured-card">
         <div class="featured-img">
           <img src="/images/ribeye.jpg" alt="Ribeye 12oz" loading="lazy" />
@@ -126,11 +112,9 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="featured-name">Ribeye 12oz</h3>
           <p class="featured-desc">Our most flavorful steak. 12oz ribeye served with your choice of side and Caesar or dinner salad. A Los Cabos classic.</p>
           <div class="featured-price">$28.99</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
-             target="_blank" rel="noopener" class="featured-order">Order Now</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="featured-order">Order Now</a>
         </div>
       </article>
-
       <article class="featured-card">
         <div class="featured-img">
           <img src="/images/MenuItems.jpg" alt="Cabos Seafood Platter" loading="lazy" />
@@ -139,12 +123,10 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="featured-name">Cabos Seafood Platter</h3>
           <p class="featured-desc">Fried shrimp, fried catfish, stuffed jalape&ntilde;o shrimp, wrapped shrimp and chicken brochette. Served with French fries. A house favorite.</p>
           <div class="featured-price">$19.50</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
-             target="_blank" rel="noopener" class="featured-order">Order Now</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="featured-order">Order Now</a>
         </div>
       </article>
     </div>
-
     <div class="featured-cta">
       <a href="/menu" class="btn-outline-dark">See Everything on the Menu &rarr;</a>
     </div>
@@ -155,42 +137,22 @@ import Layout from '../layouts/Layout.astro';
 <section class="cat-section" id="catering">
   <div class="cat-grid">
     <div class="cat-left">
-      <span class="eyebrow">Events &amp; Catering</span>
+      <span class="idx-eyebrow">Events &amp; Catering</span>
       <h2 class="cat-heading">WE COME<br>TO YOU.</h2>
       <p class="cat-desc">Los Cabos brings the full experience to your event. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
-
       <div class="cat-steps">
-        <div class="cat-step">
-          <div class="cat-step-num">01</div>
-          <div>
-            <div class="cat-step-title">Tell us about your event</div>
-            <div class="cat-step-desc">Group size, date, location, and any special requests.</div>
-          </div>
-        </div>
-        <div class="cat-step">
-          <div class="cat-step-num">02</div>
-          <div>
-            <div class="cat-step-title">We build your menu</div>
-            <div class="cat-step-desc">Fajitas, enchiladas, sides &mdash; customized for your crowd.</div>
-          </div>
-        </div>
-        <div class="cat-step">
-          <div class="cat-step-num">03</div>
-          <div>
-            <div class="cat-step-title">We show up &amp; serve</div>
-            <div class="cat-step-desc">Hot, fresh, and on time. You enjoy the party.</div>
-          </div>
-        </div>
+        <div class="cat-step"><div class="cat-step-num">01</div><div><div class="cat-step-title">Tell us about your event</div><div class="cat-step-desc">Group size, date, location, and any special requests.</div></div></div>
+        <div class="cat-step"><div class="cat-step-num">02</div><div><div class="cat-step-title">We build your menu</div><div class="cat-step-desc">Fajitas, enchiladas, sides &mdash; customized for your crowd.</div></div></div>
+        <div class="cat-step"><div class="cat-step-num">03</div><div><div class="cat-step-title">We show up &amp; serve</div><div class="cat-step-desc">Hot, fresh, and on time. You enjoy the party.</div></div></div>
       </div>
     </div>
-
     <div class="cat-right">
       <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="cat-logo" loading="lazy" />
       <div class="cat-book-title">Ready to Book?</div>
       <p class="cat-book-sub">Minimum 25 guests. Call us during business hours to get started.</p>
       <a href="tel:+15126076232" class="cat-phone">(512) 607-6232</a>
       <div class="cat-hours">Sun&ndash;Wed 11AM&ndash;9PM<br>Thu&ndash;Sat 11AM&ndash;10PM</div>
-      <a href="/catering" class="btn-primary btn-full">CATERING REQUEST</a>
+      <a href="/catering" class="btn-primary" style="display:block;width:100%;max-width:280px;text-align:center;">CATERING REQUEST</a>
     </div>
   </div>
 </section>
@@ -198,9 +160,8 @@ import Layout from '../layouts/Layout.astro';
 <!-- ===== REVIEWS ===== -->
 <section class="reviews-section">
   <div class="reviews-inner">
-    <span class="eyebrow">What People Are Saying</span>
-    <h2 class="section-heading reviews-heading">REAL REVIEWS.<br>REAL PEOPLE.</h2>
-
+    <span class="idx-eyebrow">What People Are Saying</span>
+    <h2 class="idx-heading reviews-heading">REAL REVIEWS.<br>REAL PEOPLE.</h2>
     <div class="reviews-score-row">
       <div class="reviews-score">4.8</div>
       <div>
@@ -208,7 +169,6 @@ import Layout from '../layouts/Layout.astro';
         <div class="reviews-count">Based on Google Reviews</div>
       </div>
     </div>
-
     <div class="reviews-carousel-wrap">
       <div class="reviews-carousel" id="reviewsCarousel">
         <div class="review-card">
@@ -227,17 +187,14 @@ import Layout from '../layouts/Layout.astro';
           <div class="review-name">Lashay C. &mdash; <span class="review-time">3 weeks ago &middot; Local Guide</span></div>
         </div>
       </div>
-
       <div class="reviews-dots">
         <button class="reviews-dot active" onclick="goToReview(0)" aria-label="Review 1"></button>
         <button class="reviews-dot" onclick="goToReview(1)" aria-label="Review 2"></button>
         <button class="reviews-dot" onclick="goToReview(2)" aria-label="Review 3"></button>
       </div>
     </div>
-
     <div class="reviews-cta">
-      <a href="https://www.google.com/maps/place/Los+Cabos+Mexican+Grill,+Sealy"
-         target="_blank" rel="noopener" class="btn-outline-white">Leave Us a Review on Google</a>
+      <a href="https://www.google.com/maps/place/Los+Cabos+Mexican+Grill,+Sealy" target="_blank" rel="noopener" class="btn-outline-white">Leave Us a Review on Google</a>
     </div>
   </div>
 </section>
@@ -246,8 +203,8 @@ import Layout from '../layouts/Layout.astro';
 <section class="find-section" id="find-us">
   <div class="find-content">
     <div>
-      <span class="eyebrow">Come In</span>
-      <h2 class="section-heading">FIND US</h2>
+      <span class="idx-eyebrow">Come In</span>
+      <h2 class="idx-heading">FIND US</h2>
     </div>
     <div class="find-row">
       <span class="find-label">Address</span>
@@ -264,32 +221,25 @@ import Layout from '../layouts/Layout.astro';
       <span class="find-label">Hours</span>
       <span class="find-value">Sun&ndash;Wed: 11AM &ndash; 9PM<br>Thu&ndash;Sat: 11AM &ndash; 10PM</span>
     </div>
-    <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474"
-       target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+    <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
   </div>
   <div class="map-embed">
-    <iframe
-      title="Los Cabos Sealy TX"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2!2d-96.1566!3d29.7810!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1sen!2sus!4v1"
-      width="100%" height="100%"
-      style="border:0;min-height:320px;"
-      allowfullscreen
-      loading="lazy"
-    ></iframe>
+    <iframe title="Los Cabos Sealy TX" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2!2d-96.1566!3d29.7810!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;display:block;min-height:300px;" allowfullscreen loading="lazy"></iframe>
   </div>
 </section>
 
-<style>
-/* ============================================================
-   INDEX.ASTRO — MOBILE-FIRST STYLES
-   Base = mobile (320px+)
-   md   = min-width: 600px
-   lg   = min-width: 900px
-   xl   = min-width: 1200px
-   ============================================================ */
+<style is:global>
+/* ================================================================
+   INDEX.ASTRO — MOBILE-FIRST
+   Base = 320px+  |  sm = 600px+  |  lg = 900px+  |  xl = 1200px+
+   Chrome mobile:  announce 32px + nav 58px = 90px total
+   Chrome desktop: announce 36px + nav 78px = 114px total
+   Mob-bar: 52px fixed bottom (mobile only)
+   All selectors prefixed with idx- or use unique names
+================================================================ */
 
-/* ----- SHARED UTILITIES ----- */
-.eyebrow {
+/* ----- INDEX-SPECIFIC EYEBROW + HEADING ----- */
+.idx-eyebrow {
   display: block;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 800;
@@ -299,7 +249,7 @@ import Layout from '../layouts/Layout.astro';
   color: #F4621F;
   margin-bottom: 8px;
 }
-.section-heading {
+.idx-heading {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
   font-size: clamp(32px, 9vw, 54px);
@@ -308,56 +258,8 @@ import Layout from '../layouts/Layout.astro';
   color: #1C1410;
   margin-bottom: 20px;
 }
-.btn-primary {
-  display: inline-block;
-  background: #F4621F;
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.2s;
-  cursor: pointer;
-  border: none;
-}
-.btn-primary:hover { background: #D94E0E; }
-.btn-full { display: block; text-align: center; width: 100%; }
-.btn-outline {
-  display: inline-block;
-  background: transparent;
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 13px 24px;
-  border-radius: 4px;
-  text-decoration: none;
-  border: 2px solid rgba(255,255,255,0.45);
-  transition: border-color 0.2s, color 0.2s;
-}
-.btn-outline:hover { border-color: #fff; color: #fff; }
-.btn-ghost {
-  display: inline-block;
-  background: transparent;
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 13px 24px;
-  border-radius: 4px;
-  text-decoration: none;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  transition: border-color 0.2s;
-}
-.btn-ghost:hover { border-color: rgba(255,255,255,0.6); }
+
+/* ----- DARK OUTLINE BUTTON (index only) ----- */
 .btn-outline-dark {
   display: inline-block;
   background: transparent;
@@ -374,6 +276,7 @@ import Layout from '../layouts/Layout.astro';
   transition: background 0.2s, color 0.2s;
 }
 .btn-outline-dark:hover { background: #1A1410; color: #fff; }
+
 .btn-outline-white {
   display: inline-block;
   background: transparent;
@@ -398,7 +301,7 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  padding-top: 94px; /* announce bar 32px + nav 58px + 4px gap */
+  padding-top: 90px; /* mobile chrome: 32px announce + 58px nav */
 }
 .hero-video {
   position: absolute;
@@ -412,19 +315,14 @@ import Layout from '../layouts/Layout.astro';
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(15,10,6,0.82) 0%,
-    rgba(15,10,6,0.45) 50%,
-    rgba(15,10,6,0.20) 100%
-  );
+  background: linear-gradient(to top, rgba(15,10,6,0.82) 0%, rgba(15,10,6,0.45) 50%, rgba(15,10,6,0.20) 100%);
   z-index: 2;
 }
 .hero-content {
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: 0 20px 40px;
+  padding: 0 20px 60px; /* 60px bottom: 40px design + 20px mob-bar buffer */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -439,17 +337,15 @@ import Layout from '../layouts/Layout.astro';
   color: #fff;
   letter-spacing: -0.01em;
 }
-.hero-headline em {
-  color: #F4621F;
-  font-style: italic;
+.hero-headline em { color: #F4621F; font-style: italic; display: block; }
+.hero-ctas { display: flex; flex-direction: column; gap: 10px; }
+.hero-ctas .btn-primary,
+.hero-ctas .btn-outline,
+.hero-ctas .btn-ghost {
+  width: 100%;
+  text-align: center;
   display: block;
 }
-.hero-ctas {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.hero-ctas a { width: 100%; text-align: center; }
 .hero-proof {
   display: flex;
   align-items: center;
@@ -457,32 +353,12 @@ import Layout from '../layouts/Layout.astro';
   flex-wrap: wrap;
 }
 .proof-item { display: flex; flex-direction: column; gap: 2px; }
-.proof-sep {
-  width: 1px;
-  height: 32px;
-  background: rgba(255,255,255,0.2);
-  flex-shrink: 0;
-}
-.proof-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 22px;
-  color: #fff;
-  line-height: 1;
-}
+.proof-sep { width: 1px; height: 32px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+.proof-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 22px; color: #fff; line-height: 1; }
 .proof-unit { font-size: 13px; color: rgba(255,255,255,0.5); }
-.proof-label {
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  white-space: nowrap;
-}
+.proof-label { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; white-space: nowrap; }
 .proof-stars { color: #f5c518; font-size: 11px; letter-spacing: 1px; }
-
-/* Info card: hidden on mobile, shown on desktop */
-.hero-info-card { display: none; }
+.hero-info-card { display: none; } /* desktop only */
 
 /* ----- TRUST BAR ----- */
 .trust-bar {
@@ -507,13 +383,9 @@ import Layout from '../layouts/Layout.astro';
   color: #fff;
 }
 .trust-check { color: #F4621F; }
-.trust-sep {
-  width: 1px;
-  height: 20px;
-  background: rgba(255,255,255,0.15);
-}
+.trust-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
 
-/* ----- MENU CTA BANNER ----- */
+/* ----- MENU CTA ----- */
 .menu-cta-section {
   position: relative;
   min-height: 320px;
@@ -522,15 +394,8 @@ import Layout from '../layouts/Layout.astro';
   justify-content: center;
   overflow: hidden;
 }
-.menu-cta-bg {
-  position: absolute;
-  inset: 0;
-}
-.menu-cta-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.menu-cta-bg { position: absolute; inset: 0; }
+.menu-cta-img { width: 100%; height: 100%; object-fit: cover; }
 .menu-cta-overlay {
   position: absolute;
   inset: 0;
@@ -544,7 +409,6 @@ import Layout from '../layouts/Layout.astro';
   max-width: 600px;
   width: 100%;
 }
-.menu-cta-content .eyebrow { margin-bottom: 12px; }
 .menu-cta-heading {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
@@ -561,21 +425,11 @@ import Layout from '../layouts/Layout.astro';
   margin-bottom: 28px;
   line-height: 1.5;
 }
-.menu-cta-content .btn-primary { width: 100%; max-width: 280px; }
 
-/* ----- FEATURED DISHES ----- */
-.featured-section {
-  background: #f5f0ea;
-  padding: 52px 20px;
-}
+/* ----- FEATURED ----- */
+.featured-section { background: #f5f0ea; padding: 52px 20px; }
 .featured-inner { max-width: 1200px; margin: 0 auto; }
-.featured-section .section-heading { margin-top: 4px; }
-.featured-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 36px;
-}
+.featured-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 36px; }
 .featured-card {
   background: #fff;
   border-radius: 12px;
@@ -585,27 +439,11 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   flex-direction: column;
 }
-.featured-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
-.featured-img {
-  height: 200px;
-  overflow: hidden;
-}
-.featured-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
+.featured-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.featured-img { height: 200px; overflow: hidden; }
+.featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
 .featured-card:hover .featured-img img { transform: scale(1.04); }
-.featured-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
+.featured-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
 .featured-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
@@ -616,21 +454,8 @@ import Layout from '../layouts/Layout.astro';
   margin-bottom: 8px;
   line-height: 1.1;
 }
-.featured-desc {
-  font-family: 'Barlow', sans-serif;
-  font-size: 14px;
-  color: #4A3728;
-  line-height: 1.6;
-  margin-bottom: 14px;
-  flex: 1;
-}
-.featured-price {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 20px;
-  color: #F4621F;
-  margin-bottom: 14px;
-}
+.featured-desc { font-family: 'Barlow', sans-serif; font-size: 14px; color: #4A3728; line-height: 1.6; margin-bottom: 14px; flex: 1; }
+.featured-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #F4621F; margin-bottom: 14px; }
 .featured-order {
   display: block;
   text-align: center;
@@ -648,25 +473,12 @@ import Layout from '../layouts/Layout.astro';
   margin-top: auto;
 }
 .featured-order:hover { background: #D94E0E; }
-.featured-cta {
-  text-align: center;
-  margin-top: 36px;
-}
-.featured-cta .btn-outline-dark { width: 100%; max-width: 320px; }
+.featured-cta { text-align: center; margin-top: 36px; }
 
 /* ----- CATERING ----- */
 .cat-section { background: #f5f0ea; }
-.cat-grid {
-  display: flex;
-  flex-direction: column;
-}
-.cat-left {
-  padding: 48px 20px;
-  background: #f5f0ea;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+.cat-grid { display: flex; flex-direction: column; }
+.cat-left { padding: 48px 20px; background: #f5f0ea; display: flex; flex-direction: column; gap: 24px; }
 .cat-heading {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
@@ -674,119 +486,31 @@ import Layout from '../layouts/Layout.astro';
   color: #1C1410;
   line-height: 1;
   text-transform: uppercase;
-  margin-bottom: 0;
 }
-.cat-desc {
-  font-family: 'Barlow', sans-serif;
-  font-size: 15px;
-  color: #4A3728;
-  line-height: 1.7;
-}
+.cat-desc { font-family: 'Barlow', sans-serif; font-size: 15px; color: #4A3728; line-height: 1.7; }
 .cat-steps { display: flex; flex-direction: column; gap: 16px; }
 .cat-step { display: flex; align-items: flex-start; gap: 14px; }
-.cat-step-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 30px;
-  color: #F4621F;
-  line-height: 1;
-  min-width: 32px;
-  flex-shrink: 0;
-}
-.cat-step-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #1C1410;
-  margin-bottom: 2px;
-}
-.cat-step-desc {
-  font-family: 'Barlow', sans-serif;
-  font-size: 13px;
-  color: #4A3728;
-  line-height: 1.5;
-}
-.cat-right {
-  background: #1A1410;
-  padding: 48px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-align: center;
-}
+.cat-step-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 30px; color: #F4621F; line-height: 1; min-width: 32px; flex-shrink: 0; }
+.cat-step-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; color: #1C1410; margin-bottom: 2px; }
+.cat-step-desc { font-family: 'Barlow', sans-serif; font-size: 13px; color: #4A3728; line-height: 1.5; }
+.cat-right { background: #1A1410; padding: 48px 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
 .cat-logo { height: 64px; width: auto; }
-.cat-book-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 22px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #fff;
-}
-.cat-book-sub {
-  font-family: 'Barlow', sans-serif;
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.6;
-  max-width: 280px;
-  margin: 0;
-}
-.cat-phone {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 32px;
-  color: #F4621F;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
-}
+.cat-book-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+.cat-book-sub { font-family: 'Barlow', sans-serif; font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 280px; margin: 0; }
+.cat-phone { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 32px; color: #F4621F; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
 .cat-phone:hover { color: #fff; }
-.cat-hours {
-  font-family: 'Barlow', sans-serif;
-  font-size: 12px;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.8;
-}
-.cat-right .btn-primary { width: 100%; max-width: 280px; }
+.cat-hours { font-family: 'Barlow', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8; }
 
 /* ----- REVIEWS ----- */
-.reviews-section {
-  background: #110e0b;
-  padding: 52px 20px;
-  overflow: hidden;
-}
+.reviews-section { background: #110e0b; padding: 52px 20px; overflow: hidden; }
 .reviews-inner { max-width: 1000px; margin: 0 auto; }
 .reviews-heading { color: #fff; }
-.reviews-score-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-}
-.reviews-score {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 52px;
-  color: #fff;
-  line-height: 1;
-}
+.reviews-score-row { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+.reviews-score { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 52px; color: #fff; line-height: 1; }
 .reviews-stars { color: #f5c518; font-size: 20px; letter-spacing: 2px; }
-.reviews-count {
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  margin-top: 2px;
-}
-/* Carousel: 1-up on mobile */
-.reviews-carousel-wrap { position: relative; width: 100%; }
-.reviews-carousel {
-  display: flex;
-  transition: transform 0.4s ease;
-  width: 100%;
-}
+.reviews-count { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.reviews-carousel-wrap { position: relative; width: 100%; overflow: hidden; }
+.reviews-carousel { display: flex; transition: transform 0.4s ease; width: 100%; }
 .review-card {
   min-width: 100%;
   flex-shrink: 0;
@@ -796,106 +520,37 @@ import Layout from '../layouts/Layout.astro';
   padding: 24px 20px;
   box-sizing: border-box;
 }
-.review-stars-row {
-  color: #f5c518;
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-.review-text {
-  font-family: 'Barlow', sans-serif;
-  font-size: 15px;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.6;
-  margin-bottom: 14px;
-  font-style: italic;
-}
-.review-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-}
+.review-stars-row { color: #f5c518; font-size: 16px; letter-spacing: 2px; margin-bottom: 12px; }
+.review-text { font-family: 'Barlow', sans-serif; font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 14px; font-style: italic; }
+.review-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 .review-time { opacity: 0.7; font-size: 11px; }
-.reviews-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-}
-.reviews-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s;
-}
+.reviews-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.reviews-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
 .reviews-dot.active { background: #F4621F; }
 .reviews-cta { text-align: center; margin-top: 36px; }
 
 /* ----- FIND US ----- */
-.find-section {
-  display: flex;
-  flex-direction: column;
-  background: #F5EFE6;
-}
-.find-content {
-  padding: 52px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+.find-section { display: flex; flex-direction: column; background: #F5EFE6; }
+.find-content { padding: 52px 20px 104px; display: flex; flex-direction: column; gap: 20px; } /* 104px = 52px design + 52px mob-bar */
 .find-row { display: flex; flex-direction: column; gap: 4px; }
-.find-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 10px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #9E8472;
-}
-.find-value {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: #1A1008;
-  line-height: 1.4;
-}
+.find-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #9E8472; }
+.find-value { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #1A1008; line-height: 1.4; }
 .find-value a { color: #F4621F; text-decoration: none; }
-.map-embed {
-  min-height: 280px;
-  flex-shrink: 0;
-}
-.map-embed iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 280px;
-  display: block;
-  border: 0;
-}
-.info-phone-note {
-  display: block;
-  font-family: 'Barlow', sans-serif;
-  font-size: 12px;
-  color: #F4621F;
-  font-style: italic;
-  margin-top: 2px;
-}
+.info-phone-note { display: block; font-family: 'Barlow', sans-serif; font-size: 12px; color: #F4621F; font-style: italic; margin-top: 2px; }
+.map-embed { min-height: 280px; flex-shrink: 0; }
+.map-embed iframe { width: 100%; height: 100%; min-height: 280px; display: block; border: 0; }
 
-/* ============================================================
-   TABLET  (min-width: 600px)
-   ============================================================ */
+/* ================================================================
+   TABLET  min-width: 600px
+================================================================ */
 @media (min-width: 600px) {
-  .hero { padding-top: 114px; }
+  .hero { padding-top: 114px; } /* desktop chrome */
   .hero-content { padding: 0 32px 52px; }
   .hero-headline { font-size: clamp(64px, 14vw, 100px); }
   .hero-ctas { flex-direction: row; flex-wrap: wrap; }
-  .hero-ctas a { width: auto; }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-outline,
+  .hero-ctas .btn-ghost { width: auto; display: inline-block; }
   .trust-item { padding: 8px 20px; font-size: 13px; }
   .menu-cta-section { min-height: 400px; }
   .featured-grid { grid-template-columns: repeat(2, 1fr); }
@@ -905,16 +560,16 @@ import Layout from '../layouts/Layout.astro';
   .find-section { flex-direction: row; }
   .find-content { flex: 1; padding: 52px 40px; }
   .map-embed { flex: 1; min-height: 360px; }
-  .reviews-carousel { flex-wrap: nowrap; gap: 20px; }
+  .reviews-carousel { gap: 20px; }
   .review-card { min-width: calc(50% - 10px); }
   .reviews-dots { display: none; }
 }
 
-/* ============================================================
-   DESKTOP  (min-width: 900px)
-   ============================================================ */
+/* ================================================================
+   DESKTOP  min-width: 900px
+================================================================ */
 @media (min-width: 900px) {
-  .hero { min-height: 100vh; padding-top: 114px; }
+  .hero { min-height: 100vh; }
   .hero-content {
     padding: 0 clamp(32px, 5vw, 72px) clamp(48px, 8vh, 80px);
     flex-direction: row;
@@ -925,7 +580,9 @@ import Layout from '../layouts/Layout.astro';
   .hero-left { max-width: 680px; }
   .hero-headline { font-size: clamp(80px, 10vw, 140px); }
   .hero-ctas { flex-direction: row; }
-  .hero-ctas a { width: auto; }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-outline,
+  .hero-ctas .btn-ghost { width: auto; display: inline-block; }
   .hero-info-card {
     display: flex;
     flex-direction: column;
@@ -939,38 +596,15 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
   }
   .info-card-row { display: flex; flex-direction: column; gap: 3px; }
-  .info-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-  }
-  .info-value {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: #fff;
-    line-height: 1.35;
-  }
+  .info-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .info-value { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #fff; line-height: 1.35; }
   .info-value a { color: #F4621F; text-decoration: none; }
   .info-divider { height: 1px; background: rgba(255,255,255,0.08); }
-  .info-phone-note {
-    font-family: 'Barlow', sans-serif;
-    font-size: 12px;
-    color: #F4621F;
-    font-style: italic;
-    display: block;
-    margin-top: 2px;
-  }
   .menu-cta-section { min-height: 480px; }
   .menu-cta-content { padding: 72px 40px; }
-  .menu-cta-content .btn-primary { width: auto; }
   .featured-section { padding: 80px clamp(32px, 5vw, 72px); }
   .featured-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .featured-img { height: 220px; }
-  .featured-cta .btn-outline-dark { width: auto; }
   .cat-left { padding: clamp(48px, 6vw, 72px) clamp(32px, 4vw, 56px); }
   .cat-right { flex: 0 0 340px; padding: 72px 48px; }
   .cat-heading { font-size: clamp(40px, 5vw, 64px); }
@@ -982,9 +616,9 @@ import Layout from '../layouts/Layout.astro';
   .map-embed { min-height: 440px; }
 }
 
-/* ============================================================
-   WIDE  (min-width: 1200px)
-   ============================================================ */
+/* ================================================================
+   WIDE  min-width: 1200px
+================================================================ */
 @media (min-width: 1200px) {
   .trust-item { font-size: 14px; padding: 8px 36px; }
   .trust-sep { height: 24px; }
@@ -995,43 +629,31 @@ import Layout from '../layouts/Layout.astro';
 let currentReview = 0;
 const totalReviews = 3;
 let autoTimer;
-
 function goToReview(n) {
   currentReview = n;
   const carousel = document.getElementById('reviewsCarousel');
   if (carousel && window.innerWidth < 600) {
     carousel.style.transform = 'translateX(-' + (n * 100) + '%)';
-    document.querySelectorAll('.reviews-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === n);
-    });
+    document.querySelectorAll('.reviews-dot').forEach((d, i) => d.classList.toggle('active', i === n));
   }
   clearInterval(autoTimer);
   startAuto();
 }
-
 function startAuto() {
   autoTimer = setInterval(() => {
-    if (window.innerWidth < 600) {
-      currentReview = (currentReview + 1) % totalReviews;
-      goToReview(currentReview);
-    }
+    if (window.innerWidth < 600) { currentReview = (currentReview + 1) % totalReviews; goToReview(currentReview); }
   }, 4000);
 }
-
 document.addEventListener('DOMContentLoaded', function () {
   startAuto();
   const carousel = document.getElementById('reviewsCarousel');
   if (carousel) {
     let startX = 0;
-    carousel.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-      clearInterval(autoTimer);
-    });
+    carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearInterval(autoTimer); });
     carousel.addEventListener('touchend', e => {
       const diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 50) {
-        if (diff > 0) currentReview = Math.min(currentReview + 1, totalReviews - 1);
-        else currentReview = Math.max(currentReview - 1, 0);
+        currentReview = diff > 0 ? Math.min(currentReview + 1, totalReviews - 1) : Math.max(currentReview - 1, 0);
         goToReview(currentReview);
       }
     });
@@ -1040,22 +662,12 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
-// GA4 outbound click tracking
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('a[href*="skytab"]').forEach(function (link) {
     link.addEventListener('click', function () {
       const body = link.closest('.featured-body');
-      const label = body
-        ? body.querySelector('.featured-name')?.textContent?.trim() || 'Order Now'
-        : link.textContent?.trim() + ' (Hero/Nav)';
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'order_now_click', {
-          event_category: 'Outbound',
-          event_label: label,
-          transport_type: 'beacon',
-          value: 1,
-        });
-      }
+      const label = body ? body.querySelector('.featured-name')?.textContent?.trim() || 'Order Now' : link.textContent?.trim() + ' (Hero/Nav)';
+      if (typeof gtag !== 'undefined') gtag('event', 'order_now_click', { event_category: 'Outbound', event_label: label, transport_type: 'beacon', value: 1 });
     });
   });
 });
