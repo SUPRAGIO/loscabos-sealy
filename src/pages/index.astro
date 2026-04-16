@@ -15,9 +15,9 @@ import Layout from '../layouts/Layout.astro';
   <div class="hero-content">
     <div class="hero-left">
       <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="hero-logo" loading="eager" />
-        <h1 class="hero-headline">FAJITA NIGHT<br><em>IS</em> HERE</h1>
+      <h1 class="hero-headline">FAJITA NIGHT<br><em>IS</em> HERE</h1>
       <div class="hero-ctas">
-        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">&#128293; Order Online &mdash; 15 Min</a>
+        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">Order Online &mdash; 15 Min</a>
         <a href="#menu" class="btn-outline">View Menu</a>
         <a href="tel:+15126076232" class="btn-ghost">Call Now</a>
       </div>
@@ -74,6 +74,28 @@ import Layout from '../layouts/Layout.astro';
   <div class="trust-item"><span class="trust-check">&#10003;</span><span>Dine In or Carry Out</span></div>
 </section>
 
+<!-- ===== SCROLLING BANNER ===== -->
+<div class="scroll-banner">
+  <div class="scroll-track">
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Sizzling Fajitas</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Hand-Crafted Margaritas</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Family Packs Available</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Order Online &mdash; Ready in 15 Min</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Scratch-Made Tex-Mex</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Dine In or Carry Out</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Catering Available</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Sealy, TX Favorite</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Sizzling Fajitas</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Hand-Crafted Margaritas</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Family Packs Available</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Order Online &mdash; Ready in 15 Min</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Scratch-Made Tex-Mex</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Dine In or Carry Out</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Catering Available</span>
+    <span class="scroll-item"><span class="scroll-dot">&bull;</span> Sealy, TX Favorite</span>
+  </div>
+</div>
+
 <!-- ===== MENU CTA BANNER ===== -->
 <section class="menu-cta-section" id="menu">
   <div class="menu-cta-bg">
@@ -84,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
     <span class="idx-eyebrow">Fresh. Scratch-Made. Every Day.</span>
     <h2 class="menu-cta-heading">EXPLORE THE MENU</h2>
     <p class="menu-cta-sub">From sizzling fajitas to hand-crafted margaritas &mdash; something for everyone at the table.</p>
-      <p class="menu-cta-urgency">&#128338; Order online &mdash; ready for pickup in 15 minutes</p>
+    <p class="menu-cta-urgency">Order online &mdash; ready for pickup in 15 minutes</p>
     <a href="/menu" class="btn-primary" style="display:block;max-width:280px;margin:0 auto;text-align:center;">VIEW FULL MENU &rarr;</a>
   </div>
 </section>
@@ -98,6 +120,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="fp-grid">
 
       <article class="fp-card">
+        <div class="fp-card-img">
+          <img src="/images/fajitas.jpg" alt="Family Pack 1 - Fajitas" loading="lazy" />
+        </div>
         <div class="fp-card-header">
           <div class="fp-badge">Pack #1</div>
           <div class="fp-price">$74.95</div>
@@ -105,13 +130,16 @@ import Layout from '../layouts/Layout.astro';
         <div class="fp-card-body">
           <h3 class="fp-name">Family Pack #1</h3>
           <p class="fp-desc">The perfect spread for your family dinner. Includes a generous portion of our tender beef and chicken fajitas, served with Mexican rice and your choice of refried, charro, or black beans. We include all the fixings: our homemade guacamole, fresh pico de gallo, sour cream, and your choice of tortillas. Finished with crispy chips, signature red and green salsas, and a bowl of our creamy chile con queso.</p>
-          <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
-          <div class="fp-togo">&#128718; To-Go Only</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">&#128293; Order Online Now &rarr;</a>
+          <div class="fp-serves">Serves 4&ndash;6</div>
+          <div class="fp-togo">To-Go Only</div>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">Order Online Now &rarr;</a>
         </div>
       </article>
 
       <article class="fp-card">
+        <div class="fp-card-img">
+          <img src="/images/ribeye.jpg" alt="Family Pack 2 - Premium Feast" loading="lazy" />
+        </div>
         <div class="fp-card-header">
           <div class="fp-badge">Pack #2</div>
           <div class="fp-price">$92.95</div>
@@ -119,13 +147,16 @@ import Layout from '../layouts/Layout.astro';
         <div class="fp-card-body">
           <h3 class="fp-name">Family Pack #2</h3>
           <p class="fp-desc">When you want it all! This premium feast features our sizzlin&rsquo; beef and chicken fajitas, savory ribs, and our signature shrimp brochette. Accompanied by Mexican rice and your choice of beans. Complete with homemade guacamole, pico de gallo, sour cream, and fresh tortillas. Plus plenty of chips, our signature red and green salsas, and a large helping of chile con queso for the ultimate Los Cabos experience.</p>
-          <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
-          <div class="fp-togo">&#128718; To-Go Only</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">&#128293; Order Online Now &rarr;</a>
+          <div class="fp-serves">Serves 4&ndash;6</div>
+          <div class="fp-togo">To-Go Only</div>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">Order Online Now &rarr;</a>
         </div>
       </article>
 
       <article class="fp-card">
+        <div class="fp-card-img">
+          <img src="/images/enchiladas.jpg" alt="Family Pack 3 - Enchiladas" loading="lazy" />
+        </div>
         <div class="fp-card-header">
           <div class="fp-badge">Pack #3</div>
           <div class="fp-price">$53.95</div>
@@ -133,9 +164,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="fp-card-body">
           <h3 class="fp-name">Family Pack #3</h3>
           <p class="fp-desc">Enjoy 12 of our hand-rolled enchiladas with your choice of savory ground beef, shredded chicken, or melty cheese &mdash; each topped with our rich chili gravy and extra melted cheese. Comes ready to serve with a quart of Mexican rice, a quart of your favorite beans, plenty of chips, our signature red salsa, and a large homemade chile con queso to round out the meal.</p>
-          <div class="fp-serves">&#127858; Serves 4&ndash;6</div>
-          <div class="fp-togo">&#128718; To-Go Only</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">&#128293; Order Online Now &rarr;</a>
+          <div class="fp-serves">Serves 4&ndash;6</div>
+          <div class="fp-togo">To-Go Only</div>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">Order Online Now &rarr;</a>
         </div>
       </article>
 
@@ -212,29 +243,41 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ===== FIND US ===== -->
+<!-- ===== FIND YOUR LOS CABOS ===== -->
 <section class="find-section" id="find-us">
-  <div class="find-content">
-    <div>
-      <span class="idx-eyebrow">Come In</span>
-      <h2 class="idx-heading">FIND US</h2>
+  <div class="find-bg">
+    <img src="/images/MenuItems.jpg" alt="Los Cabos Mexican Grill" class="find-bg-img" loading="lazy" />
+    <div class="find-bg-overlay"></div>
+  </div>
+  <div class="find-inner">
+    <div class="find-header">
+      <span class="find-eyebrow">Come Find Us</span>
+      <h2 class="find-heading">FIND YOUR<br>LOS CABOS.</h2>
     </div>
-    <div class="find-row">
-      <span class="find-label">Address</span>
-      <span class="find-value">6027 FM 3538 Rd<br>Sealy, TX 77474</span>
+    <div class="find-location-card">
+      <div class="find-location-name">Los Cabos Mexican Grill</div>
+      <div class="find-location-tag">Sealy, TX</div>
+      <div class="find-rows">
+        <div class="find-row">
+          <span class="find-label">Address</span>
+          <span class="find-value">6027 FM 3538 Rd<br>Sealy, TX 77474</span>
+        </div>
+        <div class="find-row">
+          <span class="find-label">Phone</span>
+          <span class="find-value">
+            <a href="tel:+15126076232">(512) 607-6232</a>
+          </span>
+        </div>
+        <div class="find-row">
+          <span class="find-label">Hours</span>
+          <span class="find-value">Sun&ndash;Wed: 11AM &ndash; 9PM<br>Thu&ndash;Sat: 11AM &ndash; 10PM</span>
+        </div>
+      </div>
+      <div class="find-btns">
+        <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474" target="_blank" rel="noopener" class="btn-primary">Get Directions &rarr;</a>
+        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-outline">Order Online</a>
+      </div>
     </div>
-    <div class="find-row">
-      <span class="find-label">Phone</span>
-      <span class="find-value">
-        <a href="tel:+15126076232">(512) 607-6232</a>
-        <span class="info-phone-note">(Yes, we&rsquo;re in Sealy, TX)</span>
-      </span>
-    </div>
-    <div class="find-row">
-      <span class="find-label">Hours</span>
-      <span class="find-value">Sun&ndash;Wed: 11AM &ndash; 9PM<br>Thu&ndash;Sat: 11AM &ndash; 10PM</span>
-    </div>
-    <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
   </div>
   <div class="map-embed">
     <iframe title="Los Cabos Sealy TX" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2!2d-96.1566!3d29.7810!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;display:block;min-height:300px;" allowfullscreen loading="lazy"></iframe>
@@ -243,14 +286,9 @@ import Layout from '../layouts/Layout.astro';
 
 <style is:global>
 /* ================================================================
-   INDEX.ASTRO ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ MOBILE-FIRST
-   Base = 320px+  |  sm = 600px+  |  lg = 900px+  |  xl = 1200px+
-   Chrome mobile:  announce 32px + nav 58px = 90px total
-   Chrome desktop: announce 36px + nav 78px = 114px total
-   Mob-bar: 52px fixed bottom (mobile only)
-   All selectors prefixed with idx- or use unique names
+   INDEX.ASTRO — MOBILE-FIRST
+   Base = 320px+ | sm = 600px+ | lg = 900px+ | xl = 1200px+
 ================================================================ */
-
 
 /* ----- HERO LOGO ----- */
 .hero-logo {
@@ -260,15 +298,46 @@ import Layout from '../layouts/Layout.astro';
   filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
 }
 
+/* ----- SCROLLING BANNER ----- */
+.scroll-banner {
+  background: #F4621F;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.scroll-track {
+  display: inline-flex;
+  animation: scrollLeft 28s linear infinite;
+  gap: 0;
+}
+.scroll-track:hover { animation-play-state: paused; }
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.scroll-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 32px;
+  white-space: nowrap;
+}
+.scroll-dot {
+  color: rgba(255,255,255,0.5);
+  font-size: 10px;
+}
+
 /* ----- REVIEWS GRID (replaces carousel on mobile) ----- */
-.reviews-grid-wrap {
-  width: 100%;
-}
-.reviews-grid-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+.reviews-grid-wrap { width: 100%; }
+.reviews-grid-inner { display: flex; flex-direction: column; gap: 16px; }
 
 /* ----- MENU CTA URGENCY ----- */
 .menu-cta-urgency {
@@ -345,7 +414,7 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  padding-top: 90px; /* mobile chrome: 32px announce + 58px nav */
+  padding-top: 90px;
 }
 .hero-video {
   position: absolute;
@@ -366,7 +435,7 @@ import Layout from '../layouts/Layout.astro';
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: 0 20px 60px; /* 60px bottom: 40px design + 20px mob-bar buffer */
+  padding: 0 20px 60px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -402,7 +471,7 @@ import Layout from '../layouts/Layout.astro';
 .proof-unit { font-size: 13px; color: rgba(255,255,255,0.5); }
 .proof-label { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; white-space: nowrap; }
 .proof-stars { color: #f5c518; font-size: 11px; letter-spacing: 1px; }
-.hero-info-card { display: none; } /* desktop only */
+.hero-info-card { display: none; }
 
 /* ----- TRUST BAR ----- */
 .trust-bar {
@@ -470,7 +539,6 @@ import Layout from '../layouts/Layout.astro';
   line-height: 1.5;
 }
 
-
 /* ----- FAMILY PACKS ----- */
 .fp-intro {
   font-family: 'Barlow', sans-serif;
@@ -499,9 +567,20 @@ import Layout from '../layouts/Layout.astro';
   transform: translateY(-3px);
   box-shadow: 0 10px 36px rgba(0,0,0,0.13);
 }
+.fp-card-img {
+  height: 200px;
+  overflow: hidden;
+}
+.fp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.fp-card:hover .fp-card-img img { transform: scale(1.04); }
 .fp-card-header {
   background: #1A1410;
-  padding: 20px 24px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -599,53 +678,9 @@ import Layout from '../layouts/Layout.astro';
   margin-right: auto;
 }
 
-/* ----- FEATURED ----- */
+/* ----- FEATURED SECTION ----- */
 .featured-section { background: #f5f0ea; padding: 52px 20px; }
 .featured-inner { max-width: 1200px; margin: 0 auto; }
-.featured-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 36px; }
-.featured-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-.featured-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
-.featured-img { height: 200px; overflow: hidden; }
-.featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-.featured-card:hover .featured-img img { transform: scale(1.04); }
-.featured-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-.featured-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #1C1410;
-  margin-bottom: 8px;
-  line-height: 1.1;
-}
-.featured-desc { font-family: 'Barlow', sans-serif; font-size: 14px; color: #4A3728; line-height: 1.6; margin-bottom: 14px; flex: 1; }
-.featured-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #F4621F; margin-bottom: 14px; }
-.featured-order {
-  display: block;
-  text-align: center;
-  background: #F4621F;
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 12px;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background 0.2s;
-  margin-top: auto;
-}
-.featured-order:hover { background: #D94E0E; }
 .featured-cta { text-align: center; margin-top: 36px; }
 
 /* ----- CATERING ----- */
@@ -682,8 +717,6 @@ import Layout from '../layouts/Layout.astro';
 .reviews-score { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 52px; color: #fff; line-height: 1; }
 .reviews-stars { color: #f5c518; font-size: 20px; letter-spacing: 2px; }
 .reviews-count { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 2px; }
-.reviews-carousel-wrap { position: relative; width: 100%; overflow: hidden; }
-.reviews-carousel { display: flex; transition: transform 0.4s ease; width: 100%; }
 .review-card {
   min-width: 100%;
   flex-shrink: 0;
@@ -702,22 +735,127 @@ import Layout from '../layouts/Layout.astro';
 .reviews-dot.active { background: #F4621F; }
 .reviews-cta { text-align: center; margin-top: 36px; }
 
-/* ----- FIND US ----- */
-.find-section { display: flex; flex-direction: column; background: #F5EFE6; }
-.find-content { padding: 52px 20px 104px; display: flex; flex-direction: column; gap: 20px; } /* 104px = 52px design + 52px mob-bar */
-.find-row { display: flex; flex-direction: column; gap: 4px; }
-.find-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #9E8472; }
-.find-value { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; color: #1A1008; line-height: 1.4; }
+/* ----- FIND YOUR LOS CABOS SECTION ----- */
+.find-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+}
+.find-bg {
+  position: absolute;
+  inset: 0;
+}
+.find-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.find-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,10,6,0.92) 0%, rgba(26,20,16,0.78) 60%, rgba(15,10,6,0.85) 100%);
+}
+.find-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 52px 20px 32px;
+}
+.find-header {}
+.find-eyebrow {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #F4621F;
+  margin-bottom: 8px;
+}
+.find-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 13vw, 72px);
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0;
+}
+.find-location-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(244,98,31,0.3);
+  border-radius: 12px;
+  padding: 28px 24px;
+  backdrop-filter: blur(12px);
+  max-width: 420px;
+}
+.find-location-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.find-location-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #F4621F;
+  margin-bottom: 20px;
+}
+.find-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.find-row { display: flex; flex-direction: column; gap: 3px; }
+.find-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.find-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.4;
+}
 .find-value a { color: #F4621F; text-decoration: none; }
+.find-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.map-embed {
+  position: relative;
+  z-index: 2;
+  min-height: 280px;
+  flex-shrink: 0;
+}
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: block;
+  border: 0;
+}
+
+/* ----- INFO CARD ----- */
 .info-phone-note { display: block; font-family: 'Barlow', sans-serif; font-size: 12px; color: #F4621F; font-style: italic; margin-top: 2px; }
-.map-embed { min-height: 280px; flex-shrink: 0; }
-.map-embed iframe { width: 100%; height: 100%; min-height: 280px; display: block; border: 0; }
 
 /* ================================================================
-   TABLET  min-width: 600px
+   TABLET min-width: 600px
 ================================================================ */
 @media (min-width: 600px) {
-  .hero { padding-top: 114px; } /* desktop chrome */
+  .hero { padding-top: 114px; }
   .hero-content { padding: 0 32px 52px; }
   .hero-headline { font-size: clamp(64px, 14vw, 100px); }
   .hero-ctas { flex-direction: row; flex-wrap: wrap; }
@@ -726,23 +864,21 @@ import Layout from '../layouts/Layout.astro';
   .hero-ctas .btn-ghost { width: auto; display: inline-block; }
   .trust-item { padding: 8px 20px; font-size: 13px; }
   .menu-cta-section { min-height: 400px; }
-  .featured-grid { grid-template-columns: repeat(2, 1fr); }
   .fp-grid { grid-template-columns: repeat(2, 1fr); }
   .cat-grid { flex-direction: row; }
   .cat-left { flex: 1; padding: 52px 32px; }
   .cat-right { flex: 0 0 300px; padding: 52px 32px; }
-  .find-section { flex-direction: row; }
-  .find-content { flex: 1; padding: 52px 40px; }
-  .map-embed { flex: 1; min-height: 360px; }
-  /* reviews stay 1-up below 900px */
+  .find-inner { flex-direction: row; align-items: flex-start; gap: 48px; padding: 72px 40px 40px; }
+  .find-btns { flex-direction: row; flex-wrap: wrap; }
+  .map-embed { min-height: 360px; }
 }
 
 /* ================================================================
-   DESKTOP  min-width: 900px
+   DESKTOP min-width: 900px
 ================================================================ */
 @media (min-width: 900px) {
   .hero { min-height: 100vh; }
-  .hero-video { object-position: 75% center; } /* desktop: shift right to balance text */
+  .hero-video { object-position: 75% center; }
   .hero-content {
     padding: 0 clamp(32px, 5vw, 72px) clamp(48px, 8vh, 80px);
     flex-direction: row;
@@ -777,24 +913,26 @@ import Layout from '../layouts/Layout.astro';
   .menu-cta-content { padding: 72px 40px; }
   .featured-section { padding: 80px clamp(32px, 5vw, 72px); }
   .fp-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .featured-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .featured-img { height: 220px; }
+  .fp-card-img { height: 220px; }
   .cat-left { padding: clamp(48px, 6vw, 72px) clamp(32px, 4vw, 56px); }
   .cat-right { flex: 0 0 340px; padding: 72px 48px; }
   .cat-heading { font-size: clamp(40px, 5vw, 64px); }
   .cat-phone { font-size: 40px; }
   .cat-logo { height: 80px; }
   .reviews-section { padding: 80px 72px; }
-  /* Reviews 3-up at desktop */
   .reviews-grid-inner { gap: 24px; flex-wrap: wrap; transform: none !important; }
   .review-card { min-width: 0; flex: 1 1 calc(33.333% - 16px); padding: 32px 28px; }
   .reviews-dots { display: none; }
-  .find-content { padding: 72px 64px; }
-  .map-embed { min-height: 440px; }
+  .find-section { flex-direction: row; min-height: 520px; }
+  .find-inner { flex: 1; padding: 72px 64px; flex-direction: column; gap: 32px; }
+  .find-heading { font-size: clamp(52px, 7vw, 88px); }
+  .map-embed { flex: 1; min-height: 440px; }
+  .find-btns { flex-direction: row; }
+  .scroll-item { font-size: 14px; padding: 0 40px; }
 }
 
 /* ================================================================
-   WIDE  min-width: 1200px
+   WIDE min-width: 1200px
 ================================================================ */
 @media (min-width: 1200px) {
   .trust-item { font-size: 14px; padding: 8px 36px; }
@@ -836,7 +974,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-</script>
+<\/script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -848,6 +986,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-</script>
+<\/script>
 
 </Layout>
