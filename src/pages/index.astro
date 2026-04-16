@@ -1084,6 +1084,18 @@ import Layout from '../layouts/Layout.astro';
     padding: 0 !important;
   }
   .cat-ck svg { display: none !important; }
+
+  /* === Mobile-only: slightly longer hero CTA buttons === */
+  @media (max-width: 599px) {
+    .hero-ctas .btn-primary,
+    .hero-ctas .btn-outline,
+    .hero-ctas .btn-ghost {
+      min-width: 260px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
 </style>
 
 <script>
