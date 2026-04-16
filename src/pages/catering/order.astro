@@ -1,0 +1,578 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Catering Request — Los Cabos Mexican Grill | Sealy, TX" description="Request catering from Los Cabos Mexican Grill in Sealy, TX. Fajita buffets, enchiladas, and more for groups of 25+.">
+
+<div class="cat-page">
+  <div class="cat-wrap">
+
+    <div class="cat-hdr">
+      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="cat-hdr-logo"/>
+      <div class="cat-hdr-eyebrow">Events &amp; Catering</div>
+      <h1 class="cat-hdr-h1">Build Your Catering Order</h1>
+      <p class="cat-hdr-sub">Pick a buffet, load up the a la carte, tell us when &amp; where — we’ll call you back within 24 hours to confirm. Minimum 25 guests. Free delivery inside Sealy city limits.</p>
+    </div>
+
+    <div id="progress-bar" class="progress-bar">
+      <div class="step-pip active" data-step="1"><div class="pip-circle">1</div><div class="pip-label">Event Details</div></div>
+      <div class="pip-line"></div>
+      <div class="step-pip" data-step="2"><div class="pip-circle">2</div><div class="pip-label">Build Your Menu</div></div>
+      <div class="pip-line"></div>
+      <div class="step-pip" data-step="3"><div class="pip-circle">3</div><div class="pip-label">Review &amp; Submit</div></div>
+    </div>
+
+    <form name="catering-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="catering-form">
+      <input type="hidden" name="form-name" value="catering-request"/>
+      <p class="hp"><label>Don’t fill this out: <input name="bot-field"/></label></p>
+      <input type="hidden" name="selected-package" id="hidden-package"/>
+      <input type="hidden" name="selected-addons" id="hidden-addons"/>
+      <input type="hidden" name="estimated-total" id="hidden-total"/>
+
+      <div id="step-1" class="form-step">
+        <div class="form-card">
+          <h2 class="form-section-title">Tell Us About Your Event</h2>
+          <div class="form-grid">
+            <div class="form-group"><label>Your Name *</label><input type="text" name="name" required placeholder="Full name"/></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="(512) 000-0000"/></div>
+            <div class="form-group"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"/></div>
+            <div class="form-group"><label>Event Date *</label><input type="date" name="event-date" required/></div>
+            <div class="form-group"><label>Start Time *</label><input type="time" name="start-time" required/></div>
+            <div class="form-group"><label>Estimated Guest Count *</label><input type="number" name="guests" required min="25" placeholder="Minimum 25"/></div>
+            <div class="form-group full-width"><label>Event Location / Address *</label><input type="text" name="location" required placeholder="Full address or venue name"/></div>
+            <div class="form-group"><label>Event Type</label><select name="event-type"><option value="">Select event type</option><option>Birthday Party</option><option>Corporate Event</option><option>Wedding Reception</option><option>Wedding Rehearsal Dinner</option><option>Family Reunion</option><option>Quinceñera</option><option>Graduation Party</option><option>Anniversary</option><option>Company Picnic</option><option>Church Event</option><option>Holiday Party</option><option>Other</option></select></div>
+            <div class="form-group"><label>Service Style *</label><select name="service-style" required><option value="">How should we serve?</option><option>Full-Service On-Site (we cook &amp; serve)</option><option>Drop-Off &amp; Setup (hot trays, sternos, chafers)</option><option>Delivery Only</option><option>Pick-Up at Restaurant</option></select></div>
+          </div>
+          <div class="form-group full-width" style="margin-top:16px;"><label>How’d you hear about us?</label><select name="referral"><option value="">Select one</option><option>Google Search</option><option>Facebook / Instagram</option><option>Friend or Family</option><option>Catered an event I attended</option><option>Drove by the restaurant</option><option>Other</option></select></div>
+          <div style="text-align:right;margin-top:28px;"><button type="button" class="btn-next" onclick="goToStep(2)">Next: Build Your Menu &rarr;</button></div>
+        </div>
+      </div>
+
+      <div id="step-2" class="form-step" style="display:none;">
+        <div class="form-card">
+          <h2 class="form-section-title">Pick Your Buffet Package</h2>
+          <p class="form-section-sub">All buffets include plates &amp; plasticware. Free delivery inside Sealy city limits. Prices are per person. Need something custom? Call <a href="tel:+15126076232" class="inline-tel">(512) 607-6232</a>.</p>
+          <div class="package-grid">
+
+            <label class="package-card">
+              <input type="radio" name="package" value="Our Famous Fajita Buffet - $17.95/person" required data-price="17.95"/>
+              <div class="package-inner">
+                <div class="package-ribbon">Most Popular</div>
+                <div class="package-price">$17.95<span>/person</span></div>
+                <div class="package-name">Our Famous Fajita Buffet</div>
+                <ul class="package-includes"><li>Beef &amp; Chicken Fajitas</li><li>Cheese Enchiladas</li><li>Rice &amp; Beans</li><li>Guacamole, Pico de Gallo &amp; Sour Cream</li><li>Shredded Cheese &amp; Homemade Tortillas</li><li>Chips &amp; Salsa</li></ul>
+              </div>
+            </label>
+
+            <label class="package-card">
+              <input type="radio" name="package" value="Taco & Enchilada Buffet - $12.99/person" data-price="12.99"/>
+              <div class="package-inner">
+                <div class="package-price">$12.99<span>/person</span></div>
+                <div class="package-name">Taco &amp; Enchilada Buffet</div>
+                <ul class="package-includes"><li>Cheese Enchiladas</li><li>Chicken Quesadillas</li><li>Build-Your-Own Crispy Tacos</li><li>Ground Beef, Lettuce, Tomatoes, Shredded Cheese &amp; Sour Cream</li><li>Rice &amp; Beans</li><li>Chips &amp; Salsa</li></ul>
+              </div>
+            </label>
+
+            <label class="package-card">
+              <input type="radio" name="package" value="American Country Buffet - $13.99/person" data-price="13.99"/>
+              <div class="package-inner">
+                <div class="package-price">$13.99<span>/person</span></div>
+                <div class="package-name">American Country Buffet</div>
+                <div class="pkg-pick"><label>Pick your main:</label><select name="american-main" class="pkg-select"><option value="">Choose one</option><option>Chicken Fried Steak (plus 2 sides)</option><option>Chicken w/ White Country Gravy (plus 2 sides)</option><option>Hamburger Steak w/ Grilled Onions &amp; Brown Gravy (plus 2 sides)</option></select></div>
+                <div class="pkg-pick"><label>Side #1:</label><select name="american-side-1" class="pkg-select"><option value="">Choose a side</option><option>Green Beans</option><option>Mashed Potatoes</option><option>Mixed Vegetables</option><option>Corn</option><option>Fries</option><option>Dinner Salad w/ Ranch Dressing</option></select></div>
+                <div class="pkg-pick"><label>Side #2:</label><select name="american-side-2" class="pkg-select"><option value="">Choose a side</option><option>Green Beans</option><option>Mashed Potatoes</option><option>Mixed Vegetables</option><option>Corn</option><option>Fries</option><option>Dinner Salad w/ Ranch Dressing</option></select></div>
+                </div>
+            </label>
+
+            <label class="package-card">
+              <input type="radio" name="package" value="Chicken & Pasta Buffet - $14.99/person" data-price="14.99"/>
+              <div class="package-inner">
+                <div class="package-price">$14.99<span>/person</span></div>
+                <div class="package-name">Chicken &amp; Pasta Buffet</div>
+                <ul class="package-includes"><li>Grilled Chicken Breast</li><li>Fettuccini Pasta w/ Toasted Garlic Bread</li></ul>
+                <div class="pkg-pick"><label>Pick a side:</label><select name="pasta-side" class="pkg-select"><option value="">Choose a side</option><option>Green Beans</option><option>Broccoli</option><option>Mixed Vegetables</option><option>Corn</option></select></div>
+                <div class="pkg-pick"><label>Pick a salad:</label><select name="pasta-salad" class="pkg-select"><option value="">Choose a salad</option><option>Caesar Salad</option><option>Dinner Salad w/ Ranch</option><option>Dinner Salad w/ Italian</option></select></div>
+              </div>
+            </label>
+
+            <label class="package-card package-card-wide">
+              <input type="radio" name="package" value="Tenderloin Buffet - $23.99/person" data-price="23.99"/>
+              <div class="package-inner">
+                <div class="package-ribbon ribbon-premium">Premium</div>
+                <div class="package-price">$23.99<span>/person</span></div>
+                <div class="package-name">Tenderloin Buffet</div>
+                <ul class="package-includes"><li>Tenderloin Tips w/ Brown Gravy &amp; Mashed Potatoes</li><li>Plus 1 side of your choice</li></ul>
+                <div class="pkg-pick"><label>Pick an extra side:</label><select name="tenderloin-side" class="pkg-select"><option value="">Choose a side</option><option>Green Beans</option><option>Mixed Vegetables</option><option>Corn</option><option>Fries</option></select></div>
+                <div class="pkg-pick"><label>Pick a salad:</label><select name="tenderloin-salad" class="pkg-select"><option value="">Choose a salad</option><option>Caesar Salad</option><option>Dinner Salad w/ Ranch</option><option>Dinner Salad w/ Italian</option></select></div>
+              </div>
+            </label>
+
+            <label class="package-card package-card-custom">
+              <input type="radio" name="package" value="Custom - A la Carte Only" data-price="0"/>
+              <div class="package-inner">
+                <div class="package-name">Custom Order Only</div>
+                <p class="package-custom-desc">Skip the buffet and just order a la carte trays and gallons below. We’ll call you to work out the details.</p>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Fajitas by the Pound</h2>
+          <p class="form-section-sub">Meat only. Rough rule of thumb: plan on ~1/3 lb per guest. Add your own tortillas below.</p>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Beef Fajitas</div><div class="qty-price">$19.99 / lb</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-beef-fajita" data-item="Beef Fajitas" data-price="19.99" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">lb</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Chicken Fajitas</div><div class="qty-price">$17.99 / lb</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-chicken-fajita" data-item="Chicken Fajitas" data-price="17.99" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">lb</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Vegetable Fajitas</div><div class="qty-price">$17.99 / lb</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-veg-fajita" data-item="Vegetable Fajitas" data-price="17.99" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">lb</span></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Enchilada Trays (serves ~30)</h2>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Enchiladas — pick a style</div><div class="qty-price">Starts at $55.00 per tray</div></div>
+            <div class="qty-ctrl qty-ctrl-wide">
+              <select class="pkg-select qty-variant" name="enchilada-style"><option value="">Style — choose filling</option><option data-price="55">Ground Beef</option><option data-price="55">Cheese</option><option data-price="55">Shredded Chicken</option><option data-price="60">Enchiladas Verdes (green chicken)</option><option data-price="60">Enchiladas Tomatillos (green cheese)</option><option data-price="80">Enchiladas al Carbon</option></select>
+              <button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-enchilada-tray" data-item="Enchilada Tray" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Quesadilla &amp; Other Trays (serves ~30)</h2>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Cheese Quesadilla</div><div class="qty-price">$55.00 / tray</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-cheese-ques" data-item="Cheese Quesadilla Tray" data-price="55" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Spinach Quesadilla</div><div class="qty-price">$65.00 / tray</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-spinach-ques" data-item="Spinach Quesadilla Tray" data-price="65" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Fajita Quesadilla</div><div class="qty-price">$70.00 / tray</div></div>
+            <div class="qty-ctrl qty-ctrl-wide">
+              <select class="pkg-select qty-variant" name="fajita-ques-meat"><option value="">Choose: beef or chicken</option><option>Beef</option><option>Chicken</option></select>
+              <button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-fajita-ques" data-item="Fajita Quesadilla Tray" data-price="70" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span>
+            </div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Shrimp Quesadilla</div><div class="qty-price">$75.00 / tray</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-shrimp-ques" data-item="Shrimp Quesadilla Tray" data-price="75" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Crispy Tacos</div><div class="qty-price">$55.00 / tray</div></div>
+            <div class="qty-ctrl qty-ctrl-wide">
+              <select class="pkg-select qty-variant" name="crispy-taco-meat"><option value="">Choose filling</option><option>Ground Beef</option><option>Shredded Chicken</option></select>
+              <button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-crispy-taco" data-item="Crispy Taco Tray" data-price="55" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span>
+            </div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Fried Burritos</div><div class="qty-price">$55.00 / tray</div></div>
+            <div class="qty-ctrl qty-ctrl-wide">
+              <select class="pkg-select qty-variant" name="fried-burrito-meat"><option value="">Choose filling</option><option>Ground Beef</option><option>Shredded Chicken</option></select>
+              <button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-fried-burrito" data-item="Fried Burrito Tray" data-price="55" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Sides, Desserts &amp; Extras</h2>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Rice &amp; Beans</div><div class="qty-price">$80.00 — serves 30</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-rice-beans" data-item="Rice & Beans (30ppl)" data-price="80" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">orders</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Rice Only</div><div class="qty-price">$45.00 — serves 30</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-rice-only" data-item="Rice Only (30ppl)" data-price="45" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">orders</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Beans Only</div><div class="qty-price">$45.00 — serves 30</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-beans-only" data-item="Beans Only (30ppl)" data-price="45" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">orders</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Sopapillas</div><div class="qty-price">$49.00 / tray of 30</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-sopapillas" data-item="Sopapillas Tray" data-price="49" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Flan</div><div class="qty-price">$49.00 / tray of 30</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-flan" data-item="Flan Tray" data-price="49" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">trays</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Tortillas</div><div class="qty-price">$9.95 / dozen — flour or corn</div></div>
+            <div class="qty-ctrl qty-ctrl-wide">
+              <select class="pkg-select qty-variant" name="tortilla-type"><option value="">Flour or corn?</option><option>Flour</option><option>Corn</option><option>Mixed (half &amp; half)</option></select>
+              <button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-tortillas" data-item="Tortillas (dozen)" data-price="9.95" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">dozen</span>
+            </div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Tamales</div><div class="qty-price">$10.99 / dozen</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-tamales" data-item="Tamales (dozen)" data-price="10.99" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">dozen</span></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Salsas, Guac &amp; Queso — by the Gallon</h2>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Pico de Gallo</div><div class="qty-price">$35.00 / gal</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-pico" data-item="Pico de Gallo (gal)" data-price="35" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">gal</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Red Salsa</div><div class="qty-price">$35.00 / gal</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-red-salsa" data-item="Red Salsa (gal)" data-price="35" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">gal</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Green Salsa</div><div class="qty-price">$40.00 / gal</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-green-salsa" data-item="Green Salsa (gal)" data-price="40" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">gal</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Guacamole</div><div class="qty-price">$70.00 / gal</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-guac" data-item="Guacamole (gal)" data-price="70" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">gal</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Guacamole Mexicano</div><div class="qty-price">$85.00 / gal</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-guac-mex" data-item="Guacamole Mexicano (gal)" data-price="85" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">gal</span></div>
+          </div>
+          <div class="qty-row">
+            <div class="qty-info"><div class="qty-name">Chili con Queso</div><div class="qty-price">$70.00 / gal</div></div>
+            <div class="qty-ctrl"><button type="button" class="qty-btn" data-action="dec">&minus;</button><input type="number" class="qty-input" name="qty-queso" data-item="Chili con Queso (gal)" data-price="70" min="0" value="0"/><button type="button" class="qty-btn" data-action="inc">+</button><span class="qty-unit">gal</span></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Service Add-Ons</h2>
+          <label class="toggle-row">
+            <input type="checkbox" name="iced-tea" value="Iced Tea Service ($1.50/person)"/>
+            <div class="toggle-info"><div class="toggle-name">Iced Tea Service</div><div class="toggle-sub">Sweet &amp; unsweet. Includes ice, cups &amp; lemon.</div></div>
+            <div class="toggle-price">$1.50 / person</div>
+          </label>
+          <label class="toggle-row">
+            <input type="checkbox" name="margarita-machine" value="Margarita Machine Rental"/>
+            <div class="toggle-info"><div class="toggle-name">Margarita Machine Rental</div><div class="toggle-sub">Frozen margaritas for your crew. Call for pricing &amp; availability.</div></div>
+            <div class="toggle-price">Call for pricing</div>
+          </label>
+          <label class="toggle-row">
+            <input type="checkbox" name="sternos" value="Sternos & Chafers"/>
+            <div class="toggle-info"><div class="toggle-name">Sternos &amp; Chafers</div><div class="toggle-sub">Keep everything hot at your venue. Recommended for drop-off orders.</div></div>
+            <div class="toggle-price">Included w/ setup</div>
+          </label>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-section-title">Custom Requests or Special Notes</h2>
+          <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#4A3728;margin-bottom:6px;">Tell us anything we should know</label>
+          <textarea name="notes" rows="4" placeholder="Dietary restrictions, allergies, setup timing, specific dish requests, dessert ideas, decor — whatever you need."></textarea>
+          <p style="font-family:'Barlow',sans-serif;font-size:13px;color:#6b5a4a;margin-top:10px;">Want something we didn’t list? Just write it in. We’ll work it out when we call you back.</p>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn-back" onclick="goToStep(1)">&larr; Back</button>
+          <div class="live-total">Estimated total: <strong id="live-total">$0.00</strong></div>
+          <button type="button" class="btn-next" onclick="goToStep(3)">Review My Request &rarr;</button>
+        </div>
+      </div>
+
+      <div id="step-3" class="form-step" style="display:none;">
+        <div class="form-card">
+          <h2 class="form-section-title">Review Your Request</h2>
+          <div id="review-content" class="review-content"></div>
+          <div class="review-note"><p><strong>Heads up:</strong> Prices shown are per-person / per-unit and subject to change. We’ll confirm availability and final pricing when we call you back within 24 hours.</p></div>
+          <div class="step-nav">
+            <button type="button" class="btn-back" onclick="goToStep(2)">&larr; Edit Menu</button>
+            <button type="submit" class="btn-submit">Send Catering Request &#10003;</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+    <div id="success-msg" class="success-msg" style="display:none;">
+      <div class="success-icon">&#10003;</div>
+      <h2>Request Received!</h2>
+      <p>Thanks — we’ll call you back within 24 hours to confirm your event details and finalize pricing.</p>
+      <p>Questions? Call us at <a href="tel:+15126076232">(512) 607-6232</a>.</p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .cat-page { padding-top: 114px; background: #FAF5EC; min-height: 100vh; font-family: 'Barlow', sans-serif; }
+  .cat-wrap { max-width: 1040px; margin: 0 auto; padding: 60px 32px 80px; }
+  .hp { position: absolute; left: -9999px; }
+
+  .cat-hdr { text-align: center; margin-bottom: 48px; }
+  .cat-hdr-logo { height: 72px; width: auto; margin-bottom: 20px; }
+  .cat-hdr-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .22em; color: #F4621F; text-transform: uppercase; margin-bottom: 10px; }
+  .cat-hdr-h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 64px); color: #1C1410; line-height: 1; text-transform: uppercase; margin: 0 0 14px; }
+  .cat-hdr-sub { font-family: 'Barlow', sans-serif; font-size: 16px; color: #4A3728; max-width: 640px; margin: 0 auto; line-height: 1.55; }
+
+  .progress-bar { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 40px; flex-wrap: wrap; }
+  .step-pip { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .pip-circle { width: 40px; height: 40px; border-radius: 999px; background: #eadfcc; color: #8a7356; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; border: 2px solid transparent; transition: all 0.25s; }
+  .pip-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8a7356; }
+  .step-pip.active .pip-circle { background: #F4621F; color: #fff; box-shadow: 0 6px 16px rgba(244,98,31,0.35); }
+  .step-pip.active .pip-label { color: #1C1410; }
+  .step-pip.done .pip-circle { background: #1a8f3a; color: #fff; }
+  .pip-line { width: 60px; height: 2px; background: #d9ccb5; margin: 0 8px 24px; }
+
+  .form-card { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(28,20,16,0.06); border: 1px solid #f0e6d6; }
+  .form-section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 26px; color: #1C1410; text-transform: uppercase; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .form-section-sub { font-family: 'Barlow', sans-serif; font-size: 14px; color: #6b5a4a; margin: 0 0 20px; }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group.full-width { grid-column: 1 / -1; }
+  .form-group label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #4A3728; margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea, .form-card textarea, .form-card select {
+    font-family: 'Barlow', sans-serif; font-size: 15px; padding: 11px 14px; border: 1.5px solid #d9ccb5; border-radius: 6px; background: #fff; color: #1C1410; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; box-sizing: border-box;
+  }
+  .form-group input:focus, .form-group select:focus, textarea:focus, .form-card select:focus { outline: none; border-color: #F4621F; box-shadow: 0 0 0 3px rgba(244,98,31,0.15); }
+  textarea { resize: vertical; min-height: 90px; }
+
+  .package-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .package-card { position: relative; cursor: pointer; display: block; }
+  .package-card input[type=radio] { position: absolute; opacity: 0; pointer-events: none; }
+  .package-inner { border: 2px solid #e8dcc4; border-radius: 10px; padding: 20px; background: #FFFAF1; transition: all 0.2s; height: 100%; box-sizing: border-box; position: relative; }
+  .package-card:hover .package-inner { border-color: #c9a877; transform: translateY(-2px); }
+  .package-card input[type=radio]:checked + .package-inner { border-color: #F4621F; background: #fff; box-shadow: 0 10px 26px rgba(244,98,31,0.18); }
+  .package-card input[type=radio]:checked + .package-inner::after { content: '✓'; position: absolute; top: 12px; right: 14px; width: 26px; height: 26px; border-radius: 999px; background: #F4621F; color: #fff; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .package-ribbon { position: absolute; top: -10px; left: 14px; background: #F4621F; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
+  .package-ribbon.ribbon-premium { background: #1C1410; }
+  .package-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 34px; color: #F4621F; line-height: 1; margin-bottom: 4px; }
+  .package-price span { font-size: 14px; color: #8a7356; font-weight: 600; }
+  .package-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #1C1410; text-transform: uppercase; margin-bottom: 10px; }
+  .package-includes { list-style: none; padding: 0; margin: 0 0 10px; font-size: 14px; color: #4A3728; line-height: 1.55; }
+  .package-includes li { padding-left: 18px; position: relative; margin-bottom: 4px; }
+  .package-includes li::before { content: '✓'; position: absolute; left: 0; color: #F4621F; font-weight: 900; }
+  .package-card-wide { grid-column: 1 / -1; }
+  .package-card-custom .package-inner { background: #FFF; border-style: dashed; }
+  .package-custom-desc { font-size: 14px; color: #4A3728; line-height: 1.5; margin: 0; }
+  .pkg-pick { margin: 10px 0; padding: 10px; background: #FFF3E0; border-radius: 6px; }
+  .pkg-pick label { display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #4A3728; margin-bottom: 4px; }
+  .pkg-select { font-family: 'Barlow', sans-serif; font-size: 14px; padding: 8px 10px; border: 1.5px solid #d9ccb5; border-radius: 5px; background: #fff; color: #1C1410; width: 100%; box-sizing: border-box; }
+
+  .qty-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #f0e6d6; gap: 14px; flex-wrap: wrap; }
+  .qty-row:last-child { border-bottom: none; }
+  .qty-info { flex: 1 1 240px; min-width: 220px; }
+  .qty-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px; color: #1C1410; text-transform: uppercase; }
+  .qty-price { font-family: 'Barlow', sans-serif; font-size: 13px; color: #8a7356; margin-top: 2px; }
+  .qty-ctrl { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .qty-ctrl-wide { flex: 1 1 320px; min-width: 280px; }
+  .qty-ctrl-wide .qty-variant { flex: 1 1 140px; min-width: 140px; margin-right: 8px; }
+  .qty-btn { width: 32px; height: 32px; border-radius: 6px; border: 1.5px solid #d9ccb5; background: #fff; color: #1C1410; font-size: 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; padding: 0; }
+  .qty-btn:hover { background: #F4621F; color: #fff; border-color: #F4621F; }
+  .qty-input { width: 60px !important; text-align: center; padding: 6px 4px !important; font-weight: 700; font-size: 15px !important; }
+  .qty-unit { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; color: #8a7356; text-transform: uppercase; letter-spacing: .08em; }
+
+  .toggle-row { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1.5px solid #f0e6d6; border-radius: 8px; margin-bottom: 10px; cursor: pointer; transition: all 0.15s; }
+  .toggle-row:hover { border-color: #d9ccb5; }
+  .toggle-row input[type=checkbox] { width: 22px; height: 22px; cursor: pointer; accent-color: #F4621F; }
+  .toggle-row:has(input:checked) { border-color: #F4621F; background: #FFFAF1; }
+  .toggle-info { flex: 1; }
+  .toggle-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px; color: #1C1410; text-transform: uppercase; }
+  .toggle-sub { font-family: 'Barlow', sans-serif; font-size: 13px; color: #6b5a4a; margin-top: 2px; }
+  .toggle-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 15px; color: #F4621F; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+
+  .step-nav { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 10px; padding: 16px 0 0; }
+  .live-total { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #4A3728; letter-spacing: .04em; }
+  .live-total strong { color: #F4621F; font-size: 22px; font-weight: 900; margin-left: 6px; }
+
+  .btn-next, .btn-back, .btn-submit {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; padding: 14px 26px; border-radius: 6px; cursor: pointer; border: none; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-next, .btn-submit { background: #F4621F; color: #fff; box-shadow: 0 8px 20px rgba(244,98,31,0.35); }
+  .btn-next:hover, .btn-submit:hover { background: #D84A10; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(244,98,31,0.5); }
+  .btn-back { background: #fff; color: #1C1410; border: 1.5px solid #d9ccb5; }
+  .btn-back:hover { border-color: #1C1410; }
+
+  .review-content { font-family: 'Barlow', sans-serif; font-size: 15px; color: #1C1410; line-height: 1.8; }
+  .review-content h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 18px; color: #F4621F; text-transform: uppercase; letter-spacing: .08em; margin: 18px 0 6px; }
+  .review-content ul { margin: 0 0 10px; padding-left: 20px; }
+  .review-content .review-total { margin-top: 18px; padding: 16px 20px; background: #FFF3E0; border-left: 4px solid #F4621F; border-radius: 0 8px 8px 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; color: #1C1410; text-transform: uppercase; }
+  .review-content .review-total span { color: #F4621F; font-size: 28px; margin-left: 8px; }
+  .review-note { background: #FFF3E0; border-left: 4px solid #F4621F; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+  .review-note p { font-family: 'Barlow', sans-serif; font-size: 14px; color: #4A3728; margin: 0; line-height: 1.5; }
+
+  .success-msg { background: #fff; border-radius: 12px; padding: 60px 40px; text-align: center; box-shadow: 0 6px 20px rgba(28,20,16,0.06); }
+  .success-icon { width: 72px; height: 72px; border-radius: 999px; background: #1a8f3a; color: #fff; font-size: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .success-msg h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 40px; color: #1C1410; text-transform: uppercase; margin: 0 0 14px; }
+  .success-msg p { font-family: 'Barlow', sans-serif; font-size: 16px; color: #4A3728; margin: 0 0 10px; }
+  .success-msg a { color: #F4621F; font-weight: 700; text-decoration: none; }
+
+  @media (max-width: 720px) {
+    .cat-wrap { padding: 40px 18px 60px; }
+    .form-card { padding: 20px; }
+    .form-grid { grid-template-columns: 1fr; gap: 14px; }
+    .package-grid { grid-template-columns: 1fr; }
+    .package-card-wide { grid-column: auto; }
+    .pip-line { width: 24px; }
+    .pip-label { font-size: 10px; }
+    .qty-ctrl-wide { width: 100%; }
+    .step-nav { justify-content: center; }
+    .live-total { order: -1; width: 100%; text-align: center; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.qty-btn');
+    if (!btn) return;
+    var row = btn.closest('.qty-ctrl');
+    var input = row ? row.querySelector('.qty-input') : null;
+    if (!input) return;
+    var val = parseInt(input.value) || 0;
+    if (btn.dataset.action === 'inc') val++;
+    else if (val > 0) val--;
+    input.value = val;
+    updateLiveTotal();
+  });
+
+  document.addEventListener('input', function(e){
+    if (e.target.matches('.qty-input, .qty-variant, input[name=guests], input[name=package], input[name=iced-tea], .pkg-select')) {
+      updateLiveTotal();
+    }
+  });
+  document.addEventListener('change', function(e){
+    if (e.target.matches('input[type=radio][name=package], input[type=checkbox]')) updateLiveTotal();
+  });
+
+  function parseEnchiladaPrice(){
+    var sel = document.querySelector('select[name=enchilada-style]');
+    if (!sel || !sel.value) return 55;
+    var opt = sel.options[sel.selectedIndex];
+    return parseFloat(opt.dataset.price || 55);
+  }
+
+  function updateLiveTotal(){
+    var total = 0;
+    var pkg = document.querySelector('input[name=package]:checked');
+    var guestsEl = document.querySelector('input[name=guests]');
+    var guests = guestsEl ? (parseInt(guestsEl.value) || 0) : 0;
+    if (pkg && pkg.dataset.price) total += parseFloat(pkg.dataset.price) * guests;
+    var tea = document.querySelector('input[name=iced-tea]');
+    if (tea && tea.checked) total += 1.5 * guests;
+    document.querySelectorAll('.qty-input').forEach(function(inp){
+      var qty = parseInt(inp.value) || 0;
+      if (qty <= 0) return;
+      var price = parseFloat(inp.dataset.price || 0);
+      if (inp.name === 'qty-enchilada-tray') price = parseEnchiladaPrice();
+      total += qty * price;
+    });
+    var el = document.getElementById('live-total');
+    if (el) el.textContent = '$' + total.toFixed(2);
+    var hidden = document.getElementById('hidden-total');
+    if (hidden) hidden.value = total.toFixed(2);
+  }
+
+  function goToStep(n){
+    if (n === 2) {
+      var required = ['name','phone','email','event-date','start-time','guests','location','service-style'];
+      for (var i=0; i<required.length; i++){
+        var el = document.querySelector('[name='+required[i]+']');
+        if (!el || !el.value) { alert('Please fill in all required fields in Step 1.'); if (el) el.focus(); return; }
+      }
+      if (parseInt(document.querySelector('[name=guests]').value) < 25) { alert('Minimum guest count is 25.'); return; }
+    }
+    if (n === 3) {
+      var pkg = document.querySelector('input[name=package]:checked');
+      if (!pkg) { alert('Please pick a buffet package (or choose Custom Order Only).'); return; }
+      buildReview();
+    }
+    document.querySelectorAll('.form-step').forEach(function(s){ s.style.display='none'; });
+    document.getElementById('step-'+n).style.display='block';
+    document.querySelectorAll('.step-pip').forEach(function(p,i){
+      p.classList.remove('active','done');
+      if (i+1===n) p.classList.add('active');
+      if (i+1<n) p.classList.add('done');
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function buildReview(){
+    var get = function(n){ var e=document.querySelector('[name='+n+']'); return e?e.value:''; };
+    var pkg = document.querySelector('input[name=package]:checked');
+    var pkgVal = pkg ? pkg.value : 'None';
+    var guests = parseInt(get('guests')) || 0;
+
+    var picks = [];
+    ['american-main','american-side-1','american-side-2','pasta-side','pasta-salad','tenderloin-side','tenderloin-salad'].forEach(function(n){
+      var v = get(n); if (v) picks.push(v);
+    });
+
+    var addons = [];
+    document.querySelectorAll('.qty-input').forEach(function(inp){
+      var qty = parseInt(inp.value) || 0;
+      if (qty <= 0) return;
+      var name = inp.dataset.item;
+      var price = parseFloat(inp.dataset.price || 0);
+      if (inp.name === 'qty-enchilada-tray') {
+        var style = get('enchilada-style') || 'style TBD';
+        name = 'Enchilada Tray (' + style + ')';
+        price = parseEnchiladaPrice();
+      }
+      if (inp.name === 'qty-fajita-ques' && get('fajita-ques-meat')) name += ' ('+get('fajita-ques-meat')+')';
+      if (inp.name === 'qty-crispy-taco' && get('crispy-taco-meat')) name += ' ('+get('crispy-taco-meat')+')';
+      if (inp.name === 'qty-fried-burrito' && get('fried-burrito-meat')) name += ' ('+get('fried-burrito-meat')+')';
+      if (inp.name === 'qty-tortillas' && get('tortilla-type')) name += ' ('+get('tortilla-type')+')';
+      addons.push({name: name, qty: qty, price: price, sub: qty*price});
+    });
+
+    var toggles = [];
+    document.querySelectorAll('input[type=checkbox][name]').forEach(function(c){
+      if (c.checked && c.name !== 'bot-field') toggles.push(c.value);
+    });
+
+    document.getElementById('hidden-package').value = pkgVal + (picks.length ? ' [' + picks.join(', ') + ']' : '');
+    document.getElementById('hidden-addons').value = addons.map(function(a){return a.qty+' x '+a.name+' (@$'+a.price.toFixed(2)+')';}).concat(toggles).join(' | ') || 'None';
+
+    var html = '';
+    html += '<h3>Event Details</h3><ul>';
+    html += '<li><strong>Name:</strong> '+get('name')+'</li>';
+    html += '<li><strong>Phone:</strong> '+get('phone')+'</li>';
+    html += '<li><strong>Email:</strong> '+get('email')+'</li>';
+    html += '<li><strong>Date:</strong> '+get('event-date')+' at '+get('start-time')+'</li>';
+    html += '<li><strong>Location:</strong> '+get('location')+'</li>';
+    html += '<li><strong>Guests:</strong> '+guests+'</li>';
+    if (get('event-type')) html += '<li><strong>Event Type:</strong> '+get('event-type')+'</li>';
+    html += '<li><strong>Service:</strong> '+get('service-style')+'</li>';
+    html += '</ul>';
+    html += '<h3>Buffet Package</h3><p>'+pkgVal+'</p>';
+    if (picks.length) html += '<ul>'+picks.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>';
+    if (addons.length) {
+      html += '<h3>A la Carte</h3><ul>';
+      addons.forEach(function(a){ html += '<li>'+a.qty+' x '+a.name+' — $'+a.sub.toFixed(2)+'</li>'; });
+      html += '</ul>';
+    }
+    if (toggles.length) { html += '<h3>Service Add-Ons</h3><ul>'+toggles.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>'; }
+    if (get('notes')) html += '<h3>Notes</h3><p>'+get('notes')+'</p>';
+
+    var total = 0;
+    if (pkg && pkg.dataset.price) total += parseFloat(pkg.dataset.price) * guests;
+    var tea = document.querySelector('input[name=iced-tea]');
+    if (tea && tea.checked) total += 1.5 * guests;
+    addons.forEach(function(a){ total += a.sub; });
+    html += '<div class="review-total">Estimated total: <span>$'+total.toFixed(2)+'</span></div>';
+    document.getElementById('review-content').innerHTML = html;
+  }
+
+  document.getElementById('catering-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var data = new FormData(this);
+    try {
+      await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() });
+      document.getElementById('catering-form').style.display='none';
+      document.getElementById('progress-bar').style.display='none';
+      document.getElementById('success-msg').style.display='block';
+      window.scrollTo({top:0, behavior:'smooth'});
+    } catch(err) { alert('Something went wrong. Please call us at (512) 607-6232.'); }
+  });
+</script>
+
+</Layout>
