@@ -15,7 +15,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="hero-content">
     <div class="hero-left">
       <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="hero-logo" loading="eager" />
-      <h1 class="hero-headline">FAJITAS FIX<br><em>EVERYTHING</em></h1>
+      <h1 class="hero-headline"><span class="hh-line">FAJITAS</span><span class="hh-line">FIX</span><span class="hh-line hh-accent">EVERYTHING</span></h1>
       <div class="hero-ctas">
         <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">Order Online &mdash; 15 Min</a>
         <a href="#menu" class="btn-outline">View Menu</a>
@@ -284,7 +284,24 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<style is:global>
+
+  <!-- ===== AUTHENTIC TEX-MEX ===== -->
+  <section class="auth-tx">
+    <div class="auth-tx-head">
+      <h2 class="auth-tx-title">Authentic Tex-Mex<span class="dot">.</span></h2>
+      <p class="auth-tx-sub">Made fresh daily in Sealy, Texas.</p>
+    </div>
+    <div class="auth-tx-grid">
+      <a class="auth-tx-card" href="/menu#fajitas"><img src="/images/fajitas.jpg" alt="Sizzling Fajitas" loading="lazy" /><h3>Sizzling Fajitas</h3></a>
+      <a class="auth-tx-card" href="/menu#enchiladas"><img src="/images/enchiladas.jpg" alt="Enchiladas" loading="lazy" /><h3>Enchiladas</h3></a>
+      <a class="auth-tx-card" href="/menu#steaks"><img src="/images/ribeye.jpg" alt="Steaks & Pasta" loading="lazy" /><h3>Steaks &amp; Pasta</h3></a>
+      <a class="auth-tx-card" href="/menu#appetizers"><img src="/images/queso.jpg" alt="Appetizers" loading="lazy" /><h3>Appetizers</h3></a>
+      <a class="auth-tx-card" href="/menu#drinks"><img src="/images/michelada.jpg" alt="Drinks" loading="lazy" /><h3>Drinks</h3></a>
+      <a class="auth-tx-card" href="/menu"><img src="/images/MenuItems.jpg" alt="Full Menu" loading="lazy" /><h3>See Full Menu</h3></a>
+    </div>
+  </section>
+
+  <style is:global>
 /* ================================================================
    INDEX.ASTRO — MOBILE-FIRST
    Base = 320px+ | sm = 600px+ | lg = 900px+ | xl = 1200px+
@@ -938,6 +955,30 @@ import Layout from '../layouts/Layout.astro';
   .trust-item { font-size: 14px; padding: 8px 36px; }
   .trust-sep { height: 24px; }
 }
+
+/* ---- CENTERED HERO OVERRIDES ---- */
+.hero-content { flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; max-width: 100% !important; }
+.hero-left { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; max-width: 760px !important; width: 100% !important; padding: 0 16px !important; }
+.hero-right, .hero-find, .find-section .find-inner { display: none !important; }
+.hero-headline { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 4px !important; line-height: 0.95 !important; margin: 0 0 28px !important; }
+.hero-headline .hh-line { display: block; font-size: clamp(56px, 10vw, 140px); font-weight: 900; letter-spacing: 0.01em; text-transform: uppercase; color: #fff; text-shadow: 0 4px 28px rgba(0,0,0,0.6); }
+.hero-headline .hh-accent { color: var(--orange); font-style: italic; }
+.hero-ctas { justify-content: center !important; flex-wrap: wrap; }
+.hero-proof { justify-content: center !important; }
+
+/* ---- AUTHENTIC TEX-MEX SECTION ---- */
+.auth-tx { background: #f7f1e6; padding: 96px 20px; text-align: center; color: #0f0d0b; }
+.auth-tx-head { max-width: 880px; margin: 0 auto 56px; }
+.auth-tx-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 76px); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 14px; color: #0f0d0b; }
+.auth-tx-title .dot { color: var(--orange); }
+.auth-tx-sub { font-family: 'Barlow', sans-serif; font-size: clamp(16px, 1.6vw, 20px); color: rgba(15,13,11,0.72); margin: 0; }
+.auth-tx-grid { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 1200px; margin: 0 auto; }
+@media (min-width: 640px) { .auth-tx-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .auth-tx-grid { grid-template-columns: repeat(3, 1fr); } }
+.auth-tx-card { display: block; text-decoration: none; color: inherit; transition: transform 0.25s ease; }
+.auth-tx-card:hover { transform: translateY(-4px); }
+.auth-tx-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); display: block; }
+.auth-tx-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 26px); text-transform: uppercase; letter-spacing: 0.04em; margin: 18px 0 0; color: #0f0d0b; }
 </style>
 
 <script>
