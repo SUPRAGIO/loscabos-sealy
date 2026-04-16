@@ -14,8 +14,11 @@ import Layout from '../layouts/Layout.astro';
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-left">
-      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="hero-logo" loading="eager" />
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Los+Cabos+Mexican+Grill+Sealy+TX" target="_blank" rel="noopener" class="hero-map-icon" aria-label="Get directions to Los Cabos Mexican Grill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="56" height="56" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+      </a>
       <h1 class="hero-headline"><span class="hh-line">FAJITAS</span><span class="hh-line">FIX</span><span class="hh-line hh-accent">EVERYTHING</span></h1>
+      <p class="hero-subheadline">Authentic Tex-Mex in Sealy, TX &mdash; sizzling fajitas, hand-crafted margaritas, fresh enchiladas, tacos &amp; seafood, open 7 days a week.</p>
       <div class="hero-ctas">
         <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-primary">Order Online &mdash; 15 Min</a>
         <a href="#menu" class="btn-outline">View Menu</a>
@@ -111,92 +114,49 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ===== FAMILY PACKS ===== -->
-<section class="featured-section">
-  <div class="featured-inner">
-    <span class="idx-eyebrow">Feed the Whole Crew</span>
-    <h2 class="idx-heading">FAMILY PACKS<br>AVAILABLE!</h2>
-    <p class="fp-intro">Bring Los Cabos home. Our family packs are packed with flavor, ready to feed 4&ndash;6 people, and perfect for any night you don&rsquo;t feel like cooking.</p>
-    <div class="fp-grid">
-
-      <article class="fp-card">
-        <div class="fp-card-img">
-          <img src="/images/fajitas.jpg" alt="Family Pack 1 - Fajitas" loading="lazy" />
-        </div>
-        <div class="fp-card-header">
-          <div class="fp-badge">Pack #1</div>
-          <div class="fp-price">$74.95</div>
-        </div>
-        <div class="fp-card-body">
-          <h3 class="fp-name">Family Pack #1</h3>
-          <p class="fp-desc">The perfect spread for your family dinner. Includes a generous portion of our tender beef and chicken fajitas, served with Mexican rice and your choice of refried, charro, or black beans. We include all the fixings: our homemade guacamole, fresh pico de gallo, sour cream, and your choice of tortillas. Finished with crispy chips, signature red and green salsas, and a bowl of our creamy chile con queso.</p>
-          <div class="fp-serves">Serves 4&ndash;6</div>
-          <div class="fp-togo">To-Go Only</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">Order Online Now &rarr;</a>
-        </div>
-      </article>
-
-      <article class="fp-card">
-        <div class="fp-card-img">
-          <img src="/images/ribeye.jpg" alt="Family Pack 2 - Premium Feast" loading="lazy" />
-        </div>
-        <div class="fp-card-header">
-          <div class="fp-badge">Pack #2</div>
-          <div class="fp-price">$92.95</div>
-        </div>
-        <div class="fp-card-body">
-          <h3 class="fp-name">Family Pack #2</h3>
-          <p class="fp-desc">When you want it all! This premium feast features our sizzlin&rsquo; beef and chicken fajitas, savory ribs, and our signature shrimp brochette. Accompanied by Mexican rice and your choice of beans. Complete with homemade guacamole, pico de gallo, sour cream, and fresh tortillas. Plus plenty of chips, our signature red and green salsas, and a large helping of chile con queso for the ultimate Los Cabos experience.</p>
-          <div class="fp-serves">Serves 4&ndash;6</div>
-          <div class="fp-togo">To-Go Only</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">Order Online Now &rarr;</a>
-        </div>
-      </article>
-
-      <article class="fp-card">
-        <div class="fp-card-img">
-          <img src="/images/enchiladas.jpg" alt="Family Pack 3 - Enchiladas" loading="lazy" />
-        </div>
-        <div class="fp-card-header">
-          <div class="fp-badge">Pack #3</div>
-          <div class="fp-price">$53.95</div>
-        </div>
-        <div class="fp-card-body">
-          <h3 class="fp-name">Family Pack #3</h3>
-          <p class="fp-desc">Enjoy 12 of our hand-rolled enchiladas with your choice of savory ground beef, shredded chicken, or melty cheese &mdash; each topped with our rich chili gravy and extra melted cheese. Comes ready to serve with a quart of Mexican rice, a quart of your favorite beans, plenty of chips, our signature red salsa, and a large homemade chile con queso to round out the meal.</p>
-          <div class="fp-serves">Serves 4&ndash;6</div>
-          <div class="fp-togo">To-Go Only</div>
-          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="fp-order">Order Online Now &rarr;</a>
-        </div>
-      </article>
-
-    </div>
-    <div class="featured-cta">
-      <p class="fp-menu-sub">Hungry for more? Explore our full menu of fajitas, enchiladas, seafood, steaks, and hand-crafted margaritas.</p>
-      <a href="/menu" class="btn-outline-dark">See Everything on the Menu &rarr;</a>
-    </div>
+<!-- ===== AUTHENTIC TEX-MEX ===== -->
+<section class="auth-tx">
+  <div class="auth-tx-head">
+    <h2 class="auth-tx-title">Authentic Tex-Mex<span class="dot">.</span></h2>
+    <p class="auth-tx-sub">Made fresh daily in Sealy, Texas.</p>
+  </div>
+  <div class="auth-tx-grid">
+    <a class="auth-tx-card" href="/menu#fajitas"><img src="/images/Fajitas4Hero.jpg" alt="Sizzling Fajitas" loading="lazy" /><h3>Sizzling Fajitas</h3></a>
+    <a class="auth-tx-card" href="/menu#enchiladas"><img src="/images/enchiladas.jpg" alt="Enchiladas" loading="lazy" /><h3>Enchiladas</h3></a>
+    <a class="auth-tx-card" href="/menu#steaks"><img src="/images/ribeye.jpg" alt="Steaks &amp; Pasta" loading="lazy" /><h3>Steaks &amp; Pasta</h3></a>
+    <a class="auth-tx-card" href="/menu#appetizers"><img src="/images/queso.jpg" alt="Appetizers" loading="lazy" /><h3>Appetizers</h3></a>
+    <a class="auth-tx-card" href="/menu#drinks"><img src="/images/michelada.jpg" alt="Drinks" loading="lazy" /><h3>Drinks</h3></a>
+    <a class="auth-tx-card" href="/menu"><img src="/images/MenuItems.jpg" alt="Full Menu" loading="lazy" /><h3>See Full Menu</h3></a>
+  </div>
+  <div class="auth-tx-cta">
+    <a href="/menu" class="btn-primary auth-tx-btn">VIEW OUR FULL MENU</a>
   </div>
 </section>
 <!-- ===== CATERING ===== -->
 <section class="cat-section" id="catering">
   <div class="cat-grid">
     <div class="cat-left">
-      <span class="idx-eyebrow">Events &amp; Catering</span>
-      <h2 class="cat-heading">WE COME<br>TO YOU.</h2>
-      <p class="cat-desc">Los Cabos brings the full experience to your event. Sizzling fajitas, fresh sides, and everything your guests need for a meal they won&rsquo;t forget.</p>
-      <div class="cat-steps">
-        <div class="cat-step"><div class="cat-step-num">01</div><div><div class="cat-step-title">Tell us about your event</div><div class="cat-step-desc">Group size, date, location, and any special requests.</div></div></div>
-        <div class="cat-step"><div class="cat-step-num">02</div><div><div class="cat-step-title">We build your menu</div><div class="cat-step-desc">Fajitas, enchiladas, sides &mdash; customized for your crowd.</div></div></div>
-        <div class="cat-step"><div class="cat-step-num">03</div><div><div class="cat-step-title">We show up &amp; serve</div><div class="cat-step-desc">Hot, fresh, and on time. You enjoy the party.</div></div></div>
+      <span class="idx-eyebrow">Catering &amp; Events</span>
+      <h2 class="cat-heading">WE BRING<br>THE FIESTA.</h2>
+      <p class="cat-desc">From backyard birthdays to corporate events and weddings &mdash; Los Cabos shows up, fires up the grill on-site, and serves a Tex-Mex spread your guests will talk about for years.</p>
+      <ul class="cat-benefits">
+        <li><span class="cat-ck">✔</span><div><strong>Cooked On-Site</strong><span>Sizzling fajitas fresh off the grill at your location.</span></div></li>
+        <li><span class="cat-ck">✔</span><div><strong>Custom Menus</strong><span>Pick your favorites &mdash; fajitas, enchiladas, tacos, sides, margaritas.</span></div></li>
+        <li><span class="cat-ck">✔</span><div><strong>Delivery &amp; Full Setup</strong><span>We deliver, set up, serve, and clean up. You enjoy the party.</span></div></li>
+        <li><span class="cat-ck">✔</span><div><strong>Any Group Size</strong><span>From 25 to 500+ guests &mdash; we scale with you.</span></div></li>
+      </ul>
+      <div class="cat-cta-row">
+        <a href="tel:+15126076232" class="btn-primary cat-cta-main">CALL (512) 607-6232</a>
+        <a href="/catering" class="btn-outline-dark cat-cta-sec">Request a Quote &rarr;</a>
       </div>
+      <p class="cat-fineprint">Serving Sealy, Katy, Brookshire, Bellville, Columbus, Houston &amp; all of Austin County.</p>
     </div>
     <div class="cat-right">
-      <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="cat-logo" loading="lazy" />
-      <div class="cat-book-title">Ready to Book?</div>
-      <p class="cat-book-sub">Minimum 25 guests. Call us during business hours to get started.</p>
-      <a href="tel:+15126076232" class="cat-phone">(512) 607-6232</a>
-      <div class="cat-hours">Sun&ndash;Wed 11AM&ndash;9PM<br>Thu&ndash;Sat 11AM&ndash;10PM</div>
-      <a href="/catering" class="btn-primary" style="display:block;width:100%;max-width:280px;text-align:center;">CATERING REQUEST</a>
+      <img src="/images/server.jpg" alt="Los Cabos catering service" class="cat-img" loading="lazy" />
+      <div class="cat-badge-overlay">
+        <div class="cat-badge-num">500+</div>
+        <div class="cat-badge-label">Events Catered</div>
+      </div>
     </div>
   </div>
 </section>
@@ -215,6 +175,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="reviews-grid-wrap">
       <div class="reviews-grid-inner" id="reviewsCarousel">
+        <div class="reviews-track">
         <div class="review-card">
           <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">&ldquo;Food was out quick and it was phenomenal. Will definitely be going back.&rdquo;</p>
@@ -230,6 +191,23 @@ import Layout from '../layouts/Layout.astro';
           <p class="review-text">&ldquo;The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit.&rdquo;</p>
           <div class="review-name">Lashay C. &mdash; <span class="review-time">3 weeks ago &middot; Local Guide</span></div>
         </div>
+      
+        <div class="review-card">
+          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">&ldquo;Food was out quick and it was phenomenal. Will definitely be going back.&rdquo;</p>
+          <div class="review-name">Brandin S. &mdash; <span class="review-time">19 hours ago</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">&ldquo;Best food, service, and price for a meal that I&rsquo;ve had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn&rsquo;t finish half.&rdquo;</p>
+          <div class="review-name">Larsen Trucking &mdash; <span class="review-time">3 weeks ago</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">&ldquo;The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit.&rdquo;</p>
+          <div class="review-name">Lashay C. &mdash; <span class="review-time">3 weeks ago &middot; Local Guide</span></div>
+        </div>
+      </div>
       </div>
       <div class="reviews-dots" style="display:none;">
         <button class="reviews-dot active" onclick="goToReview(0)" aria-label="Review 1"></button>
@@ -285,21 +263,6 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 
-  <!-- ===== AUTHENTIC TEX-MEX ===== -->
-  <section class="auth-tx">
-    <div class="auth-tx-head">
-      <h2 class="auth-tx-title">Authentic Tex-Mex<span class="dot">.</span></h2>
-      <p class="auth-tx-sub">Made fresh daily in Sealy, Texas.</p>
-    </div>
-    <div class="auth-tx-grid">
-      <a class="auth-tx-card" href="/menu#fajitas"><img src="/images/fajitas.jpg" alt="Sizzling Fajitas" loading="lazy" /><h3>Sizzling Fajitas</h3></a>
-      <a class="auth-tx-card" href="/menu#enchiladas"><img src="/images/enchiladas.jpg" alt="Enchiladas" loading="lazy" /><h3>Enchiladas</h3></a>
-      <a class="auth-tx-card" href="/menu#steaks"><img src="/images/ribeye.jpg" alt="Steaks & Pasta" loading="lazy" /><h3>Steaks &amp; Pasta</h3></a>
-      <a class="auth-tx-card" href="/menu#appetizers"><img src="/images/queso.jpg" alt="Appetizers" loading="lazy" /><h3>Appetizers</h3></a>
-      <a class="auth-tx-card" href="/menu#drinks"><img src="/images/michelada.jpg" alt="Drinks" loading="lazy" /><h3>Drinks</h3></a>
-      <a class="auth-tx-card" href="/menu"><img src="/images/MenuItems.jpg" alt="Full Menu" loading="lazy" /><h3>See Full Menu</h3></a>
-    </div>
-  </section>
 
   <style is:global>
 /* ================================================================
@@ -979,6 +942,96 @@ import Layout from '../layouts/Layout.astro';
 .auth-tx-card:hover { transform: translateY(-4px); }
 .auth-tx-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); display: block; }
 .auth-tx-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 26px); text-transform: uppercase; letter-spacing: 0.04em; margin: 18px 0 0; color: #0f0d0b; }
+
+/* ===== Hero Map Icon ===== */
+.hero-map-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: #E87722;
+  color: #fff;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  transition: transform 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+.hero-map-icon:hover { transform: scale(1.08); background: #c95e10; }
+.hero-map-icon svg { width: 40px; height: 40px; }
+
+/* ===== Hero Subheadline ===== */
+.hero-subheadline {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: #f3ece1;
+  max-width: 640px;
+  margin: 10px auto 18px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+@media (min-width: 600px) { .hero-subheadline { font-size: 1.15rem; } }
+@media (min-width: 900px) { .hero-subheadline { font-size: 1.25rem; max-width: 760px; } }
+
+/* ===== Authentic Tex-Mex Section CTA ===== */
+.auth-tx-cta { text-align: center; margin: 28px auto 0; padding: 0 16px; }
+.auth-tx-btn {
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+
+/* ===== Reviews Carousel (marquee) ===== */
+.reviews-grid-wrap { overflow: hidden; position: relative; margin: 24px -16px 0; padding: 0; }
+.reviews-grid-wrap::before, .reviews-grid-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none;
+}
+.reviews-grid-wrap::before { left: 0; background: linear-gradient(to right, #0f0d0b, transparent); }
+.reviews-grid-wrap::after { right: 0; background: linear-gradient(to left, #0f0d0b, transparent); }
+#reviewsCarousel { overflow: hidden; }
+.reviews-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: reviewsScroll 50s linear infinite;
+}
+.reviews-track:hover { animation-play-state: paused; }
+.reviews-track .review-card { flex: 0 0 320px; max-width: 320px; }
+@keyframes reviewsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (min-width: 900px) {
+  .reviews-track .review-card { flex: 0 0 360px; max-width: 360px; }
+}
+
+/* ===== Catering Revamp ===== */
+.cat-section { padding: 60px 16px; background: #faf6ef; }
+.cat-grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1200px; margin: 0 auto; align-items: center; }
+@media (min-width: 900px) { .cat-grid { grid-template-columns: 1.1fr 1fr; gap: 56px; } }
+.cat-left .idx-eyebrow { color: #E87722; }
+.cat-heading { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 0.95; font-weight: 900; color: #0f0d0b; margin: 8px 0 16px; letter-spacing: -0.01em; }
+.cat-desc { font-size: 1.05rem; line-height: 1.55; color: #3a342c; margin: 0 0 20px; }
+.cat-benefits { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 14px; }
+.cat-benefits li { display: flex; gap: 12px; align-items: flex-start; }
+.cat-ck { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #E87722; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-top: 2px; }
+.cat-benefits strong { display: block; font-size: 1rem; color: #0f0d0b; font-weight: 800; }
+.cat-benefits span { display: block; font-size: 0.95rem; color: #5a524a; line-height: 1.4; margin-top: 2px; }
+.cat-cta-row { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 12px; }
+@media (min-width: 600px) { .cat-cta-row { flex-direction: row; align-items: center; } }
+.cat-cta-main { text-align: center; padding: 16px 28px; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.06em; }
+.cat-cta-sec { padding: 14px 24px; text-align: center; font-weight: 700; }
+.cat-fineprint { font-size: 0.85rem; color: #6a6158; margin: 12px 0 0; }
+.cat-right { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.18); }
+.cat-img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; }
+.cat-badge-overlay { position: absolute; bottom: 16px; left: 16px; background: rgba(232, 119, 34, 0.95); color: #fff; padding: 14px 20px; border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
+.cat-badge-num { font-size: 2rem; font-weight: 900; line-height: 1; }
+.cat-badge-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; opacity: 0.95; }
+
 </style>
 
 <script>
