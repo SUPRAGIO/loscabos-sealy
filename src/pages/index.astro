@@ -113,7 +113,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- ===== AUTHENTIC TEX-MEX ===== -->
 <section class="auth-tx">
   <div class="auth-tx-head">
-    <h2 class="auth-tx-title">Authentic Tex-Mex<span class="dot">.</span></h2>
+    <h2 class="auth-tx-title">Authentic Tex-Mex</h2>
     <p class="auth-tx-sub">Every meal made fresh to order &mdash; right here in Sealy, Texas.</p>
   </div>
   <div class="auth-tx-grid">
@@ -422,7 +422,7 @@ import Layout from '../layouts/Layout.astro';
 .hero-headline {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: clamp(52px, 16vw, 80px);
+  font-size: clamp(68px, 18vw, 110px);
   line-height: 0.9;
   text-transform: uppercase;
   color: #fff;
@@ -922,7 +922,7 @@ import Layout from '../layouts/Layout.astro';
 .hero-left { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; max-width: 760px !important; width: 100% !important; padding: 0 16px !important; }
 .hero-right, .hero-find, .hero-info-card, .find-section { display: none !important; }
 .hero-headline { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 4px !important; line-height: 0.95 !important; margin: 0 0 28px !important; }
-.hero-headline .hh-line { display: block; font-size: clamp(56px, 10vw, 140px); font-weight: 900; letter-spacing: 0.01em; text-transform: uppercase; color: #fff; text-shadow: 0 4px 28px rgba(0,0,0,0.6); }
+.hero-headline .hh-line { display: block; font-size: clamp(72px, 13vw, 180px); font-weight: 900; letter-spacing: 0.01em; text-transform: uppercase; color: #fff; text-shadow: 0 4px 28px rgba(0,0,0,0.6); }
 .hero-headline .hh-accent { color: var(--orange); font-style: italic; }
 .hero-ctas { justify-content: center !important; flex-wrap: wrap; }
 .hero-proof { justify-content: center !important; }
@@ -1094,6 +1094,13 @@ import Layout from '../layouts/Layout.astro';
       padding-left: 40px;
       padding-right: 40px;
     }
+  }
+
+
+  /* === Mobile-only: shrink hero direction icon & nudge down === */
+  @media (max-width: 599px) {
+    .hero-map-icon { width: 36px; height: 36px; margin-top: 24px; }
+    .hero-map-icon svg { width: 20px; height: 20px; }
   }
 
 </style>
