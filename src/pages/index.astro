@@ -221,42 +221,45 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- ===== FIND YOUR LOS CABOS ===== -->
 <section class="find-section" id="find-us">
-  <div class="find-bg">
-    <img src="/images/MenuItems.jpg" alt="Los Cabos Mexican Grill" class="find-bg-img" loading="lazy" />
-    <div class="find-bg-overlay"></div>
-  </div>
+  <div class="find-bg-solid"></div>
   <div class="find-inner">
     <div class="find-header">
-      <span class="find-eyebrow">Come Find Us</span>
-      <h2 class="find-heading">FIND YOUR<br>LOS CABOS.</h2>
+      <span class="find-eyebrow">Come Visit Us</span>
+      <h2 class="find-heading">FIND US.</h2>
+      <p class="find-sub">Sizzling fajitas, ice-cold margaritas, and warm Sealy hospitality — come see us in person.</p>
     </div>
-    <div class="find-location-card">
-      <div class="find-location-name">Los Cabos Mexican Grill</div>
-      <div class="find-location-tag">Sealy, TX</div>
-      <div class="find-rows">
-        <div class="find-row">
-          <span class="find-label">Address</span>
-          <span class="find-value">6027 FM 3538 Rd<br>Sealy, TX 77474</span>
+    <div class="find-grid">
+      <div class="find-info">
+        <img src="/images/logo.png" alt="Los Cabos Mexican Grill" class="find-logo" loading="lazy" />
+        <div class="find-location-name">Los Cabos Mexican Grill</div>
+        <div class="find-location-tag">Mexican Grill & Steak House &middot; Sealy, TX</div>
+        <div class="find-rows">
+          <div class="find-row">
+            <span class="find-label">Address</span>
+            <span class="find-value">6027 FM 3538 Rd<br>Sealy, TX 77474</span>
+          </div>
+          <div class="find-row">
+            <span class="find-label">Phone</span>
+            <span class="find-value"><a href="tel:+15126076232">(512) 607-6232</a></span>
+          </div>
+          <div class="find-row">
+            <span class="find-label">Hours</span>
+            <span class="find-value">Sun&ndash;Wed: 11AM &ndash; 9PM<br>Thu&ndash;Sat: 11AM &ndash; 10PM</span>
+          </div>
+          <div class="find-row">
+            <span class="find-label">Email</span>
+            <span class="find-value"><a href="mailto:info@loscabossealy.com">info@loscabossealy.com</a></span>
+          </div>
         </div>
-        <div class="find-row">
-          <span class="find-label">Phone</span>
-          <span class="find-value">
-            <a href="tel:+15126076232">(512) 607-6232</a>
-          </span>
-        </div>
-        <div class="find-row">
-          <span class="find-label">Hours</span>
-          <span class="find-value">Sun&ndash;Wed: 11AM &ndash; 9PM<br>Thu&ndash;Sat: 11AM &ndash; 10PM</span>
+        <div class="find-btns">
+          <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474" target="_blank" rel="noopener" class="btn-primary">Get Directions &rarr;</a>
+          <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-outline">Order Online</a>
         </div>
       </div>
-      <div class="find-btns">
-        <a href="https://maps.google.com/?q=6027+FM+3538+Rd+Sealy+TX+77474" target="_blank" rel="noopener" class="btn-primary">Get Directions &rarr;</a>
-        <a href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener" class="btn-outline">Order Online</a>
+      <div class="find-map">
+        <iframe title="Los Cabos Sealy TX" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2!2d-96.1566!3d29.7810!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;display:block;" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
-  </div>
-  <div class="map-embed">
-    <iframe title="Los Cabos Sealy TX" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.2!2d-96.1566!3d29.7810!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;display:block;min-height:300px;" allowfullscreen loading="lazy"></iframe>
   </div>
 </section>
 
@@ -713,117 +716,175 @@ import Layout from '../layouts/Layout.astro';
 .reviews-dot.active { background: #F4621F; }
 .reviews-cta { text-align: center; margin-top: 36px; }
 
-/* ----- FIND YOUR LOS CABOS SECTION ----- */
+/* ----- FIND US SECTION ----- */
 .find-section {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 480px;
+  display: block;
+  padding: 72px 20px 80px;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a120b 50%, #0f0a06 100%);
+  overflow: hidden;
 }
-.find-bg {
+.find-section::before {
+  content: '';
   position: absolute;
   inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(226,114,31,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(226,114,31,0.07) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
 }
-.find-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-.find-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(15,10,6,0.92) 0%, rgba(26,20,16,0.78) 60%, rgba(15,10,6,0.85) 100%);
-}
+.find-bg-solid { display: none; }
 .find-inner {
   position: relative;
   z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 52px 20px 32px;
+  gap: 40px;
 }
-.find-header {}
+.find-header { text-align: center; }
 .find-eyebrow {
   display: block;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 800;
-  font-size: 11px;
-  letter-spacing: 0.28em;
+  font-size: 12px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #F4621F;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .find-heading {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: clamp(40px, 13vw, 72px);
-  line-height: 0.92;
+  font-size: clamp(44px, 9vw, 88px);
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: 0;
+  margin: 0;
+  line-height: 0.95;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
 }
-.find-location-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(244,98,31,0.3);
-  border-radius: 12px;
-  padding: 28px 24px;
-  backdrop-filter: blur(12px);
-  max-width: 420px;
+.find-sub {
+  max-width: 620px;
+  margin: 16px auto 0;
+  color: rgba(255,255,255,0.78);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.find-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+.find-info {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 18px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(6px);
+}
+.find-logo {
+  display: block;
+  width: 160px;
+  height: auto;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
 }
 .find-location-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 28px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: #fff;
-  margin-bottom: 4px;
+  line-height: 1.05;
 }
 .find-location-tag {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
   text-transform: uppercase;
-  color: #F4621F;
-  margin-bottom: 20px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-top: -10px;
 }
-.find-rows { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-.find-row { display: flex; flex-direction: column; gap: 3px; }
+.find-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+.find-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.find-row:last-child { border-bottom: none; padding-bottom: 0; }
 .find-label {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 800;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: #F4621F;
 }
 .find-value {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   color: #fff;
-  line-height: 1.4;
+  line-height: 1.5;
 }
-.find-value a { color: #F4621F; text-decoration: none; }
+.find-value a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+.find-value a:hover { color: #F4621F; border-bottom-color: #F4621F; }
 .find-btns {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 12px;
 }
-.map-embed {
+.find-btns .btn-primary,
+.find-btns .btn-outline {
+  width: 100%;
+  text-align: center;
+}
+.find-map {
   position: relative;
-  z-index: 2;
-  min-height: 280px;
-  flex-shrink: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 360px;
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
-.map-embed iframe {
+.find-map iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 280px;
   display: block;
   border: 0;
+}
+@media (min-width: 900px) {
+  .find-section { padding: 100px 32px 110px; }
+  .find-grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 36px;
+  }
+  .find-info { padding: 44px 40px; }
+  .find-map { min-height: 520px; }
+  .find-btns { flex-direction: row; }
+  .find-btns .btn-primary,
+  .find-btns .btn-outline { width: auto; flex: 1; }
 }
 
 /* ----- INFO CARD ----- */
@@ -901,11 +962,6 @@ import Layout from '../layouts/Layout.astro';
   .reviews-grid-inner { gap: 24px; flex-wrap: wrap; transform: none !important; }
   .review-card { min-width: 0; flex: 1 1 calc(33.333% - 16px); padding: 32px 28px; }
   .reviews-dots { display: none; }
-  .find-section { flex-direction: row; min-height: 520px; }
-  .find-inner { flex: 1; padding: 72px 64px; flex-direction: column; gap: 32px; }
-  .find-heading { font-size: clamp(52px, 7vw, 88px); }
-  .map-embed { flex: 1; min-height: 440px; }
-  .find-btns { flex-direction: row; }
   .scroll-item { font-size: 14px; padding: 0 40px; }
 }
 
@@ -920,7 +976,7 @@ import Layout from '../layouts/Layout.astro';
 /* ---- CENTERED HERO OVERRIDES ---- */
 .hero-content { flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; max-width: 100% !important; }
 .hero-left { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; max-width: 760px !important; width: 100% !important; padding: 0 16px !important; }
-.hero-right, .hero-find, .hero-info-card, .find-section { display: none !important; }
+.hero-right, .hero-find, .hero-info-card { display: none !important; }
 .hero-headline { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 4px !important; line-height: 0.95 !important; margin: 0 0 28px !important; }
 .hero-headline .hh-line { display: block; font-size: clamp(72px, 13vw, 180px); font-weight: 900; letter-spacing: 0.01em; text-transform: uppercase; color: #fff; text-shadow: 0 4px 28px rgba(0,0,0,0.6); }
 .hero-headline .hh-accent { color: var(--orange); font-style: italic; }
