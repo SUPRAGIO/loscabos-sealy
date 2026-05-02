@@ -162,60 +162,44 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- ===== REVIEWS ===== -->
 <section class="reviews-section">
+  <video autoplay muted loop playsinline class="reviews-vid"><source src="/video/reviews-bg.mp4" type="video/mp4"></video>
+  <div class="reviews-vid-overlay"></div>
   <div class="reviews-inner">
-    <span class="idx-eyebrow">See What Your Neighbors Are Talking About</span>
-    <h2 class="idx-heading reviews-heading">REAL REVIEWS.<br>REAL NEIGHBORS.</h2>
+    <div class="section-eyebrow" style="color:#F4621F;">What People Are Saying</div>
+    <h2 class="section-heading" style="color:white;">REAL REVIEWS.<br>REAL PEOPLE.</h2>
     <div class="reviews-score-row">
       <div class="reviews-score">4.8</div>
       <div>
-        <div class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="color:#F4621F;font-size:22px;letter-spacing:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="reviews-count">Based on Google Reviews</div>
       </div>
     </div>
-    <div class="reviews-grid-wrap">
-      <div class="reviews-grid-inner" id="reviewsCarousel">
-        <div class="reviews-track">
+    <div class="reviews-carousel-wrap">
+      <div class="reviews-carousel" id="reviewsCarousel">
         <div class="review-card">
-          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&ldquo;Food was out quick and it was phenomenal. Will definitely be going back.&rdquo;</p>
-          <div class="review-name">Brandin S. &mdash; <span class="review-time">19 hours ago</span></div>
+          <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Food was out quick and it was phenomenal. Will definitely be going back."</p>
+          <div class="review-name">Brandin S. &mdash; <span style="opacity:.5;font-size:12px;">19 hours ago</span></div>
         </div>
         <div class="review-card">
-          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&ldquo;Best food, service, and price for a meal that I&rsquo;ve had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn&rsquo;t finish half.&rdquo;</p>
-          <div class="review-name">Larsen Trucking &mdash; <span class="review-time">3 weeks ago</span></div>
+          <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Best food, service, and price for a meal that I&rsquo;ve had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn&rsquo;t finish half."</p>
+          <div class="review-name">Larsen Trucking &mdash; <span style="opacity:.5;font-size:12px;">3 weeks ago</span></div>
         </div>
         <div class="review-card">
-          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&ldquo;The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit.&rdquo;</p>
-          <div class="review-name">Lashay C. &mdash; <span class="review-time">3 weeks ago &middot; Local Guide</span></div>
-        </div>
-      
-        <div class="review-card">
-          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&ldquo;Food was out quick and it was phenomenal. Will definitely be going back.&rdquo;</p>
-          <div class="review-name">Brandin S. &mdash; <span class="review-time">19 hours ago</span></div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&ldquo;Best food, service, and price for a meal that I&rsquo;ve had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn&rsquo;t finish half.&rdquo;</p>
-          <div class="review-name">Larsen Trucking &mdash; <span class="review-time">3 weeks ago</span></div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&ldquo;The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit.&rdquo;</p>
-          <div class="review-name">Lashay C. &mdash; <span class="review-time">3 weeks ago &middot; Local Guide</span></div>
+          <div style="color:#F4621F;font-size:18px;margin-bottom:12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit."</p>
+          <div class="review-name">Lashay C. &mdash; <span style="opacity:.5;font-size:12px;">3 weeks ago &middot; Local Guide</span></div>
         </div>
       </div>
-      </div>
-      <div class="reviews-dots" style="display:none;">
-        <button class="reviews-dot active" onclick="goToReview(0)" aria-label="Review 1"></button>
-        <button class="reviews-dot" onclick="goToReview(1)" aria-label="Review 2"></button>
-        <button class="reviews-dot" onclick="goToReview(2)" aria-label="Review 3"></button>
+      <div class="reviews-dots">
+        <span class="reviews-dot active" onclick="goToReview(0)"></span>
+        <span class="reviews-dot" onclick="goToReview(1)"></span>
+        <span class="reviews-dot" onclick="goToReview(2)"></span>
       </div>
     </div>
-    <div class="reviews-cta">
-      <a href="https://www.google.com/maps/place/Los+Cabos+Mexican+Grill,+Sealy" target="_blank" rel="noopener" class="btn-outline-white">Leave Us a Review on Google</a>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://www.google.com/maps/place/Los+Cabos+Mexican+Grill,+Sealy" target="_blank" rel="noopener" style="display:inline-block;border:2px solid rgba(255,255,255,0.3);color:white;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;padding:12px 32px;border-radius:4px;text-decoration:none;">Leave Us a Review on Google</a>
     </div>
   </div>
 </section>
@@ -1210,6 +1194,30 @@ import Layout from '../layouts/Layout.astro';
     .hero-map-icon svg { width: 20px; height: 20px; }
   }
 
+
+.reviews-section{position:relative;padding:80px 72px;overflow:hidden;background:#1A1410;}
+.reviews-vid{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.35;}
+.reviews-vid-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,20,16,0.85) 0%,rgba(26,20,16,0.7) 100%);z-index:1;}
+.reviews-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;}
+.reviews-score-row{display:flex;align-items:center;gap:20px;margin:24px 0 40px;}
+.reviews-score{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;color:white;line-height:1;}
+.reviews-count{font-family:'Barlow',sans-serif;font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px;}
+.reviews-carousel-wrap{width:100%;overflow:hidden;position:relative;}
+.reviews-carousel{display:flex;gap:24px;transition:transform .4s ease;}
+.review-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:32px;flex:1;min-width:calc(33.333% - 16px);}
+.review-text{font-family:'Barlow',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);line-height:1.7;margin-bottom:16px;font-style:italic;}
+.review-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.reviews-dots{display:none;justify-content:center;gap:8px;margin-top:20px;}
+.reviews-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:background .2s;}
+.reviews-dot.active{background:#F4621F;}
+@media(max-width:768px){
+  .reviews-section{padding:60px 20px;}
+  .reviews-carousel{flex-wrap:nowrap;}
+  .review-card{min-width:100%;flex-shrink:0;}
+  .reviews-dots{display:flex;}
+  .reviews-score{font-size:52px;}
+  .review-text{font-size:14px;}
+}
 </style>
 
 <script>
