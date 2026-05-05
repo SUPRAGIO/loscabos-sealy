@@ -130,33 +130,14 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 <!-- ===== CATERING ===== -->
-<section class="cat-section" id="catering">
-  <div class="cat-grid">
-    <div class="cat-left">
-      <span class="idx-eyebrow">Catering &amp; Events</span>
-      <h2 class="cat-heading">WE BRING<br>THE FIESTA.</h2>
-      <p class="cat-desc">Backyard birthdays. Corporate lunches. Weddings. We roll up, fire up the grill on-site, and hit your guests with the kind of Tex-Mex spread they&rsquo;ll be texting about for weeks. No sad trays. No cold fajitas. Just the real deal.</p>
-      <ul class="cat-benefits">
-        <li><span class="cat-ck">&#10003;</span><div><strong>Cooked On-Site</strong><span>We bring the grill. Your guests hear the sizzle before they taste it.</span></div></li>
-        <li><span class="cat-ck">&#10003;</span><div><strong>Custom Menus</strong><span>Fajitas, enchiladas, tacos, margaritas &mdash; build a menu your crew will actually fight over.</span></div></li>
-        <li><span class="cat-ck">&#10003;</span><div><strong>Delivery &amp; Full Setup</strong><span>We deliver, set up, serve, and clean up. You enjoy the party &mdash; that&rsquo;s the deal.</span></div></li>
-        <li><span class="cat-ck">&#10003;</span><div><strong>Drop-Off &amp; Setup Available</strong><span>Short on time? We&rsquo;ll drop off hot trays ready to serve, plus sternos, chafers, and all the setup.</span></div></li>
-        <li><span class="cat-ck">&#10003;</span><div><strong>Any Group Size</strong><span>25 guests or 500+ &mdash; if you&rsquo;re feeding &rsquo;em, we&rsquo;re cooking.</span></div></li>
-      </ul>
-      <div class="cat-cta-row">
-        <a href="tel:+15126076232" class="btn-primary cat-cta-main">CALL (512) 607-6232</a>
-        <a href="/catering" class="btn-outline-dark cat-cta-sec">Request a Quote</a>
-          <a href="/catering-menu.pdf" class="btn-outline-dark cat-cta-sec cat-cta-dl" download="Los-Cabos-Catering-Menu.pdf" aria-label="Download catering menu PDF">Download Menu (PDF)</a>
-      </div>
-      <p class="cat-fineprint">Serving Sealy and surrounding areas up to a 30 mile radius.</p>
-    </div>
-    <div class="cat-right">
-      <img src="/images/cabosvan2.jpeg" alt="Los Cabos catering van at event" class="cat-img" loading="lazy" />
-      <div class="cat-badge-overlay">
-        <div class="cat-badge-num">500+</div>
-        <div class="cat-badge-label">Events Catered</div>
-      </div>
-    </div>
+<section class="cat-section cat-stack" id="catering">
+  <div class="cat-stack-img">
+    <img src="/images/cabosvan2.jpeg" alt="Los Cabos Sealy Catering Van" loading="lazy" />
+  </div>
+  <div class="cat-stack-body">
+    <h2 class="cat-stack-title">CATERING THAT BRINGS THE FIESTA</h2>
+    <p class="cat-stack-sub">From backyard parties to corporate events. We bring Los Cabos to you.</p>
+    <a href="/catering" class="cat-stack-btn">REQUEST CATERING</a>
   </div>
 </section>
 
@@ -1218,6 +1199,66 @@ import Layout from '../layouts/Layout.astro';
   .reviews-score{font-size:52px;}
   .review-text{font-size:14px;}
 }
+
+/* ===== Catering Stack (stacked at all sizes) ===== */
+.cat-stack { display: block; padding: 0; background: transparent; }
+.cat-stack .cat-stack-img,
+.cat-stack-img { width: 100%; line-height: 0; }
+.cat-stack-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+}
+.cat-stack-body {
+  background: #F4621F; /* brand orange */
+  color: #f5f0ea; /* brand cream */
+  padding: 56px 24px;
+  text-align: center;
+}
+.cat-stack-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 8vw, 52px);
+  line-height: 1;
+  text-transform: uppercase;
+  color: #f5f0ea;
+  margin: 0 0 16px;
+  letter-spacing: 0.01em;
+}
+.cat-stack-sub {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: clamp(15px, 2.4vw, 18px);
+  line-height: 1.5;
+  color: #f5f0ea;
+  max-width: 640px;
+  margin: 0 auto 28px;
+  opacity: 0.95;
+}
+.cat-stack-btn {
+  display: inline-block;
+  background: #f5f0ea;
+  color: #F4621F;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 32px;
+  min-height: 44px;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.cat-stack-btn:hover { background: #fff; transform: translateY(-1px); }
+.cat-stack-btn:focus-visible { outline: 3px solid #f5f0ea; outline-offset: 3px; }
+@media (min-width: 768px) {
+  .cat-stack-body { padding: 72px 32px; }
+  .cat-stack-img img { max-height: 560px; }
+}
+
 </style>
 
 <script>
