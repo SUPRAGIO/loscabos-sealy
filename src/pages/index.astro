@@ -141,6 +141,52 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<!-- ===== LOCAL FAVORITES ===== -->
+<section class="local-favorites">
+  <div class="lf-header">
+    <h2 class="lf-eyebrow">LOCAL FAVORITES</h2>
+    <p class="lf-sub">The dishes Sealy keeps coming back for.</p>
+  </div>
+  <div class="lf-row">
+    <article class="lf-card">
+      <div class="lf-img-wrap">
+        <img src="/images/MenuItems.jpg" alt="Street Tacos" loading="lazy" />
+      </div>
+      <h3 class="lf-title">STREET TACOS</h3>
+      <p class="lf-desc">Three corn tortillas, your choice of meat, onion, cilantro, lime.</p>
+    </article>
+    <article class="lf-card">
+      <div class="lf-img-wrap">
+        <img src="/images/MenuItems.jpg" alt="Fajita Quesadilla" loading="lazy" />
+      </div>
+      <h3 class="lf-title">FAJITA QUESADILLA</h3>
+      <p class="lf-desc">Grilled steak or chicken with peppers, onions, melted cheese.</p>
+    </article>
+    <article class="lf-card">
+      <div class="lf-img-wrap">
+        <img src="/images/MenuItems.jpg" alt="Birria Tacos" loading="lazy" />
+      </div>
+      <h3 class="lf-title">BIRRIA TACOS</h3>
+      <p class="lf-desc">Slow-braised beef, consomé for dipping, melted Oaxaca cheese.</p>
+    </article>
+    <article class="lf-card">
+      <div class="lf-img-wrap">
+        <img src="/images/MenuItems.jpg" alt="Enchiladas Verdes" loading="lazy" />
+      </div>
+      <h3 class="lf-title">ENCHILADAS VERDES</h3>
+      <p class="lf-desc">Three rolled tortillas, salsa verde, queso fresco, crema.</p>
+    </article>
+    <article class="lf-card">
+      <div class="lf-img-wrap">
+        <img src="/images/MenuItems.jpg" alt="Carne Asada Plate" loading="lazy" />
+      </div>
+      <h3 class="lf-title">CARNE ASADA PLATE</h3>
+      <p class="lf-desc">Grilled skirt steak, rice, beans, guacamole, fresh tortillas.</p>
+    </article>
+  </div>
+</section>
+
+
 <!-- ===== REVIEWS ===== -->
 <section class="reviews-section">
   <video autoplay muted loop playsinline class="reviews-vid"><source src="/video/reviews-bg.mp4" type="video/mp4"></video>
@@ -1259,6 +1305,120 @@ import Layout from '../layouts/Layout.astro';
   .cat-stack-img img { max-height: 560px; }
 }
 
+
+/* ===== Local Favorites ===== */
+.local-favorites {
+  background: #f5f0ea;
+  padding: 64px 0;
+}
+.local-favorites .lf-header {
+  max-width: 1200px;
+  margin: 0 auto 32px;
+  padding: 0 16px;
+  text-align: center;
+}
+.local-favorites .lf-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #F4621F;
+  font-size: 2.25rem;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+.local-favorites .lf-sub {
+  color: #1A1410;
+  opacity: 0.75;
+  font-weight: 400;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.local-favorites .lf-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 4px 16px 24px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.local-favorites .lf-row::-webkit-scrollbar {
+  display: none;
+}
+.local-favorites .lf-card {
+  flex: 0 0 auto;
+  width: 75%;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(26, 20, 16, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.local-favorites .lf-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #1A1410;
+}
+.local-favorites .lf-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.local-favorites .lf-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1A1410;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin: 14px 16px 6px;
+}
+.local-favorites .lf-desc {
+  color: #1A1410;
+  opacity: 0.75;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 16px 16px;
+}
+@media (min-width: 768px) {
+  .local-favorites {
+    padding: 80px 0;
+  }
+  .local-favorites .lf-eyebrow {
+    font-size: 2.75rem;
+  }
+  .local-favorites .lf-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow-x: visible;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4px 24px 24px;
+    scroll-snap-type: none;
+  }
+  .local-favorites .lf-card {
+    width: auto;
+  }
+  .local-favorites .lf-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(26, 20, 16, 0.12);
+  }
+}
+@media (min-width: 1024px) {
+  .local-favorites .lf-row {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}
 </style>
 
 <script>
