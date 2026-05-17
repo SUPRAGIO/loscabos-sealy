@@ -1,20 +1,25 @@
 # build output
 dist/
-.output/
+.astro/
 
 # dependencies
 node_modules/
 
 # logs
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # environment variables
 .env
-.env.*
-!.env.example
+.env.production
+.env.local
 
-# macOS
+# macOS-specific files
 .DS_Store
 
-# Astro
-.astro/
+# editor / OS
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,34 @@
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base title="Page not found — Los Cabos Mexican Grill" description="That page wandered off.">
+  <section class="page-hero notfound">
+    <div class="container">
+      <span class="eyebrow-script">Ay, caramba</span>
+      <h1>404 — That plate's not on the menu.</h1>
+      <p>
+        The page you were looking for took a long lunch break and never came
+        back. Let's get you to something tasty instead.
+      </p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="/">Back to Home</a>
+        <a class="btn btn-ghost" href="/menu">See the Menu</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound h1 {
+    font-size: clamp(2.4rem, 6vw, 5rem);
+  }
+
+  .ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
+  }
+</style>

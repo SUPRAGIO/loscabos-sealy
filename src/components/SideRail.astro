@@ -1,0 +1,68 @@
+---
+const tabs = [
+  {
+    label: "ORDER",
+    href: "https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings",
+    title: "Order online",
+    external: true,
+  },
+  { label: "MENU", href: "/menu", title: "See the menu", external: false },
+  { label: "CALL", href: "tel:+15126076232", title: "Call us", external: false },
+];
+---
+
+<aside class="side-rail" aria-label="Quick links">
+  {
+    tabs.map((t) => (
+      <a
+        class="rail-tab"
+        href={t.href}
+        title={t.title}
+        target={t.external ? "_blank" : undefined}
+        rel={t.external ? "noopener" : undefined}
+      >
+        <span>{t.label}</span>
+      </a>
+    ))
+  }
+</aside>
+
+<style>
+  .side-rail {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .rail-tab {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 10px 0 0 10px;
+    padding: 14px 10px;
+    font-family: var(--font-display);
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: background 150ms ease, padding 150ms ease, color 150ms ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  }
+
+  .rail-tab:hover {
+    background: var(--orange);
+    color: #fff;
+    padding-left: 14px;
+  }
+
+  /* Desktop only */
+  @media (max-width: 1099px) {
+    .side-rail {
+      display: none;
+    }
+  }
+</style>

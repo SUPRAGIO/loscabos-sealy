@@ -1,0 +1,798 @@
+---
+import Base from "@/layouts/Base.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+
+const heroImg = "/watermelon-margarita.jpg";
+
+const flavoredMargs = [
+  "Strawberry",
+  "Mango",
+  "Peach",
+  "Raspberry",
+  "Jalapeño Cucumber",
+  "Pineapple",
+  "Watermelon",
+  "Prickly Pear",
+];
+
+const topShelfSpotlight = [
+  {
+    name: "Ultimate Patrón",
+    spec: "Patrón Silver, Añejo, Reposado, Cointreau, grenadine.",
+    pitch: "Three Patróns walked into a glass. Dangerous in the right way.",
+  },
+  {
+    name: "Skinny Margarita",
+    spec: "Patrón Silver, fresh lime, agave nectar.",
+    pitch: "All flavor, no shortcuts. The marg you order without thinking twice.",
+  },
+  {
+    name: "Ranch Water",
+    spec: "Patrón Silver, fresh lime, Topo Chico.",
+    pitch: "Texas in a glass. Three ingredients, zero apologies.",
+  },
+];
+
+const specialtyHits = [
+  { name: "Adios MF", note: "Five spirits. Don't ask, just order." },
+  { name: "Texas Sunset", note: "Pretty enough to post. Strong enough to pay attention to." },
+  { name: "La Paloma", note: "Lalo Silver, fresh lime, grapefruit soda. The fancy cousin of the Ranch Water." },
+  { name: "Big Tex Tea", note: "It's a long island, but louder. Texas size." },
+  { name: "Baja Piña Colada", note: "Beach in a hurricane glass. Whipped cream, cherry, the works." },
+  { name: "Mexican Martini", note: "Marg meets martini. Grand Marnier, olive juice, attitude." },
+];
+---
+
+<Base
+  title="Bar & Margaritas | Los Cabos Mexican Grill in Sealy, TX"
+  description="Hand shaken margaritas, twelve flavors, top shelf builds, frozen drinks, micheladas, cervezas, and gallon margs to go. The Sealy, TX bar."
+>
+  <!-- ===== Hero ===== -->
+  <section class="bar-hero" style={`--hero-img: url('${heroImg}')`}>
+    <div class="bar-hero-overlay"></div>
+    <div class="bar-hero-content">
+      <span class="eyebrow-script">¡Salúd!</span>
+      <h1>The Bar at Los Cabos</h1>
+      <p class="hero-sub">
+        <span>Hand shaken. Ice cold.</span>
+        <span>Built one drink at a time.</span>
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="/menu#flavored-margaritas">See the Full Bar Menu</a>
+        <a class="btn btn-ghost hero-ghost" href="/contact">Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Margs section ===== -->
+  <section class="section margs-section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Twelve flavors. Zero shortcuts."
+        title="Flavored margaritas."
+        sub="Frozen or on the rocks. Regular or jumbo. The way you want it."
+        stackSub
+      />
+
+      <div class="flavor-grid">
+        {flavoredMargs.map((f) => <div class="flavor-pill">{f}</div>)}
+      </div>
+
+      <p class="margs-tail">
+        Plus the seasonals we rotate when summer hits Sealy. Watermelon
+        when it's brutal out. Prickly pear when we're feeling fancy.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Top shelf hype band ===== -->
+  <section class="topshelf-band">
+    <div class="topshelf-pattern" aria-hidden="true"></div>
+    <div class="container topshelf-inner">
+      <div class="topshelf-header">
+        <span class="lime-eyebrow">Top shelf</span>
+        <h2>For the tequila lovers.</h2>
+        <p>
+          When you want the good stuff, we keep the good stuff. Patrón.
+          Herradura. Don Julio. Lalo. Hand shaken, frozen or on the rocks,
+          regular or jumbo. No frozen drink machines. No sour mix. Just
+          juice, agave, and bottles we picked one at a time.
+        </p>
+      </div>
+
+      <div class="spotlight-grid">
+        {
+          topShelfSpotlight.map((d) => (
+            <article class="spotlight-card">
+              <h3>{d.name}</h3>
+              <p class="spec">{d.spec}</p>
+              <p class="pitch">{d.pitch}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== House classics + jugs ===== -->
+  <section class="section house-classics">
+    <div class="container two-col">
+      <div class="copy">
+        <SectionTitle
+          eyebrow="Cabos house classics"
+          title="The Original. Plus eleven friends."
+          align="left"
+        />
+        <p>
+          The Original is what we built the bar on. House tequila, triple
+          sec, fresh lime, salt rim. Cold, clean, dangerous in a quiet way.
+        </p>
+        <p>
+          From there it gets fun. The Texas Two Step (half lime, half
+          strawberry, frozen). The Sangria Marg with Spanish sangria wine.
+          The Italian Marg with Amaretto. The Cancun. The Stars Over
+          Texas. The Hecho en Mexico. The Chambord. The Beer Rita that
+          gets a whole jumbo marg plus your favorite beer.
+        </p>
+        <p>
+          Whatever direction you want to go, there's a glass for it.
+        </p>
+      </div>
+
+      <div class="jugs-card">
+        <span class="jugs-eyebrow">Margaritas by the jug</span>
+        <h3>Going big? Take it home.</h3>
+        <ul>
+          <li><span>Half Gallon</span><span class="price">$35</span></li>
+          <li><span>Gallon</span><span class="price">$60</span></li>
+        </ul>
+        <p class="to-go-note">To go only. Call ahead and we'll have it ready.</p>
+        <a class="btn btn-dark" href="tel:+15126076232">Call to Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Specialty drinks ===== -->
+  <section class="section specialty-section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Beyond the marg"
+        title="Specialty drinks."
+        sub="Eighteen specialties built one glass at a time. The hits below, the rest on the menu."
+        stackSub
+      />
+
+      <div class="specialty-grid">
+        {
+          specialtyHits.map((s) => (
+            <article class="specialty-card">
+              <h3>{s.name}</h3>
+              <p>{s.note}</p>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="specialty-cta">
+        <a class="btn btn-primary" href="/menu#specialty-drinks">See All Specialty Drinks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Beer + wine + michelada ===== -->
+  <section class="section beer-wine">
+    <div class="container">
+      <SectionTitle
+        eyebrow="The rest of the bar"
+        title="Cervezas, wines, and the michelada."
+      />
+
+      <div class="bw-grid">
+        <article class="bw-card beer">
+          <span class="bw-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 11h1a3 3 0 0 1 0 6h-1"/>
+              <path d="M9 12v6"/>
+              <path d="M13 12v6"/>
+              <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5C9.44 3.5 10 3 12 3s2.56.5 3.5.5c.93 0 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/>
+              <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+            </svg>
+          </span>
+          <h3>Cervezas</h3>
+          <p>
+            Domestic favorites and the Mexican lineup that belongs on every
+            Tex Mex bar: Corona, Modelo, Negra Modelo, Pacifico, Tecate, Dos
+            XX. Plus 22 oz tap pours of Michelob Ultra, Dos XX Lager, and
+            Shiner Bock.
+          </p>
+        </article>
+
+        <article class="bw-card wine">
+          <span class="bw-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 22h8"/>
+              <path d="M7 10h10"/>
+              <path d="M12 15v7"/>
+              <path d="M12 15a5 5 0 0 0 5-5V3H7v7a5 5 0 0 0 5 5Z"/>
+            </svg>
+          </span>
+          <h3>Wines</h3>
+          <p>
+            Sutter Home house pours by the glass. Kendall Jackson Cab and
+            Chardonnay. Roscato Rosso. Ecco Domani Pinot Grigio. Real
+            Sangria from Spain. Glasses and bottles, your call.
+          </p>
+        </article>
+
+        <article class="bw-card michelada">
+          <span class="bw-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </span>
+          <h3>The Michelada</h3>
+          <p>
+            Mexican lager, lime, our house mix, Tajín rim. Spicy, salty,
+            cold, and exactly what your morning after the night before is
+            asking for.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Closer / final CTA ===== -->
+  <section class="bar-closer">
+    <div class="container closer-inner">
+      <span class="eyebrow-script">Pull up</span>
+      <h2>The bar's open. The seat's yours.</h2>
+      <p>
+        Come thirsty. Stay a while. Order the classic. Try the spicy mango.
+        Bring a friend. Take a gallon to go.
+      </p>
+      <div class="closer-ctas">
+        <a class="btn btn-primary" href="/menu#flavored-margaritas">See the Full Bar Menu</a>
+        <a class="btn btn-ghost dark" href="/contact">Get Directions</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ============ Hero ============ */
+  .bar-hero {
+    position: relative;
+    min-height: clamp(440px, 70vh, 640px);
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .bar-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+    z-index: 1;
+  }
+
+  .bar-hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(900px, 92vw);
+    padding: 80px 0;
+  }
+
+  .bar-hero-content .eyebrow-script {
+    color: #ffd9b8;
+    font-size: clamp(1.6rem, 2.6vw, 2rem);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .bar-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin: 8px 0 22px;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin: 0 0 28px;
+  }
+
+  .hero-sub span {
+    display: block;
+  }
+
+  .hero-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-ghost {
+    border-color: #fff;
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ============ Flavored margs grid ============ */
+  .margs-section {
+    background: var(--cream);
+  }
+
+  .flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 800px) {
+    .flavor-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .flavor-pill {
+    background: #fff;
+    border: 2px solid var(--orange);
+    border-radius: 999px;
+    padding: 14px 18px;
+    text-align: center;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    font-size: 1.05rem;
+    transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+  }
+
+  .flavor-pill:hover {
+    background: var(--orange);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .margs-tail {
+    text-align: center;
+    color: var(--muted);
+    max-width: 60ch;
+    margin: 38px auto 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ============ Top shelf hype band ============ */
+  .topshelf-band {
+    background: var(--ink);
+    color: var(--cream);
+    padding: clamp(70px, 10vw, 120px) 0;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .topshelf-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(232, 106, 38, 0.05) 0,
+      rgba(232, 106, 38, 0.05) 2px,
+      transparent 2px,
+      transparent 16px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .topshelf-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .topshelf-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+
+  .lime-eyebrow {
+    font-family: var(--font-script);
+    color: var(--lime);
+    font-size: clamp(1.6rem, 2.4vw, 2rem);
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .topshelf-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0 0 18px;
+    color: #fff;
+  }
+
+  .topshelf-header p {
+    color: rgba(255, 247, 236, 0.84);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    max-width: 60ch;
+    margin: 0 auto;
+  }
+
+  .spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 900px) {
+    .spotlight-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .spotlight-card {
+    background: rgba(255, 247, 236, 0.04);
+    border: 1px solid rgba(255, 247, 236, 0.12);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+  }
+
+  .spotlight-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--orange);
+    background: rgba(232, 106, 38, 0.06);
+  }
+
+  .spotlight-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+    margin: 0 0 10px;
+    line-height: 1;
+  }
+
+  .spotlight-card .spec {
+    color: rgba(255, 247, 236, 0.72);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0 0 14px;
+    font-style: italic;
+  }
+
+  .spotlight-card .pitch {
+    color: var(--cream);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ============ House classics two-col ============ */
+  .house-classics {
+    background: var(--cream);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.2fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .copy p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 18px;
+    max-width: 56ch;
+  }
+
+  .jugs-card {
+    background: var(--orange);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .jugs-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .jugs-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .jugs-eyebrow {
+    font-family: var(--font-script);
+    color: #fff7ec;
+    font-size: 1.3rem;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .jugs-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+    margin: 0 0 22px;
+  }
+
+  .jugs-card ul {
+    margin: 0 0 18px;
+  }
+
+  .jugs-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .jugs-card li:last-child {
+    border-bottom: 0;
+  }
+
+  .jugs-card .price {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+  .to-go-note {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    margin: 0 0 18px;
+    font-style: italic;
+  }
+
+  /* ============ Specialty drinks grid ============ */
+  .specialty-section {
+    background: #fbeed8;
+  }
+
+  .specialty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 900px) {
+    .specialty-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 580px) {
+    .specialty-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .specialty-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-soft);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .specialty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .specialty-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0 0 8px;
+    line-height: 1;
+  }
+
+  .specialty-card p {
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .specialty-cta {
+    text-align: center;
+    margin-top: 44px;
+  }
+
+  /* ============ Beer + wine + michelada ============ */
+  .beer-wine {
+    background: var(--cream);
+  }
+
+  .bw-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .bw-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .bw-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: transform 200ms ease;
+  }
+
+  .bw-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .bw-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--cream);
+    color: var(--orange);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f3e6cf;
+    margin-bottom: 14px;
+  }
+
+  .bw-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    text-transform: uppercase;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+  }
+
+  .bw-card p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  /* ============ Closer ============ */
+  .bar-closer {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: clamp(70px, 10vw, 120px) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-closer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 247, 236, 0.04) 0,
+      rgba(255, 247, 236, 0.04) 2px,
+      transparent 2px,
+      transparent 16px
+    );
+    pointer-events: none;
+  }
+
+  .closer-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bar-closer .eyebrow-script {
+    color: var(--lime);
+    font-size: clamp(1.6rem, 2.4vw, 2rem);
+  }
+
+  .bar-closer h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 8px 0 18px;
+    color: #fff;
+  }
+
+  .bar-closer p {
+    max-width: 56ch;
+    margin: 0 auto 30px;
+    color: rgba(255, 247, 236, 0.85);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+
+  .closer-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-ghost.dark {
+    border-color: var(--cream);
+    color: var(--cream);
+    box-shadow: 0 4px 0 rgba(255, 247, 236, 0.5);
+  }
+
+  .btn-ghost.dark:hover {
+    background: rgba(255, 247, 236, 0.08);
+  }
+</style>

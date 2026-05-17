@@ -1,0 +1,258 @@
+---
+import SectionTitle from "@/components/SectionTitle.astro";
+
+const reviews = [
+  {
+    quote:
+      "First time here. Food was excellent. Service was great. I'll be back. Food: 5/5. Service: 5/5. Atmosphere: 5/5.",
+    author: "Randy Rushing",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Must go! Food is authentically Mexican and delicious. Service is great, and the atmosphere is very comfortable and welcoming.",
+    author: "Ahinoam Mckinney",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Lunch prices are great, the food was great. The staff was on point. Great place.",
+    author: "Mindalynn Moffett",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "The only disappointment was not going again and again and again, every day of my visit. The food was fabulous, the service outstanding, the ambience lovely. I had El Norteño! Heaven!",
+    author: "Heidi Hunter",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "This place is absolutely fabulous! Considered Tex Mex BUT actually more Mexican than most places. The meals, service and drinks are way, way more than expected! Highly recommended. I travel the complete USA and Mexico and this has become one of my favorite stopping points.",
+    author: "Edgar de la Rosa",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Best food, service, and price for a meal that I've had in years. Angel was an awesome waiter and the food is really good. Surprised by how much food was served. Couldn't finish half.",
+    author: "Larsen Trucking",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "The best of the best! Best service ever and the food is always on point. The staff here are amazing beyond words! Definitely one of my favorite places to visit.",
+    author: "Lashay Coleman",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "The real deal when it comes to Mexican food. The BEST I've had in a long time.",
+    author: "David Sebastian",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Surprisingly delicious food considering the location. I live in the heart of Houston where good Mexican food is readily available, but this place stacks up against any I've had there. The chicken enchiladas were extremely delicious. Highly recommend.",
+    author: "Biophilia",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Stopped for lunch due to a flat tire. Wow. From the red salsa with garlic, the charro beans, to the awesome tacos. Everything tasted great. Staff was friendly. Will definitely stop by again.",
+    author: "Derrick H.",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Best Caesar salad in the area! I always get the Larry's Kabobs so I can get a Caesar salad with it, they are traditionally made in house with fabulous flavor. The seafood queso is a must have when dining in and the fresh strawberry margaritas must not be missed either. Friendly staff and lovely atmosphere.",
+    author: "Heather W.",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Best food I've had in a while! Service was exceptional and the menu was SO big! Lots to choose from and a little bit of everything for everyone. Will definitely go back!",
+    author: "Dawn Baker",
+    where: "Google Review",
+  },
+  {
+    quote:
+      "Really happy I stumbled upon this restaurant after a long day on the road. Everything was clean and inviting. I ordered Enchiladas Poblanas, and it was delicious. The service was phenomenal, shoutout to Antonio for being very attentive and kind. I just appreciated the experience and look forward to dining here again.",
+    author: "Jasmine Pennyman",
+    where: "Google Review",
+  },
+];
+
+// Duplicate the list so the marquee loop has zero seam.
+const loop = [...reviews, ...reviews];
+---
+
+<section class="section reviews">
+  <div class="container">
+    <SectionTitle
+      eyebrow="What people are saying"
+      title="Real reviews. Real people."
+      sub="Don't take our word for it. Take theirs."
+      stackSub
+    />
+  </div>
+
+  <!-- Edge-bleed marquee, lives outside the container so it can run wall to wall -->
+  <div class="rev-marquee" aria-label="Customer reviews">
+    <div class="rev-track">
+      {
+        loop.map((r) => (
+          <article class="rev-card" aria-roledescription="review">
+            <div class="rev-stars" aria-label="5 out of 5 stars">
+              {Array.from({ length: 5 }).map(() => (
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="var(--orange)" aria-hidden="true">
+                  <path d="M12 2 l3.09 6.26 L22 9.27 l-5 4.87 1.18 6.88 L12 17.77 5.82 21.02 7 14.14 2 9.27 l6.91 -1.01 z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="rev-quote">"{r.quote}"</blockquote>
+            <div class="rev-meta">
+              <span class="rev-author">{r.author}</span>
+              <span class="rev-sep" aria-hidden="true">•</span>
+              <span class="rev-where">{r.where}</span>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    background: #fbeed8;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: clamp(60px, 8vw, 110px);
+  }
+
+  .reviews::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(232, 106, 38, 0.04) 0,
+      rgba(232, 106, 38, 0.04) 2px,
+      transparent 2px,
+      transparent 18px
+    );
+    pointer-events: none;
+  }
+
+  /* Marquee shell: full width, soft fades on the edges */
+  .rev-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Fade-out mask on left & right so cards seem to drift in/out */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 60px,
+      #000 calc(100% - 60px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 60px,
+      #000 calc(100% - 60px),
+      transparent 100%
+    );
+  }
+
+  /* Track: holds 2x reviews, scrolls -50% then loops */
+  .rev-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    padding: 8px 22px;
+    animation: rev-scroll 80s linear infinite;
+  }
+
+  /* Pause-on-hover for desktop users */
+  .rev-marquee:hover .rev-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes rev-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* Distance equal to one full set of cards (we duplicated, so -50%) */
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Cards */
+  .rev-card {
+    flex: 0 0 auto;
+    width: clamp(280px, 30vw, 380px);
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .rev-stars {
+    display: inline-flex;
+    gap: 2px;
+    margin-bottom: 14px;
+  }
+
+  .rev-quote {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 18px;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .rev-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+  }
+
+  .rev-author {
+    color: var(--ink);
+  }
+
+  .rev-where {
+    color: var(--orange);
+  }
+
+  .rev-sep {
+    color: rgba(42, 26, 16, 0.3);
+  }
+
+  /* Reduced-motion: stop the loop */
+  @media (prefers-reduced-motion: reduce) {
+    .rev-track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+      justify-content: center;
+    }
+    .rev-marquee {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+</style>

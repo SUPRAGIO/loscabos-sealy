@@ -1,0 +1,183 @@
+---
+import SectionTitle from "@/components/SectionTitle.astro";
+---
+
+<section class="section find-us">
+  <div class="container">
+    <SectionTitle
+      eyebrow="Come on by"
+      title="Find us in Sealy."
+      sub="Easy to spot, easier to walk into. We save the corner booth for whoever's brave enough to ask."
+    />
+
+    <div class="find-grid">
+      <div class="find-info">
+        <ul class="info-list">
+          <li>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </span>
+            <div>
+              <strong>Address</strong>
+              <span>6027 FM 3538<br />Sealy, TX 77474</span>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.91.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+15126076232">(512) 607-6232</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <div>
+              <strong>Hours</strong>
+              <ul class="hours-list">
+                <li><span>Sun — Wed</span><span>11AM — 9PM</span></li>
+                <li><span>Thu — Sat</span><span>11AM — 10PM</span></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <div class="find-buttons">
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=6027+FM+3538+Sealy+TX+77474" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-ghost" href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener">Order Online</a>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <iframe
+          title="Map to Los Cabos Mexican Grill, 6027 FM 3538, Sealy TX"
+          src="https://www.google.com/maps?q=6027+FM+3538+Sealy+TX+77474&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .find-us {
+    background: #fbeed8;
+    position: relative;
+  }
+
+  .find-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: stretch;
+  }
+
+  @media (max-width: 950px) {
+    .find-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .info-list > li {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    align-items: start;
+    background: #fff;
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .ico {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--orange);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info-list strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .info-list > li > div > span,
+  .info-list > li > div > a {
+    color: var(--muted);
+    line-height: 1.55;
+    font-size: 0.98rem;
+  }
+
+  .info-list a {
+    color: var(--orange);
+    border-bottom: 2px solid currentColor;
+  }
+
+  .hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.93rem;
+  }
+
+  .find-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .map-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 6px solid #fff;
+    box-shadow: var(--shadow);
+    min-height: 480px;
+    position: relative;
+  }
+
+  .map-card iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    border: 0;
+    display: block;
+  }
+</style>

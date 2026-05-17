@@ -1,0 +1,162 @@
+---
+// Full-bleed hero with looping fajita-sizzle video background.
+// Poster shows instantly; video kicks in when ready.
+---
+
+<section class="hero">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="/fajita-sizzle-poster.jpg"
+    aria-hidden="true"
+  >
+    <source src="/fajita-sizzle.webm" type="video/webm" />
+    <source src="/fajita-sizzle.mp4" type="video/mp4" />
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="eyebrow-script hero-eyebrow">From Our Grill, To Your Plate!</span>
+
+    <h1 class="hero-title">
+      <span>Puro</span>
+      <span>Fresh</span>
+    </h1>
+
+    <p class="hero-body">
+      <span>Family owned, fresh made, fire grilled.</span>
+      <span>Real Tex Mex in Sealy, Texas, just off I-10.</span>
+    </p>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="/menu">Explore Menu</a>
+      <a class="btn btn-ghost hero-ghost" href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings" target="_blank" rel="noopener">Order Online</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: clamp(560px, 88vh, 820px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #1a0f08;
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(1100px, 92vw);
+    padding: 80px 0;
+    animation: heroFade 900ms ease-out both;
+  }
+
+  @keyframes heroFade {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-eyebrow {
+    color: #ffd9b8;
+    /* Sized so the eyebrow line visually matches the PURO/FRESH width below */
+    font-size: clamp(0.95rem, 1.6vw, 1.35rem);
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 6px;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(96px, 16vw, 220px);
+    line-height: 0.85;
+    letter-spacing: 0.005em;
+    margin: 8px 0 18px;
+    text-transform: uppercase;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-title span {
+    display: block;
+  }
+
+  .hero-title span:nth-child(2) {
+    color: #fff;
+  }
+
+  .hero-body {
+    max-width: 56ch;
+    margin: 0 auto 28px;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-body span {
+    display: block;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-ghost {
+    border-color: #fff;
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Reduced-motion users: skip the loop, show the poster */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video {
+      display: none;
+    }
+    .hero {
+      background-image: url("/fajita-sizzle-poster.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+</style>

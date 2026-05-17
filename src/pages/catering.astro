@@ -1,178 +1,458 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Base from "@/layouts/Base.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+
+const packs = [
+  {
+    name: "Famous Fajita Buffet",
+    tagline: "The Cabos signature",
+    desc: "Beef and chicken fajitas, cheese enchiladas, rice and beans, guacamole, pico de gallo, sour cream, shredded cheese, homemade tortillas, chips and salsa. The full spread.",
+    pop: true,
+  },
+  {
+    name: "Taco & Enchilada Buffet",
+    tagline: "Crowd pleaser",
+    desc: "Cheese enchiladas, chicken quesadillas, build your own crispy tacos with all the fixings, rice and beans, chips and salsa. Easy to love, easy to feed.",
+    pop: false,
+  },
+  {
+    name: "Chicken & Pasta Buffet",
+    tagline: "A different lane",
+    desc: "Grilled chicken breast, fettuccine pasta, toasted garlic bread. Choice of side and choice of Caesar or dinner salad with ranch or Italian.",
+    pop: false,
+  },
+  {
+    name: "Tenderloin Buffet",
+    tagline: "Stepping it up",
+    desc: "Tenderloin tips with brown gravy, mashed potatoes, plus one side. Choice of Caesar or dinner salad with ranch or Italian. The plate that closes the deal.",
+    pop: false,
+  },
+  {
+    name: "American Country Buffet",
+    tagline: "Down home",
+    desc: "Choice of chicken fried steak, country chicken with white gravy, or hamburger steak with grilled onions and brown gravy. Two sides plus a dinner salad.",
+    pop: false,
+  },
+  {
+    name: "By the Pound, by the Tray",
+    tagline: "Build your own",
+    desc: "Beef, chicken, or veggie fajitas by the pound. Trays of enchiladas, quesadillas, crispy tacos, fried burritos. Gallons of pico, guac, salsa, queso. Dozens of tortillas and tamales.",
+    pop: false,
+  },
+];
 ---
 
-<Layout title="Catering in Sealy, TX - Los Cabos Mexican Grill" description="Tex-Mex catering for Sealy and surrounding areas. 500+ events catered. Free delivery inside Sealy city limits. Book online or call (512) 607-6232.">
+<Base
+  title="Catering in Sealy, TX | Los Cabos Mexican Grill | Fajita Buffets"
+  description="Tex Mex catering in Sealy, Brookshire, Bellville TX. Fajita Buffets, Tenderloin, by the pound. Free delivery in city limits. 25 person minimum."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow-script">Catering & big tables</span>
+      <h1>Feed the whole crew.</h1>
+      <p>
+        Birthdays, graduations, weddings, work lunches, soccer wrap ups,
+        Sunday after church. We've cooked for all of it. Tell us the head
+        count and the day — we'll bring the fiesta.
+      </p>
+    </div>
+  </section>
 
-<main class="cat-sales">
+  <section class="section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Six ways to feed a room"
+        title="Pick your spread."
+        sub="Free delivery inside city limits. Custom menus on request. Add iced tea service, margarita machine rentals, sopapillas, flan, tamales — whatever the occasion calls for."
+      />
 
-  <section class="sales-hero">
-    <div class="sales-hero-overlay"></div>
-    <img src="/images/cabosvan2.jpeg" alt="Los Cabos catering van at event" class="sales-hero-bg" />
-    <div class="sales-hero-inner">
-      <div class="sales-hero-eyebrow">CATERING · SEALY &amp; SURROUNDING AREAS</div>
-      <h1 class="sales-hero-h1"><span class="sh-line">SIZZLING</span><span class="sh-line">CATERING,</span><span class="sh-line sh-accent">UNLEASHED.</span></h1>
-      <p class="sales-hero-sub">Sizzling fajitas, stacked enchiladas, fresh pico - delivered hot, set up clean, gone in minutes. From 25 to 500+ guests.</p>
-      <div class="sales-hero-ctas">
-        <a href="/catering/order" class="btn-primary">Build Your Order</a>
-        <a href="tel:+15126076232" class="btn-outline">Call (512) 607-6232</a>
-        <a href="/catering-menu.pdf" class="btn-ghost" download="Los-Cabos-Catering-Menu.pdf">Download Menu PDF</a>
-      </div>
-      <div class="sales-hero-meta">
-        <span>500+ events catered</span>
-        <span>30-mile serving radius</span>
-        <span>Minimum 25 guests</span>
-        <span>Free delivery inside Sealy</span>
+      <div class="packs">
+        {
+          packs.map((p) => (
+            <article class:list={["pack", { pop: p.pop }]}>
+              {p.pop && <span class="pop-tag">Most ordered</span>}
+              <span class="serves">{p.tagline}</span>
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <section class="sales-why">
-    <div class="sales-container">
-      <div class="sales-eyebrow">WHY TEXANS CHOOSE LOS CABOS</div>
-      <h2 class="sales-h2">The catering Sealy actually shows up for.</h2>
-      <p class="sales-lede">Feeding Sealy, Katy, Brookshire, Bellville, Columbus, Houston and all of Austin County. Scratch kitchen, honest prices, real people answering the phone.</p>
-      <div class="why-grid">
-        <div class="why-card"><h3>Fresh off the grill</h3><p>Fajitas marinated in-house and seared on open flame. Enchiladas rolled to order. Guacamole mashed the morning of.</p></div>
-        <div class="why-card"><h3>Delivery, setup, cleanup</h3><p>We deliver, set up on chafers with sternos, and break it all down when you are done.</p></div>
-        <div class="why-card"><h3>Actual humans</h3><p>Call (512) 607-6232 and you will get a real person. Changes 48 hours out? No problem.</p></div>
-        <div class="why-card"><h3>Plates included</h3><p>Every buffet package comes with plates, utensils and napkins. No trip to the dollar store.</p></div>
+  <section class="section catering-form-section">
+    <div class="container form-grid">
+      <div>
+        <SectionTitle
+          eyebrow="Tell us about your event"
+          title="Get a quote, fast."
+          align="left"
+          sub="We'll get back to you within one business day. Promise."
+        />
+        <ul class="contact-list">
+          <li><strong>Call:</strong> <a href="tel:+15126076232">(512) 607-6232</a></li>
+          <li><strong>Email:</strong> <a href="mailto:catering@loscabossealy.com">catering@loscabossealy.com</a></li>
+          <li><strong>Minimum:</strong> 25 people. Smaller crew? Grab a <a href="/family-packs">family pack</a>.</li>
+          <li><strong>Delivery:</strong> Free inside Sealy city limits.</li>
+          <li><strong>Lead time:</strong> 72 hours preferred. Tighter? Call us — we'll figure it out.</li>
+        </ul>
       </div>
+
+      <form
+        class="cater-form"
+        name="catering"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/catering?sent=true"
+      >
+        <input type="hidden" name="form-name" value="catering" />
+        <p class="hp">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="event-date">Event date</label>
+            <input id="event-date" name="event-date" type="date" required />
+          </div>
+          <div class="field">
+            <label for="head-count">Head count <span class="field-hint">(25 minimum)</span></label>
+            <input id="head-count" name="head-count" type="number" min="25" placeholder="25+" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="package">Package interest</label>
+          <select id="package" name="package">
+            <option>Famous Fajita Buffet</option>
+            <option>Taco & Enchilada Buffet</option>
+            <option>Chicken & Pasta Buffet</option>
+            <option>Tenderloin Buffet</option>
+            <option>American Country Buffet</option>
+            <option>By the Pound / By the Tray</option>
+            <option>Custom — let's talk</option>
+          </select>
+        </div>
+
+        <fieldset class="field addons-field">
+          <legend>Add ons <span class="field-hint">(pick any)</span></legend>
+          <div class="addons-grid">
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Iced Tea Service" />
+              <span>Iced Tea Service</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Margarita Machine Rental" />
+              <span>Margarita Machine Rental</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Chips & Salsa Trays" />
+              <span>Chips & Salsa Trays</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Chips & Queso Trays" />
+              <span>Chips & Queso Trays</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Guacamole Bowl" />
+              <span>Guacamole Bowl</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Tamales" />
+              <span>Tamales</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Sopapillas" />
+              <span>Sopapillas</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Flan" />
+              <span>Flan</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Churros" />
+              <span>Churros</span>
+            </label>
+            <label class="addon">
+              <input type="checkbox" name="add-ons[]" value="Setup & Serve Staff" />
+              <span>Setup & Serve Staff</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="notes">Anything else?</label>
+          <textarea id="notes" name="notes" placeholder="Allergies, vibe, location, dreams..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+      </form>
     </div>
   </section>
-
-  <section class="sales-packages">
-    <div class="sales-container">
-      <div class="sales-eyebrow">BUFFET PACKAGES</div>
-      <h2 class="sales-h2">Choose your feast. We bring the fire.</h2>
-      <p class="sales-lede">Per person pricing. Plates and plasticware included. Free delivery inside Sealy city limits.</p>
-      <div class="pkg-grid">
-        <a href="/catering/order" class="pkg-card pkg-popular"><div class="pkg-ribbon">MOST POPULAR</div><div class="pkg-price">$17.95<span>/person</span></div><div class="pkg-name">Famous Fajita Buffet</div><ul><li>Beef &amp; Chicken Fajitas</li><li>Cheese Enchiladas</li><li>Rice &amp; Beans</li><li>Guacamole, Pico &amp; Sour Cream</li><li>Homemade Tortillas</li><li>Chips &amp; Salsa</li></ul></a>
-        <a href="/catering/order" class="pkg-card"><div class="pkg-price">$12.99<span>/person</span></div><div class="pkg-name">Taco &amp; Enchilada Buffet</div><ul><li>Cheese Enchiladas</li><li>Chicken Quesadillas</li><li>Build-Your-Own Crispy Tacos</li><li>Rice &amp; Beans</li><li>Chips &amp; Salsa</li></ul></a>
-        <a href="/catering/order" class="pkg-card"><div class="pkg-price">$13.99<span>/person</span></div><div class="pkg-name">American Country</div><ul><li>Chicken Fried Steak, Chicken w/ Country Gravy, or Hamburger Steak</li><li>Plus 2 sides</li></ul></a>
-        <a href="/catering/order" class="pkg-card"><div class="pkg-price">$14.99<span>/person</span></div><div class="pkg-name">Chicken &amp; Pasta</div><ul><li>Grilled Chicken Breast</li><li>Fettuccini w/ Garlic Bread</li><li>Choice of side &amp; salad</li></ul></a>
-        <a href="/catering/order" class="pkg-card pkg-premium"><div class="pkg-ribbon">PREMIUM</div><div class="pkg-price">$23.99<span>/person</span></div><div class="pkg-name">Tenderloin Buffet</div><ul><li>Tenderloin Tips w/ Brown Gravy</li><li>Mashed Potatoes + 1 side</li><li>Caesar or Dinner Salad</li></ul></a>
-        <a href="/catering/order" class="pkg-card"><div class="pkg-price">Custom</div><div class="pkg-name">A La Carte Only</div><ul><li>Skip the buffet, just order trays, gallons, and extras</li></ul></a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="sales-tst">
-    <div class="sales-container">
-      <div class="sales-eyebrow">REAL REVIEWS</div>
-      <h2 class="sales-h2">Straight from the folks we feed.</h2>
-      <div class="tst-grid">
-        <div class="tst-card"><div class="tst-stars">★★★★★</div><p>Catered our daughter's Quinceanera for 180 guests. Everything showed up hot and beautiful. Fajitas disappeared in twenty minutes.</p><div class="tst-who">- Maria G., Sealy</div></div>
-        <div class="tst-card"><div class="tst-stars">★★★★★</div><p>We use Los Cabos for quarterly office lunches. Stupid-easy to order, they set up, they clean up, nobody complains.</p><div class="tst-who">- Office Manager, Katy</div></div>
-        <div class="tst-card"><div class="tst-stars">★★★★★</div><p>Called two days before a memorial for 75 people. They made it work. Tenderloin buffet was the best comfort we could give our family.</p><div class="tst-who">- Robert H., Bellville</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sales-faq">
-    <div class="sales-container">
-      <div class="sales-eyebrow">COMMON QUESTIONS</div>
-      <h2 class="sales-h2">Questions, answered.</h2>
-      <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">How far in advance do I need to book?</div><div class="faq-a">72 hours is the sweet spot. We try to make shorter notice work when we can - call us.</div></div>
-        <div class="faq-item"><div class="faq-q">What is the minimum head count?</div><div class="faq-a">25 guests for buffet packages.</div></div>
-        <div class="faq-item"><div class="faq-q">Do you deliver outside Sealy?</div><div class="faq-a">Yes - up to 30 miles. Free inside Sealy city limits.</div></div>
-        <div class="faq-item"><div class="faq-q">Service fees or gratuity?</div><div class="faq-a">Posted prices are per-person food only. Full-service staffing available for added fee - ask when we quote you.</div></div>
-        <div class="faq-item"><div class="faq-q">Can I mix buffet + a la carte?</div><div class="faq-a">Yes. The order builder lets you pick a buffet and add trays, gallons, and extras on top. Or go a la carte only.</div></div>
-        <div class="faq-item"><div class="faq-q">Dietary restrictions?</div><div class="faq-a">Tell us about serious allergies in the notes.</div></div>
-        <div class="faq-item"><div class="faq-q">How do I pay?</div><div class="faq-a">We confirm payment when we confirm your order - card, check.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sales-final">
-    <div class="sales-final-inner">
-      <h2 class="sales-final-h2">Let’s get your fiesta started.</h2>
-      <p class="sales-final-sub">Start with our 2-minute order builder, or call us directly.</p>
-      <div class="sales-final-ctas">
-        <a href="/catering/order" class="btn-primary sales-cta-xl">Build Your Order</a>
-        <a href="tel:+15126076232" class="btn-outline sales-cta-xl">Call (512) 607-6232</a>
-      </div>
-      <div class="sales-final-meta">Serving Sealy and a 30-mile radius · Free delivery inside Sealy city limits · 25 guest minimum · 500+ events catered</div>
-      <a href="/catering-menu.pdf" class="sales-final-dl" download="Los-Cabos-Catering-Menu.pdf">Or download the full menu PDF</a>
-    </div>
-  </section>
-
-</main>
-
+</Base>
 
 <style>
-  .cat-sales { background: #FBF5E9; color: #1A1410; font-family: 'Inter', system-ui, sans-serif; }
-  .sales-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .sales-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.2em; color: #E2721F; text-transform: uppercase; margin-bottom: 12px; }
-  .sales-h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(34px, 5vw, 56px); line-height: 1; text-transform: uppercase; margin: 0 0 16px; }
-  .sales-lede { font-size: 17px; line-height: 1.55; color: #4a3f34; max-width: 720px; margin: 0 0 40px; }
+  .packs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
 
-  .sales-hero { position: relative; min-height: 78vh; display: flex; align-items: center; padding: 140px 0 80px; color: #fff; overflow: hidden; }
-  .sales-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .sales-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75)); z-index: 1; }
-  .sales-hero-inner { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 0 24px; text-align: center; }
-  .sales-hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: 0.2em; font-size: 13px; color: #ffd8b5; text-transform: uppercase; margin-bottom: 20px; }
-  .sales-hero-h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(56px, 11vw, 130px); line-height: 0.92; letter-spacing: -0.02em; margin: 0 0 24px; text-transform: uppercase; text-shadow: 0 4px 24px rgba(0,0,0,0.5); }
-  .sh-line { display: block; }
-  .sh-accent { color: #F4621F; font-style: italic; }
-  .sales-hero-sub { font-size: 18px; line-height: 1.5; max-width: 680px; margin: 0 auto 36px; color: rgba(255,255,255,0.9); }
-  .sales-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 32px; }
-  .sales-hero-meta { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; font-size: 13px; color: rgba(255,255,255,0.85); }
+  @media (max-width: 1100px) {
+    .packs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
-  .sales-why, .sales-packages, .sales-tst, .sales-faq { padding: 80px 0; }
-  .sales-why { background: #FBF5E9; }
-  .sales-packages { background: #fff; }
-  .sales-tst { background: #FBF5E9; }
-  .sales-faq { background: #fff; }
+  @media (max-width: 640px) {
+    .packs {
+      grid-template-columns: 1fr;
+    }
+  }
 
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-  .why-card { background: #fff; border: 1px solid rgba(226,114,31,0.18); border-radius: 12px; padding: 28px 24px; }
-  .why-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; text-transform: uppercase; margin: 0 0 8px; }
-  .why-card p { font-size: 15px; line-height: 1.55; color: #4a3f34; margin: 0; }
+  /* When the popular pack lifts -8px, the row neighbors look orphaned —
+     reset the lift on smaller breakpoints so rows stay tidy */
+  @media (max-width: 1100px) {
+    .pack.pop {
+      transform: none;
+    }
+    .pack.pop:hover {
+      transform: translateY(-4px);
+    }
+  }
 
-  .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
-  .pkg-card { position: relative; display: block; background: #fff; border: 2px solid rgba(226,114,31,0.25); border-radius: 14px; padding: 28px 24px; text-decoration: none; color: #1A1410; transition: transform 0.2s, border-color 0.2s; overflow: hidden; }
-  .pkg-card:hover { transform: translateY(-4px); border-color: #E2721F; }
-  .pkg-popular { border-color: #E2721F; }
-  .pkg-premium { background: linear-gradient(180deg, #fff, #fef5e8); border-color: #c08c30; }
-  .pkg-ribbon { position: absolute; top: 14px; right: -34px; transform: rotate(35deg); background: #E2721F; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: 0.14em; font-size: 12px; padding: 4px 40px; text-transform: uppercase; }
-  .pkg-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 40px; color: #E2721F; line-height: 1; margin-bottom: 6px; }
-  .pkg-price span { font-size: 15px; color: #7a6d5f; font-weight: 600; }
-  .pkg-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; text-transform: uppercase; margin-bottom: 14px; }
-  .pkg-card ul { list-style: none; padding: 0; margin: 0; font-size: 14.5px; color: #4a3f34; }
-  .pkg-card li { padding: 5px 0; }
+  .pack {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius);
+    padding: 32px 28px 30px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    display: flex;
+    flex-direction: column;
+  }
 
-  .tst-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-  .tst-card { background: #fff; border-radius: 12px; padding: 28px 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-  .tst-stars { color: #f5c518; font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; font-weight: 800; }
-  .tst-card p { font-size: 16px; line-height: 1.55; color: #2b2520; margin: 0 0 14px; font-style: italic; }
-  .tst-who { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; font-size: 13px; color: #C25610; text-transform: uppercase; }
+  .pack.pop {
+    background: var(--ink);
+    color: var(--cream);
+    transform: translateY(-8px);
+    border: 0;
+  }
 
-  .faq-list { max-width: 820px; margin: 40px auto 0; }
-  .faq-item { background: #FBF5E9; border-radius: 10px; margin-bottom: 10px; padding: 18px 22px; border-left: 3px solid #E2721F; }
-  .faq-q { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 6px; }
-  .faq-a { font-size: 15px; line-height: 1.55; color: #4a3f34; }
+  .pack.pop h3 {
+    color: var(--cream);
+  }
 
-  .sales-final { padding: 100px 24px; background: linear-gradient(135deg, #1A1410, #3a2817); color: #fff; text-align: center; }
-  .sales-final-inner { max-width: 800px; margin: 0 auto; }
-  .sales-final-h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(38px, 6vw, 64px); line-height: 1; text-transform: uppercase; margin: 0 0 16px; }
-  .sales-final-sub { font-size: 18px; color: rgba(255,255,255,0.8); margin: 0 0 32px; }
-  .sales-final-ctas { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 24px; }
-  .sales-cta-xl { padding: 20px 42px !important; font-size: 17px !important; }
-  .sales-final-meta { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
-  .sales-final-dl { color: #ffd8b5; font-size: 14px; text-decoration: underline; }
+  .pack.pop p {
+    color: rgba(255, 247, 236, 0.78);
+  }
 
-  @media (max-width: 639px) {
-    .sales-hero { min-height: 0; padding: 100px 0 60px; }
-    .sales-hero-ctas { flex-direction: column; align-items: stretch; }
-    .sales-hero-ctas a { width: 100%; }
-    .sales-hero-meta { gap: 8px 16px; font-size: 12px; }
-    .sales-final-ctas { flex-direction: column; }
-    .sales-final-ctas a { width: 100%; }
-    .sales-why, .sales-packages, .sales-tst, .sales-faq { padding: 56px 0; }
+  .pack.pop .serves {
+    color: var(--orange);
+  }
+
+  .pack:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .pack.pop:hover {
+    transform: translateY(-12px);
+  }
+
+  .pop-tag {
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 999px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .pack h3 {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .serves {
+    font-family: var(--font-display);
+    color: var(--orange);
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .pack p {
+    color: var(--muted);
+    margin: 14px 0 18px;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  /* Form */
+  .catering-form-section {
+    background: #fbeed8;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 900px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-list {
+    margin-top: 12px;
+  }
+
+  .contact-list li {
+    margin-bottom: 10px;
+    color: var(--muted);
+  }
+
+  .contact-list a {
+    color: var(--orange);
+  }
+
+  .cater-form {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .hp {
+    display: none;
+  }
+
+  .field-hint {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-left: 6px;
+  }
+
+  /* ===== Add-ons fieldset ===== */
+  .addons-field {
+    border: 0;
+    padding: 0;
+    margin: 0 0 18px;
+  }
+
+  .addons-field legend {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 12px;
+    padding: 0;
+  }
+
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  @media (max-width: 540px) {
+    .addons-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .addon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid rgba(42, 26, 16, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 150ms ease, background 150ms ease;
+    font-size: 0.95rem;
+    color: var(--ink);
+    user-select: none;
+  }
+
+  .addon:hover {
+    border-color: var(--orange);
+    background: rgba(232, 106, 38, 0.04);
+  }
+
+  .addon input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(42, 26, 16, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+    transition: border-color 150ms ease, background 150ms ease;
+    position: relative;
+  }
+
+  .addon input[type="checkbox"]:checked {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  .addon input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    width: 4px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .addon:has(input:checked) {
+    border-color: var(--orange);
+    background: rgba(232, 106, 38, 0.06);
+  }
+
+  .addon input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
   }
 </style>
-
-</Layout>

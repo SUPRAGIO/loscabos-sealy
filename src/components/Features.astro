@@ -1,0 +1,191 @@
+---
+import SectionTitle from "@/components/SectionTitle.astro";
+
+const cards = [
+  {
+    color: "orange",
+    pill: "11AM — 3PM Mon — Fri",
+    title: "Los Cabos Lunch",
+    body: "Daily lunch specials built to get you in, fed, and back to your day. Plates that don't skimp. The kind of lunch you'll be telling your coworkers about by two o'clock.",
+    cta: "See the Lunch Menu",
+    href: "/lunch",
+  },
+  {
+    color: "teal",
+    pill: "To Go Only",
+    title: "Family Packs",
+    body: "Feeding the whole crew tonight? Grab a family pack to go. Fajitas, enchiladas, rice, beans, tortillas, salsa, the works. Order ahead, swing by, dinner's handled.",
+    cta: "See Family Packs",
+    href: "/family-packs",
+  },
+  {
+    color: "orange",
+    pill: "Made Daily",
+    title: "Chips & Queso",
+    body: "Salsa pressed fresh every morning. Queso melted to order. Guac smashed when you ask. Chips made in house, salted and ready. The basics, done right, every single time.",
+    cta: "See Chips & Queso",
+    href: "/queso",
+  },
+];
+---
+
+<section class="section features-section">
+  <div class="container">
+    <SectionTitle
+      eyebrow="Daily Go-To's"
+      title="Authentic Tex Mex."
+      sub="The everyday menu we sweat the most. Lunch in a hurry, family packs to feed the crew, and chips & queso done the right way."
+      stackSub
+    />
+
+    <div class="features-grid">
+      {
+        cards.map((c) => (
+          <a class:list={["feat-card", `card-${c.color}`]} href={c.href}>
+            <div class="stripes" aria-hidden="true" />
+            <span class="pill">{c.pill}</span>
+            <h3>{c.title}</h3>
+            <p>{c.body}</p>
+            <span class="feat-cta">
+              {c.cta}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .features-section {
+    background: var(--cream);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .feat-card {
+    position: relative;
+    border-radius: var(--radius);
+    padding: 36px 28px 32px;
+    border: 4px solid #fff;
+    outline: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow);
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    /* Card-as-link behavior */
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .feat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  .card-orange {
+    background: var(--orange);
+  }
+
+  .card-teal {
+    background: var(--teal);
+  }
+
+  /* Diagonal stripe overlay */
+  .stripes {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .feat-card .pill,
+  .feat-card h3,
+  .feat-card p,
+  .feat-card .feat-cta {
+    position: relative;
+    z-index: 1;
+  }
+
+  .pill {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+    margin-bottom: 18px;
+    align-self: flex-start;
+  }
+
+  .feat-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+    line-height: 1;
+  }
+
+  .feat-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 22px;
+    flex: 1;
+  }
+
+  .feat-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    color: #fff;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.35);
+    margin-top: auto;
+    transition: gap 200ms ease;
+  }
+
+  .feat-card:hover .feat-cta {
+    gap: 14px;
+  }
+
+  .feat-cta svg {
+    transition: transform 200ms ease;
+  }
+
+  .feat-card:hover .feat-cta svg {
+    transform: translateX(2px);
+  }
+</style>

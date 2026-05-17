@@ -1,0 +1,747 @@
+---
+import Base from "@/layouts/Base.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+
+const heroImg = "/family-pack-spread.jpg";
+
+const packs = [
+  {
+    number: "1",
+    name: "Beef and Chicken Fajitas",
+    tagline: "The classic Cabos spread",
+    price: "$74.95",
+    pop: false,
+    sells: "Tonight, you're the hero. Fajitas hit the table loud, and the whole crew falls in line.",
+    includes: [
+      "Beef and chicken fajitas",
+      "Rice",
+      "Refried, charro, or black beans",
+      "Guacamole, pico de gallo, sour cream",
+      "Your choice of tortillas",
+      "Chips, green and red salsa, chile con queso",
+    ],
+  },
+  {
+    number: "2",
+    name: "Fajitas, Shrimp Brochette & Ribs",
+    tagline: "When you want to flex",
+    price: "$92.95",
+    pop: true,
+    sells: "Three proteins, one table, zero leftovers. The pack you order when the occasion deserves more than just dinner.",
+    includes: [
+      "Beef and chicken fajitas",
+      "Shrimp brochette",
+      "Baby back ribs",
+      "Rice",
+      "Refried, charro, or black beans",
+      "Guacamole, pico de gallo, sour cream",
+      "Your choice of tortillas",
+      "Chips, green and red salsa, chile con queso",
+    ],
+  },
+  {
+    number: "3",
+    name: "Enchilada Pack",
+    tagline: "Twelve enchiladas. Your call.",
+    price: "$53.95",
+    pop: false,
+    sells: "Twelve enchiladas. Pick your filling. Topped with chili gravy and melted cheese the way it's supposed to be.",
+    includes: [
+      "12 enchiladas — beef, chicken, or cheese",
+      "Topped with chili gravy and melted cheese",
+      "Quart of rice",
+      "Quart of charro, black, or refried beans",
+      "Chips, red salsa, large chile con queso",
+    ],
+  },
+];
+
+const occasions = [
+  {
+    // Cake
+    icon: `<path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/>`,
+    label: "Birthday parties",
+  },
+  {
+    // Graduation cap
+    icon: `<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>`,
+    label: "Graduations",
+  },
+  {
+    // Trophy (game day)
+    icon: `<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>`,
+    label: "Game day",
+  },
+  {
+    // Users / family
+    icon: `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+    label: "Family dinner",
+  },
+  {
+    // Briefcase
+    icon: `<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
+    label: "Office lunch",
+  },
+  {
+    // Church
+    icon: `<path d="M10 9h4"/><path d="M12 7v5"/><path d="M14 22v-4a2 2 0 0 0-4 0v4"/><path d="m18 22 .034-9 4-2v11"/><path d="M2 22V11l4 2L2 11"/><path d="M6 22V13"/><path d="M18 22h-4"/><path d="M14 22H6"/><path d="m6 13 6-3 6 3"/>`,
+    label: "Sunday after church",
+  },
+];
+
+const fpItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Los Cabos Sealy Family Packs",
+  description: "Family packs to go from Los Cabos Mexican Grill in Sealy, TX",
+  itemListElement: packs.map((p: any, i: number) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "MenuItem",
+      name: p.name,
+      description: p.tagline,
+      offers: {
+        "@type": "Offer",
+        price: p.price.replace("$", ""),
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+    },
+  })),
+};
+---
+
+<Base
+  title="Family Packs To Go | Los Cabos Mexican Grill, Sealy TX"
+  description="Family packs to go from Los Cabos Sealy. Fajitas, enchiladas, ribs, shrimp brochette, plus rice, beans, tortillas, salsa, queso. Order ahead, pick up."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(fpItemList)} />
+  <!-- ===== Hero ===== -->
+  <section class="fp-hero" style={`--hero-img: url('${heroImg}')`}>
+    <div class="fp-hero-overlay"></div>
+    <div class="fp-hero-content">
+      <span class="eyebrow-script">To go only</span>
+      <h1>Family Packs</h1>
+      <p class="hero-sub">
+        <span>Feed the whole crew.</span>
+        <span>Order ahead. Swing by. Dinner's handled.</span>
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+15126076232">Call to Order</a>
+        <a
+          class="btn btn-ghost hero-ghost"
+          href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
+          target="_blank"
+          rel="noopener"
+        >Order Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why family packs intro ===== -->
+  <section class="section intro-section">
+    <div class="container intro-inner">
+      <SectionTitle
+        eyebrow="Built to share"
+        title="Real food. Real fast. Real easy."
+        sub="No reservations. No waiting list. No wondering if everyone'll be happy. Three packs, every taste covered, all of it ready when you walk in the door."
+        stackSub
+      />
+    </div>
+  </section>
+
+  <!-- ===== The three packs ===== -->
+  <section class="section packs-section">
+    <div class="container">
+      <div class="packs-grid">
+        {
+          packs.map((p) => (
+            <article class:list={["pack-card", { pop: p.pop }]}>
+              {p.pop && <span class="pop-badge">Most ordered</span>}
+              <div class="pack-number" aria-hidden="true">#{p.number}</div>
+              <span class="pack-tag">{p.tagline}</span>
+              <h3>{p.name}</h3>
+              <p class="pack-pitch">{p.sells}</p>
+
+              <ul class="pack-includes">
+                {p.includes.map((line) => (
+                  <li>
+                    <span class="check" aria-hidden="true"><svg class="check-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="pack-footer">
+                <span class="pack-price">{p.price}</span>
+                <a class="btn btn-primary pack-cta" href="tel:+15126076232">Order Pack #{p.number}</a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <p class="lead-time">
+        Heads up: family packs are to go only. Call ahead so we can fire it up the right way.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Perfect for ===== -->
+  <section class="section occasions-section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Made for the moments"
+        title="Perfect for any night."
+      />
+
+      <div class="occasion-grid">
+        {
+          occasions.map((o) => (
+            <div class="occasion-tile">
+              <span class="occ-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
+              </span>
+              <span class="occ-label">{o.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bigger crowd CTA ===== -->
+  <section class="section bigger-section">
+    <div class="container bigger-inner">
+      <div class="bigger-copy">
+        <span class="lime-eyebrow">Bigger crowd?</span>
+        <h2>Catering's got you.</h2>
+        <p>
+          Twenty five people, fifty, a hundred and fifty. We've cooked
+          for all of it. Buffets, by the pound, by the tray. Free
+          delivery inside city limits. Margarita machine rentals
+          available.
+        </p>
+        <div class="bigger-ctas">
+          <a class="btn btn-primary" href="/catering">See Catering Options</a>
+          <a class="btn btn-ghost" href="tel:+15126076232">Call (512) 607-6232</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Closer ===== -->
+  <section class="fp-closer">
+    <div class="container closer-inner">
+      <span class="eyebrow-script">From our familia, to your table</span>
+      <h2>Order today. Eat tonight.</h2>
+      <p>
+        Pick your pack. Pick your time. We'll have it hot and ready
+        when you pull up. The only thing left for you to do is set the
+        table.
+      </p>
+      <div class="closer-ctas">
+        <a class="btn btn-primary" href="tel:+15126076232">Call to Order</a>
+        <a
+          class="btn btn-ghost dark"
+          href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
+          target="_blank"
+          rel="noopener"
+        >Order Online</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ============ Hero ============ */
+  .fp-hero {
+    position: relative;
+    min-height: clamp(420px, 65vh, 600px);
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .fp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .fp-hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(900px, 92vw);
+    padding: 80px 0;
+  }
+
+  .fp-hero-content .eyebrow-script {
+    color: #ffd9b8;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .fp-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    margin: 8px 0 22px;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-sub {
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin: 0 0 28px;
+  }
+
+  .hero-sub span {
+    display: block;
+  }
+
+  .hero-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-ghost {
+    border-color: #fff;
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ============ Intro ============ */
+  .intro-section {
+    background: var(--cream);
+    padding-bottom: 30px;
+  }
+
+  /* ============ Packs ============ */
+  .packs-section {
+    background: var(--cream);
+    padding-top: 30px;
+  }
+
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  @media (max-width: 1100px) {
+    .packs-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .pack-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius);
+    padding: 36px 30px 30px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .pack-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+
+  .pack-card.pop {
+    background: var(--ink);
+    color: var(--cream);
+    border: 0;
+    transform: translateY(-10px);
+  }
+
+  .pack-card.pop:hover {
+    transform: translateY(-14px);
+  }
+
+  @media (max-width: 1100px) {
+    .pack-card.pop {
+      transform: none;
+    }
+    .pack-card.pop:hover {
+      transform: translateY(-6px);
+    }
+  }
+
+  .pop-badge {
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    background: var(--lime);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 var(--lime-shadow);
+  }
+
+  .pack-number {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    color: var(--orange);
+    line-height: 0.9;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .pack-card.pop .pack-number {
+    color: var(--lime);
+  }
+
+  .pack-tag {
+    display: inline-block;
+    font-family: var(--font-script);
+    color: var(--orange);
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .pack-card.pop .pack-tag {
+    color: #ffd9b8;
+  }
+
+  .pack-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  .pack-card.pop h3 {
+    color: #fff;
+  }
+
+  .pack-pitch {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 22px;
+    font-size: 1rem;
+  }
+
+  .pack-card.pop .pack-pitch {
+    color: rgba(255, 247, 236, 0.82);
+  }
+
+  .pack-includes {
+    margin: 0 0 26px;
+    padding-top: 22px;
+    border-top: 1px dashed rgba(42, 26, 16, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+  }
+
+  .pack-card.pop .pack-includes {
+    border-top-color: rgba(255, 247, 236, 0.18);
+  }
+
+  .pack-includes li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .pack-card.pop .pack-includes li {
+    color: rgba(255, 247, 236, 0.92);
+  }
+
+  .pack-includes .check {
+    color: var(--orange);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .pack-card.pop .pack-includes .check {
+    color: var(--lime);
+  }
+
+  .pack-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(42, 26, 16, 0.18);
+    flex-wrap: wrap;
+  }
+
+  .pack-card.pop .pack-footer {
+    border-top-color: rgba(255, 247, 236, 0.18);
+  }
+
+  .pack-price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .pack-card.pop .pack-price {
+    color: var(--lime);
+  }
+
+  .pack-cta {
+    font-size: 0.95rem;
+    padding: 11px 20px;
+  }
+
+  .lead-time {
+    text-align: center;
+    color: var(--muted);
+    margin: 36px auto 0;
+    font-style: italic;
+    font-size: 1.02rem;
+    max-width: 60ch;
+  }
+
+  /* ============ Occasions ============ */
+  .occasions-section {
+    background: #fbeed8;
+  }
+
+  .occasion-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) {
+    .occasion-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .occasion-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .occasion-tile {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 22px 12px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-soft);
+    transition: transform 180ms ease;
+  }
+
+  .occasion-tile:hover {
+    transform: translateY(-3px);
+  }
+
+  .occ-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
+    color: var(--orange);
+  }
+
+  .occ-label {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  /* ============ Bigger crowd ============ */
+  .bigger-section {
+    background: var(--ink);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .bigger-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(232, 106, 38, 0.05) 0,
+      rgba(232, 106, 38, 0.05) 2px,
+      transparent 2px,
+      transparent 16px
+    );
+    pointer-events: none;
+  }
+
+  .bigger-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bigger-copy {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .lime-eyebrow {
+    font-family: var(--font-script);
+    color: var(--lime);
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .bigger-copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0 0 16px;
+    color: #fff;
+  }
+
+  .bigger-copy p {
+    color: rgba(255, 247, 236, 0.84);
+    font-size: 1.06rem;
+    line-height: 1.7;
+    margin: 0 0 26px;
+  }
+
+  .bigger-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bigger-section .btn-ghost {
+    border-color: var(--cream);
+    color: var(--cream);
+    box-shadow: 0 4px 0 rgba(255, 247, 236, 0.5);
+  }
+
+  .bigger-section .btn-ghost:hover {
+    background: rgba(255, 247, 236, 0.08);
+  }
+
+  /* ============ Closer ============ */
+  .fp-closer {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: clamp(70px, 10vw, 120px) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-closer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 247, 236, 0.04) 0,
+      rgba(255, 247, 236, 0.04) 2px,
+      transparent 2px,
+      transparent 16px
+    );
+    pointer-events: none;
+  }
+
+  .closer-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp-closer .eyebrow-script {
+    color: #ffd9b8;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+  }
+
+  .fp-closer h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 8px 0 18px;
+    color: #fff;
+  }
+
+  .fp-closer p {
+    max-width: 56ch;
+    margin: 0 auto 30px;
+    color: rgba(255, 247, 236, 0.85);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+
+  .closer-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-ghost.dark {
+    border-color: var(--cream);
+    color: var(--cream);
+    box-shadow: 0 4px 0 rgba(255, 247, 236, 0.5);
+  }
+
+  .btn-ghost.dark:hover {
+    background: rgba(255, 247, 236, 0.08);
+  }
+</style>

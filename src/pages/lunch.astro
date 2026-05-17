@@ -1,0 +1,755 @@
+---
+import Base from "@/layouts/Base.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+
+// Item shape: {name, price, desc, variants?, tag?, addOn?}
+const menu = [
+  {
+    id: "appetizers",
+    title: "Appetizers",
+    eyebrow: "Get the table going",
+    items: [
+      {
+        name: "Botana Mix",
+        price: "$13.99",
+        desc: "The whole table starts here. Cheese quesadilla, nachos, mini chalupas, stuffed shrimp jalapeño, chicken fried burrito, guacamole, and sour cream.",
+      },
+      {
+        name: "Supreme Nachos",
+        desc: "Cheddar piled over ground beef and beans, finished with lettuce, tomatoes, sour cream, guacamole, and sliced jalapeños.",
+        variants: [
+          { label: "Small", price: "$9.99" },
+          { label: "Large", price: "$11.99" },
+        ],
+      },
+      {
+        name: "Quesadillas",
+        desc: "Grilled flour tortilla stuffed with Monterey Jack. Pick your filling: beef fajita, chicken fajita, mixed fajita, or spinach.",
+        variants: [
+          { label: "Full", price: "$13.99" },
+          { label: "Half", price: "$10.99" },
+        ],
+      },
+      {
+        name: "El Campo Nachos",
+        desc: "Stacked with chicken or beef fajitas, Monterey Jack, beans, guacamole, lettuce, tomatoes, and sliced jalapeños.",
+        variants: [
+          { label: "Small", price: "$9.99" },
+          { label: "Large", price: "$12.99" },
+        ],
+      },
+      {
+        name: "Mixed Queso Flameado",
+        price: "$11.99",
+        desc: "A bubbling casserole of melted Monterey Jack with chicken and beef fajitas sautéed alongside mushrooms, green and red bell peppers, and poblano.",
+      },
+    ],
+  },
+
+  {
+    id: "soups-salads",
+    title: "Soups & Salads",
+    eyebrow: "Fresh, but make it Tex Mex",
+    items: [
+      {
+        name: "Tortilla Soup",
+        price: "$9.99",
+        desc: "Vegetables, tortilla strips, mushrooms, cheese, and avocado slices.",
+      },
+      {
+        name: "Taco Salad",
+        price: "$12.99",
+        desc: "Charbroiled beef or chicken fajitas served in a grande taco shell with chile con queso, lettuce, cheese, tomatoes, guacamole, and sour cream.",
+      },
+    ],
+  },
+
+  {
+    id: "fajitas",
+    title: "Fajitas",
+    eyebrow: "Loud, hot, and yours to roll",
+    blurb:
+      "Every fajita plate comes with fresh guacamole, pico, rice, charro beans, and flour tortillas.",
+    items: [
+      {
+        name: "Fajitas al Carbón",
+        desc: "Beef, chicken, or mixed. Sizzling straight from the grill.",
+        variants: [
+          { label: "Small", price: "$14.99" },
+          { label: "Medium", price: "$16.99" },
+        ],
+      },
+      {
+        name: "Add a Sauce Topping",
+        price: "$3.00",
+        addOn: true,
+        desc: "Mexican Sauce — marinated with onions, tomatoes, jalapeños, cilantro, and mushrooms. Poblana Sauce — poblano peppers, onions, mushrooms, cilantro, heavy cream, and parmesan. Chipotle Sauce — chipotle butter sauce topped with melted Monterey Jack.",
+      },
+    ],
+  },
+
+  {
+    id: "steak",
+    title: "Steak",
+    eyebrow: "From the grill",
+    items: [
+      {
+        name: "Ribeye",
+        price: "$19.95",
+        desc: "10 oz ribeye, our most flavorful cut. Served with Caesar or dinner salad and one side.",
+      },
+    ],
+  },
+
+  {
+    id: "burger",
+    title: "Burger",
+    eyebrow: "Two patties, no apologies",
+    items: [
+      {
+        name: "Texas Cheeseburger",
+        price: "$11.99",
+        desc: "Two fresh ground chuck patties with melted American cheese, lettuce, tomato, onions, pickles, and bacon. Served with french fries.",
+      },
+    ],
+  },
+
+  {
+    id: "chicken",
+    title: "Chicken",
+    eyebrow: "From the grill, from the fryer",
+    items: [
+      {
+        name: "Pollo a la Parrilla",
+        price: "$16.99",
+        desc: "Charbroiled chicken breast topped with bacon, Monterey Jack, mushrooms, onions, and bell peppers. Served with rice, charro beans, guacamole, and pico.",
+      },
+      {
+        name: "Spinach Chicken",
+        price: "$15.99",
+        desc: "Grilled chicken breast layered with sautéed spinach, mushrooms, onions, and melted Monterey Jack, finished with poblano cream sauce. Served with rice, charro beans, guacamole, and pico.",
+      },
+      {
+        name: "Grilled Chicken Breast",
+        price: "$12.99",
+        desc: "10 oz marinated and grilled boneless chicken breast. Served with Caesar or dinner salad and one side.",
+      },
+      {
+        name: "Chicken Tenders",
+        price: "$12.99",
+        desc: "Lightly fried tenderloins with cream gravy. Served with french fries.",
+      },
+    ],
+  },
+
+  {
+    id: "combos",
+    title: "Combo Plates",
+    eyebrow: "Pick a little, pick a lot",
+    blurb: "Served with rice and beans unless noted.",
+    items: [
+      {
+        name: "Plato Tulum",
+        price: "$15.99",
+        desc: "Three shrimp brochettes, a beef enchilada poblana, and a beef fajita taco.",
+      },
+      {
+        name: "El Rey",
+        price: "$11.99",
+        desc: "Beef enchilada, chicken tostada, and a tamal.",
+      },
+      {
+        name: "Morelia Combo",
+        price: "$12.99",
+        desc: "Guacamole salad, a crispy beef taco, a chalupa, and a beef fajita taco topped with chile con queso.",
+      },
+      {
+        name: "Cancún Combo",
+        price: "$12.99",
+        desc: "Guacamole salad, a chile con queso puff, a crispy beef taco, and an enchilada al carbón.",
+      },
+      {
+        name: "El Torito",
+        price: "$10.95",
+        desc: "Beef enchilada, cheese enchilada, and a crispy taco.",
+      },
+      {
+        name: "El Pollito",
+        price: "$12.99",
+        desc: "Two chicken burritos, a mini chicken quesadilla, and a chicken chalupa.",
+      },
+    ],
+  },
+
+  {
+    id: "enchiladas",
+    title: "Enchiladas",
+    eyebrow: "Rolled, sauced, and ready",
+    blurb: "All served with rice and beans.",
+    items: [
+      {
+        name: "Enchiladas",
+        price: "$12.99",
+        desc: "Two enchiladas. Beef, chicken, or cheese.",
+      },
+      {
+        name: "Enchiladas Verdes",
+        price: "$12.99",
+        desc: "Two chicken enchiladas under cilantro sauce and sour cream. Guacamole on the side.",
+      },
+      {
+        name: "Spinach Enchiladas",
+        price: "$14.99",
+        desc: "Two enchiladas filled with spinach, artichokes, mushrooms, onions, and melted Monterey Jack, finished with poblano cream sauce.",
+      },
+      {
+        name: "Fajita Enchiladas",
+        price: "$15.99",
+        desc: "Two enchiladas. Beef or chicken.",
+      },
+    ],
+  },
+
+  {
+    id: "tacos",
+    title: "Tacos",
+    eyebrow: "Two to a plate",
+    items: [
+      {
+        name: "Tacos de Carnitas",
+        price: "$12.99",
+        desc: "Two pork tacos. Served with rice and charro beans.",
+      },
+      {
+        name: "Chipotle Tacos",
+        price: "$8.99",
+        desc: "Two soft flour tortillas rolled around chicken or beef fajita sautéed in chipotle sauce. Lettuce, tomatoes, cheese, and guacamole on the side. Served with rice and charro beans.",
+      },
+      {
+        name: "Golden Tacos",
+        price: "$12.99",
+        desc: "Two crispy tacos, beef or chicken, topped with lettuce, cheese, and tomatoes. Served with rice and charro beans.",
+      },
+      {
+        name: "William's Tacos",
+        price: "$12.99",
+        desc: "Two tacos al carbón finished with chile con queso. Served with rice and charro beans.",
+      },
+    ],
+  },
+
+  {
+    id: "burritos",
+    title: "Burritos",
+    eyebrow: "Wrapped to perfection",
+    items: [
+      {
+        name: "Super Burritos",
+        price: "$12.99",
+        desc: "Two fried beef or chicken burritos topped with chile con queso. Served with rice and beans, sour cream on the side.",
+      },
+      {
+        name: "Los Cabos Burritos",
+        desc: "Filled with rice, beans, and ground beef or shredded chicken. Topped with chile con queso. Lettuce, tomatoes, and sour cream on the side.",
+        variants: [
+          { label: "Classic", price: "$12.99" },
+          { label: "With Fajitas", price: "$15.99" },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "chalupas",
+    title: "Chalupas",
+    eyebrow: "Crisp, layered, loaded",
+    items: [
+      {
+        name: "Chalupas",
+        price: "$9.99",
+        desc: "Two plain toasted tortillas with beans, cheese, lettuce, and tomatoes.",
+      },
+      {
+        name: "Chalupas Compuestas",
+        desc: "Two toasted tortillas with beef or chicken, beans, cheese, lettuce, tomatoes, and sour cream.",
+        variants: [
+          { label: "Two", price: "$9.99" },
+          { label: "Single", price: "$5.00" },
+        ],
+      },
+    ],
+  },
+];
+
+const lunchMenuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  name: "Los Cabos Sealy Lunch Menu",
+  description: "Lunch served Monday through Friday 11AM to 3PM",
+  hasMenuSection: menu.map((section) => ({
+    "@type": "MenuSection",
+    name: section.title,
+    hasMenuItem: section.items.map((item: any) => {
+      const m: any = { "@type": "MenuItem", name: item.name };
+      if (item.desc) m.description = item.desc;
+      if (item.price && item.price !== "$—") {
+        m.offers = {
+          "@type": "Offer",
+          price: item.price.replace("$", ""),
+          priceCurrency: "USD",
+        };
+      }
+      return m;
+    }),
+  })),
+};
+---
+
+<Base
+  title="Lunch Menu | Los Cabos Mexican Grill in Sealy, TX"
+  description="Lunch at Los Cabos Sealy, 11AM to 3PM Mon-Fri. Combo plates, fajitas, enchiladas, tacos, burritos, chalupas, daily Tex Mex specials. Off I-10."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(lunchMenuSchema)} />
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow-script">Lunch hours</span>
+      <h1>The Lunch Menu</h1>
+      <p class="lunch-hours">11AM — 3PM, Monday through Friday</p>
+      <p>
+        Plates that don't skimp. In, fed, and back to your day. The
+        kind of lunch you'll be telling your coworkers about by two
+        o'clock.
+      </p>
+    </div>
+  </section>
+
+  <nav class="menu-nav" id="menuNav" aria-label="Lunch menu sections">
+    <div class="container">
+      <ul>
+        {menu.map((s) => <li><a href={`#${s.id}`}>{s.title}</a></li>)}
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    // Hide on scroll down, show on scroll up — mirrors the main menu page nav.
+    (() => {
+      const nav = document.getElementById("menuNav");
+      if (!nav) return;
+
+      let lastY = window.scrollY;
+      let ticking = false;
+      const SHOW_THRESHOLD = 80;
+      const DELTA = 6;
+
+      function update() {
+        const y = window.scrollY;
+        const goingDown = y > lastY + DELTA;
+        const goingUp = y < lastY - DELTA;
+
+        if (y < SHOW_THRESHOLD) {
+          nav.classList.remove("is-hidden");
+        } else if (goingDown) {
+          nav.classList.add("is-hidden");
+        } else if (goingUp) {
+          nav.classList.remove("is-hidden");
+        }
+
+        lastY = y;
+        ticking = false;
+      }
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+    })();
+  </script>
+
+  {
+    menu.map((section) => (
+      <section class="section menu-section" id={section.id}>
+        <div class="container">
+          <SectionTitle eyebrow={section.eyebrow} title={section.title} />
+
+          {section.blurb && (
+            <p class="section-blurb">{section.blurb}</p>
+          )}
+
+          <ul class="menu-list">
+            {section.items.map((item) => (
+              <li class:list={["menu-item", { "is-addon": item.addOn }]}>
+                <div class="menu-row">
+                  <span class="dish-name">
+                    {item.name}
+                    {item.tag && <span class="dish-tag">{item.tag}</span>}
+                    {item.addOn && <span class="dish-tag add">Add On</span>}
+                  </span>
+                  {item.price && (
+                    <>
+                      <span class="dots" aria-hidden="true" />
+                      <span class="dish-price">{item.price}</span>
+                    </>
+                  )}
+                </div>
+                {item.desc && <p class="dish-desc">{item.desc}</p>}
+                {item.variants && (
+                  <ul class="dish-variants">
+                    {item.variants.map((v) => (
+                      <li>
+                        <span class="variant-label">{v.label}</span>
+                        <span class="variant-price">{v.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="section side-swap-note">
+    <div class="container">
+      <div class="swap-card">
+        <span class="lime-eyebrow">Heads up</span>
+        <h3>Side swap on the house.</h3>
+        <p>
+          Any plate that comes with rice and beans? You can swap to
+          green beans, broccoli, or sautéed vegetables. Just ask.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lunch-closer">
+    <div class="container closer-inner">
+      <span class="eyebrow-script">Don't sleep on lunch</span>
+      <h2>11AM to 3PM. Monday to Friday.</h2>
+      <p>
+        Tell the coworkers. Bring the team. Order ahead if you're in a
+        hurry. We'll have you fed and back at your desk before anybody
+        notices you left.
+      </p>
+      <div class="closer-ctas">
+        <a
+          class="btn btn-primary"
+          href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
+          target="_blank"
+          rel="noopener"
+        >Order Online</a>
+        <a class="btn btn-ghost dark" href="tel:+15126076232">Call (512) 607-6232</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lunch-hours {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--orange);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+
+  .menu-nav {
+    background: var(--ink);
+    color: var(--cream);
+    position: sticky;
+    top: 86px;
+    z-index: 30;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    transition: transform 280ms ease;
+    will-change: transform;
+  }
+
+  .menu-nav.is-hidden {
+    transform: translateY(-200%);
+  }
+
+  .menu-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+
+  .menu-nav a {
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cream);
+    font-size: 0.9rem;
+    transition: color 150ms ease;
+    white-space: nowrap;
+  }
+
+  .menu-nav a:hover {
+    color: var(--orange);
+  }
+
+  @media (max-width: 900px) {
+    .menu-nav ul {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .menu-nav ul::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .menu-section:nth-child(odd) {
+    background: var(--cream);
+  }
+  .menu-section:nth-child(even) {
+    background: #fbeed8;
+  }
+
+  .section-blurb {
+    text-align: center;
+    color: var(--muted);
+    max-width: 70ch;
+    margin: -28px auto 38px;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .menu-item {
+    border-bottom: 1px dashed rgba(42, 26, 16, 0.18);
+    padding-bottom: 22px;
+  }
+
+  .menu-item.is-addon {
+    background: rgba(232, 106, 38, 0.06);
+    border: 1px solid rgba(232, 106, 38, 0.25);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+  }
+
+  .menu-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .dish-name {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    text-transform: uppercase;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .dish-tag {
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .dish-tag.add {
+    background: var(--teal);
+  }
+
+  .dots {
+    flex: 1;
+    border-bottom: 2px dotted rgba(42, 26, 16, 0.4);
+    transform: translateY(-6px);
+  }
+
+  .dish-price {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    color: var(--orange);
+  }
+
+  .dish-desc {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 6px 0 0;
+    max-width: 70ch;
+  }
+
+  .dish-variants {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 22px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid rgba(42, 26, 16, 0.08);
+  }
+
+  @media (max-width: 600px) {
+    .dish-variants {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .dish-variants li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    padding: 4px 0;
+    border: 0;
+  }
+
+  .variant-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .variant-price {
+    font-family: var(--font-display);
+    color: var(--orange);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============ Side swap note ============ */
+  .side-swap-note {
+    background: var(--cream);
+  }
+
+  .swap-card {
+    background: #fff;
+    border: 2px dashed var(--orange);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .swap-card .lime-eyebrow {
+    font-family: var(--font-script);
+    color: var(--orange);
+    font-size: 1.4rem;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .swap-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+
+  .swap-card p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 56ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ============ Closer ============ */
+  .lunch-closer {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: clamp(70px, 10vw, 120px) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lunch-closer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 247, 236, 0.04) 0,
+      rgba(255, 247, 236, 0.04) 2px,
+      transparent 2px,
+      transparent 16px
+    );
+    pointer-events: none;
+  }
+
+  .closer-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .lunch-closer .eyebrow-script {
+    color: #ffd9b8;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+  }
+
+  .lunch-closer h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 8px 0 18px;
+    color: #fff;
+  }
+
+  .lunch-closer p {
+    max-width: 56ch;
+    margin: 0 auto 30px;
+    color: rgba(255, 247, 236, 0.85);
+    font-size: 1.06rem;
+    line-height: 1.6;
+  }
+
+  .closer-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-ghost.dark {
+    border-color: var(--cream);
+    color: var(--cream);
+    box-shadow: 0 4px 0 rgba(255, 247, 236, 0.5);
+  }
+
+  .btn-ghost.dark:hover {
+    background: rgba(255, 247, 236, 0.08);
+  }
+</style>

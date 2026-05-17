@@ -1,14 +1,18 @@
 {
   "name": "loscabos-sealy",
+  "version": "1.0.0",
+  "description": "Los Cabos Mexican Grill — Sealy, TX. Static Astro 4 marketing site.",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.19"
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^4.16.19",
+    "typescript": "^5.9.3"
   }
 }

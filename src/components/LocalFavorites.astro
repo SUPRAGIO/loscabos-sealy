@@ -1,0 +1,167 @@
+---
+import SectionTitle from "@/components/SectionTitle.astro";
+
+const favorites = [
+  {
+    name: "Orman's Tacos",
+    desc: "Two beef or chicken fajita tacos sautéed with chopped onions, jalapeños, cilantro, and white wine. Served on your choice of corn or flour tortillas, with avocado slices, grilled onions on the side, rice, and charro or black beans.",
+    image: "/ormans-tacos.jpg",
+    pill: "House Favorite",
+  },
+  {
+    name: "Carnitas Enchiladas",
+    desc: "Two slow cooked carnitas enchiladas under cilantro green sauce, melted Jack cheese, and avocado slices. Served with rice, beans, and a scoop of guacamole.",
+    image: "/carnitas-enchiladas.jpg",
+    pill: "New",
+  },
+  {
+    name: "Plato Tulum",
+    desc: "Three shrimp brochettes, a beef enchilada poblana, and a beef fajita taco. Served with rice and beans. The whole show on one plate.",
+    image: "/plato-tulum.jpg",
+    pill: "From La Cocina",
+  },
+  {
+    name: "Golden Tacos",
+    desc: "Two crispy tacos, beef or chicken, stacked with shredded lettuce, fresh tomato, and melted cheddar. Served with Spanish rice and charro or black beans. The Tex Mex plate you grew up wanting.",
+    image: "/golden-tacos.jpg",
+    pill: "Crowd Pleaser",
+  },
+];
+---
+
+<section class="section local-favs">
+  <div class="container">
+    <SectionTitle
+      title="Local favorites"
+      sub="The plates this town keeps coming back for. Order one, share one, take some home."
+      stackSub
+    />
+
+    <div class="favs-grid">
+      {
+        favorites.map((f) => (
+          <article class="fav-card">
+            <div class="fav-image">
+              <img src={f.image} alt={f.name} loading="lazy" />
+            </div>
+            <div class="fav-body">
+              <h3>{f.name}</h3>
+              <p>{f.desc}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="favs-cta">
+      <a class="btn btn-primary" href="/menu">See Full Menu</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .local-favs {
+    background: var(--cream);
+  }
+
+  .favs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 1100px) {
+    .favs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 580px) {
+    .favs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .fav-card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-soft);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fav-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+
+  .fav-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .fav-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    transition: transform 700ms ease;
+  }
+
+  /* Orman's source plate sits lower in the frame — pull focal point up. */
+  .fav-image img[alt="Orman's Tacos"] {
+    object-position: center top;
+  }
+
+  .fav-card:hover .fav-image img {
+    transform: scale(1.06);
+  }
+
+  .fav-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--orange);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+  }
+
+  .fav-body {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .fav-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0 0 10px;
+    line-height: 1;
+  }
+
+  .fav-body p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .favs-cta {
+    text-align: center;
+    margin-top: 44px;
+  }
+</style>

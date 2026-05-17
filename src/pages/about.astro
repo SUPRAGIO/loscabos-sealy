@@ -1,0 +1,632 @@
+---
+import Base from "@/layouts/Base.astro";
+
+const storefrontImg = "/sealy-storefront.jpg";
+
+const sisterLocations = [
+  {
+    city: "Sealy",
+    state: "TX",
+    name: "Los Cabos Mexican Grill",
+    blurb:
+      "Right on FM 3538, just off I-10. Built for the I-10 corridor between Houston and San Antonio.",
+    url: "/",
+    current: true,
+  },
+  {
+    city: "Brenham",
+    state: "TX",
+    name: "Los Cabos Mexican Grill & Steak House",
+    blurb:
+      "The original flagship on Highway 290. Where it all started. Steak house menu, full bar, the largest dining room.",
+    url: "https://www.loscabosbrenham.com",
+  },
+  {
+    city: "Navasota",
+    state: "TX",
+    name: "Los Cabos Navasota",
+    blurb:
+      "Tex Mex and catering on the Hwy 6 corridor between College Station and Houston. Grimes County's gathering spot.",
+    url: "https://www.loscabosnavasota.com",
+  },
+  {
+    city: "Hallettsville",
+    state: "TX",
+    name: "Cabos San Lucas",
+    blurb:
+      "Serving the Czech and German heritage country south of Schulenburg. Same family recipes, same hand shaken margaritas.",
+    url: "https://www.loscaboshallettsville.com",
+  },
+];
+
+const faqs = [
+  {
+    q: "Where is Los Cabos Mexican Grill located in Sealy, Texas?",
+    a: "Los Cabos Mexican Grill in Sealy is located at 6027 FM 3538, Sealy, TX 77474. We're just off Interstate 10 on the I-10 corridor between Houston and San Antonio. Easy parking, easy in and out.",
+  },
+  {
+    q: "What are the hours at Los Cabos Sealy?",
+    a: "We're open daily at 11AM. Sunday through Wednesday we close at 9PM. Thursday, Friday, and Saturday we stay open until 10PM. Lunch hours run 11AM to 3PM Monday through Friday.",
+  },
+  {
+    q: "Does Los Cabos Sealy offer catering?",
+    a: "Yes. We cater across Austin County and the surrounding I-10 corridor. Our catering menu includes Famous Fajita Buffets, Taco and Enchilada Buffets, and Fajitas by the Pound. Free delivery inside Sealy city limits. Minimum 25 people. Visit our catering page or call to plan your event.",
+  },
+  {
+    q: "How many Los Cabos restaurants are there in Texas?",
+    a: "There are four family owned and operated Los Cabos restaurants in Texas: the original flagship in Brenham (Los Cabos Mexican Grill & Steak House on Highway 290), Los Cabos Navasota on Hwy 6, Cabos San Lucas in Hallettsville, and Los Cabos in Sealy. Same family, same recipes, four front doors.",
+  },
+  {
+    q: "Who founded Los Cabos Mexican Grill?",
+    a: "Los Cabos Mexican Grill was founded by Isidro Sánchez in Brenham, Texas. From a single Brenham kitchen, the family grew the business to four Texas locations, all still owned and operated by the same familia.",
+  },
+  {
+    q: "Do you serve lunch specials in Sealy?",
+    a: "Yes. Our lunch menu runs Monday through Friday from 11AM to 3PM and features daily Tex Mex plates including enchiladas, fajitas, tacos, burritos, chalupas, and combo plates.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<Base
+  title="About | Los Cabos Mexican Grill in Sealy, TX | Tex Mex Family"
+  description="Family owned Tex Mex restaurant in Sealy, Texas, founded by Isidro Sánchez. One of four Los Cabos locations in south central Texas. Same recipes, same family."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">About Us</span>
+        <h1>Not your average Tex Mex.</h1>
+        <p class="lede">
+          Los Cabos Mexican Grill in Sealy is one of four family owned
+          Tex Mex restaurants across south central Texas. Same recipes
+          that started in Brenham. Same kitchen standard. Same familia
+          behind every plate.
+        </p>
+        <ul class="hero-meta">
+          <li>
+            <span class="label">Phone</span>
+            <a href="tel:+15126076232">(512) 607-6232</a>
+          </li>
+          <li>
+            <span class="label">Address</span>
+            <span>6027 FM 3538, Sealy, TX 77474</span>
+          </li>
+          <li>
+            <span class="label">Hours</span>
+            <span>Sun — Wed 11AM to 9PM<br />Thu — Sat 11AM to 10PM</span>
+          </li>
+        </ul>
+      </div>
+      <div class="hero-photo">
+        <img
+          src={storefrontImg}
+          alt="Los Cabos Mexican Grill storefront on FM 3538 in Sealy, Texas with the red Los Cabos sign"
+          width="1024"
+          height="1536"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="story">
+    <div class="container story-inner">
+      <h2>One Brenham kitchen. Four Texas restaurants.</h2>
+      <p>
+        Los Cabos started with founder <strong>Isidro Sánchez</strong>
+        and a kitchen in Brenham, Texas. One restaurant, one family,
+        one standard for every plate. The standard held. The family
+        grew.
+      </p>
+      <p>
+        Today there are four Los Cabos restaurants across south central
+        Texas, all family owned and operated. The flagship in
+        <strong>Brenham</strong> on Highway 290. <strong>Los Cabos
+        Navasota</strong> on the Hwy 6 corridor. <strong>Cabos San
+        Lucas</strong> in Hallettsville. And <strong>Sealy</strong>,
+        right off Interstate 10.
+      </p>
+      <p>
+        What hasn't changed: real ingredients, plates we'd serve our
+        own families, a welcome that means it. Same recipes. Same
+        hands. Same family.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ LOCATIONS ============ -->
+  <section class="locations">
+    <div class="container">
+      <h2>Four Los Cabos locations across Texas.</h2>
+      <p class="sub">
+        Family owned and operated since the original Brenham dining
+        room opened. Same family. Same recipes. Four front doors.
+      </p>
+
+      <div class="loc-grid">
+        {
+          sisterLocations.map((loc) => (
+            <article class:list={["loc", { current: loc.current }]}>
+              <header>
+                <h3>{loc.city}, {loc.state}</h3>
+                {loc.current && <span class="here">You are here</span>}
+              </header>
+              <p class="loc-name">{loc.name}</p>
+              <p class="loc-blurb">{loc.blurb}</p>
+              <a
+                href={loc.url}
+                target={loc.url.startsWith("http") ? "_blank" : undefined}
+                rel={loc.url.startsWith("http") ? "noopener" : undefined}
+                class="loc-link"
+              >
+                {loc.current ? "Sealy location" : `Visit ${loc.city}`}
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        {
+          faqs.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Visit Los Cabos in Sealy.</h2>
+      <p>
+        Open daily at 11AM. Just off I-10 on FM 3538. Lunch, dinner,
+        catering, big tables, small tables, take out, order ahead. Come
+        eat with us.
+      </p>
+      <div class="cta-row">
+        <a
+          class="btn btn-primary"
+          href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884/order-settings"
+          target="_blank"
+          rel="noopener"
+        >Order Online</a>
+        <a class="btn btn-ghost dark" href="/menu">See the Menu</a>
+        <a class="btn btn-ghost dark" href="tel:+15126076232">(512) 607-6232</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ============ HERO ============ */
+  .hero {
+    background: var(--cream);
+    padding: clamp(60px, 8vw, 110px) 0 clamp(50px, 6vw, 80px);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--orange);
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    color: var(--ink);
+    margin: 0 0 22px;
+  }
+
+  .lede {
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    line-height: 1.65;
+    color: var(--muted);
+    margin: 0 0 28px;
+    max-width: 56ch;
+  }
+
+  .hero-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px solid rgba(42, 26, 16, 0.12);
+    padding-top: 24px;
+  }
+
+  .hero-meta li {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    font-size: 0.98rem;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+
+  @media (max-width: 480px) {
+    .hero-meta li {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+
+  .hero-meta .label {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .hero-meta a {
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius);
+    border: 6px solid #fff;
+    box-shadow: var(--shadow);
+    display: block;
+    max-height: 580px;
+  }
+
+  /* ============ STORY ============ */
+  .story {
+    background: #fff;
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+
+  .story-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 26px;
+    letter-spacing: 0.01em;
+  }
+
+  .story p {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 1.06rem;
+    margin: 0 0 18px;
+    text-align: left;
+  }
+
+  .story p:last-child {
+    margin-bottom: 0;
+  }
+
+  .story strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ============ LOCATIONS ============ */
+  .locations {
+    background: #fbeed8;
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+
+  .locations h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    text-transform: uppercase;
+    color: var(--ink);
+    text-align: center;
+    margin: 0 0 12px;
+    letter-spacing: 0.01em;
+  }
+
+  .locations .sub {
+    text-align: center;
+    color: var(--muted);
+    max-width: 56ch;
+    margin: 0 auto 44px;
+    line-height: 1.65;
+  }
+
+  .loc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  @media (max-width: 1100px) {
+    .loc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 580px) {
+    .loc-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .loc {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .loc:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .loc.current {
+    background: var(--ink);
+    color: var(--cream);
+    border: 0;
+  }
+
+  .loc header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  .loc h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .loc.current h3 {
+    color: #fff;
+  }
+
+  .here {
+    background: var(--lime);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    padding: 3px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 0 var(--lime-shadow);
+  }
+
+  .loc-name {
+    font-family: var(--font-script);
+    color: var(--orange);
+    font-size: 0.98rem;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  .loc.current .loc-name {
+    color: #ffd9b8;
+  }
+
+  .loc-blurb {
+    color: var(--muted);
+    line-height: 1.55;
+    font-size: 0.9rem;
+    margin: 0 0 16px;
+    flex: 1;
+  }
+
+  .loc.current .loc-blurb {
+    color: rgba(255, 247, 236, 0.82);
+  }
+
+  .loc-link {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    color: var(--orange);
+    padding-top: 14px;
+    border-top: 1px dashed rgba(42, 26, 16, 0.18);
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 200ms ease;
+  }
+
+  .loc-link:hover {
+    gap: 12px;
+  }
+
+  .loc.current .loc-link {
+    color: var(--lime);
+    border-top-color: rgba(255, 247, 236, 0.2);
+  }
+
+  /* ============ FAQ ============ */
+  .faq {
+    background: var(--cream);
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+
+  .faq h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    text-transform: uppercase;
+    color: var(--ink);
+    text-align: center;
+    margin: 0 0 36px;
+    letter-spacing: 0.01em;
+  }
+
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-list details {
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: box-shadow 180ms ease;
+  }
+
+  .faq-list details[open] {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    padding: 20px 24px;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq-list summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-list summary::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--orange);
+    transition: transform 180ms ease;
+    flex-shrink: 0;
+  }
+
+  .faq-list details[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-list p {
+    padding: 0 24px 22px;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 0.98rem;
+  }
+
+  /* ============ CTA ============ */
+  .cta {
+    background: var(--teal-dark);
+    color: var(--cream);
+    padding: clamp(60px, 8vw, 100px) 0;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 18px;
+    letter-spacing: 0.01em;
+    line-height: 0.95;
+  }
+
+  .cta p {
+    max-width: 54ch;
+    margin: 0 auto 30px;
+    color: rgba(255, 247, 236, 0.82);
+    line-height: 1.65;
+    font-size: 1.05rem;
+  }
+
+  .cta-row {
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-ghost.dark {
+    border-color: var(--cream);
+    color: var(--cream);
+    box-shadow: 0 4px 0 rgba(255, 247, 236, 0.5);
+  }
+
+  .btn-ghost.dark:hover {
+    background: rgba(255, 247, 236, 0.08);
+  }
+</style>

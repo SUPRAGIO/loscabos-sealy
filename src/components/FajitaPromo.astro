@@ -1,0 +1,185 @@
+---
+// Bold full-bleed promo block for the home page.
+// Background is a looping drone video over the food.
+---
+
+<section class="fajita-promo">
+  <video
+    class="promo-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="/fajita-promo-poster.jpg"
+    aria-hidden="true"
+  >
+    <source src="/fajita-promo.webm" type="video/webm" />
+    <source src="/fajita-promo.mp4" type="video/mp4" />
+  </video>
+
+  <div class="promo-overlay"></div>
+
+  <div class="container promo-inner">
+    <div class="promo-copy">
+      <span class="lime-eyebrow">Hungry yet?</span>
+
+      <h2 class="promo-title">
+        <span>Fajitas Fix</span>
+        <span>Everything</span>
+      </h2>
+
+      <p class="promo-body">
+        Marinated steak or chicken. Charred peppers and sweet onions.
+        Tortillas warm, lime wedge ready, salsa on deck. Whatever kind
+        of day it is, the skillet doesn't ask questions.
+      </p>
+
+      <a class="promo-cta" href="https://online.skytab.com/75fd37a0da5766d1bf27a245fba50884" target="_blank" rel="noopener">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .fajita-promo {
+    position: relative;
+    min-height: clamp(520px, 70vh, 720px);
+    background: #1a0f08;
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+  }
+
+  .promo-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .promo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+    z-index: 1;
+  }
+
+  .promo-inner {
+    position: relative;
+    z-index: 2;
+    padding: clamp(60px, 9vw, 110px) 0;
+  }
+
+  .promo-copy {
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .lime-eyebrow {
+    font-family: var(--font-script);
+    color: var(--lime);
+    font-size: clamp(1.6rem, 2.4vw, 2rem);
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+
+  .promo-diamonds {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    margin: 14px 0 22px;
+  }
+
+  .promo-diamonds span {
+    width: 11px;
+    height: 11px;
+    transform: rotate(45deg);
+    background: var(--lime);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .promo-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    margin: 0 0 22px;
+    text-shadow: 0 6px 28px rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    gap: 0.05em;
+  }
+
+  .promo-body {
+    max-width: 58ch;
+    margin: 0 auto 32px;
+    font-size: clamp(1rem, 1.25vw, 1.1rem);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .promo-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--lime);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 42px;
+    border-radius: 6px;
+    box-shadow: 0 7px 0 var(--lime-shadow);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+  }
+
+  .promo-cta:hover {
+    transform: translateY(2px);
+    box-shadow: 0 5px 0 var(--lime-shadow);
+  }
+
+  .promo-cta:active {
+    transform: translateY(7px);
+    box-shadow: 0 0 0 var(--lime-shadow);
+  }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .fajita-promo {
+      min-height: auto;
+    }
+    .promo-inner {
+      padding: 70px 0 30px;
+    }
+    .promo-overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  /* Reduced-motion users: skip the loop, show the poster */
+  @media (prefers-reduced-motion: reduce) {
+    .promo-video {
+      display: none;
+    }
+    .fajita-promo {
+      background-image: url("/fajita-promo-poster.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+</style>
