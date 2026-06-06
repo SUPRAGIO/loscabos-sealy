@@ -288,3 +288,11 @@ ol {
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* Mobile sticky action bar — give the page bottom clearance so it
+   never covers the footer's last line. Matches MobileBar 1099px cutoff. */
+@media (max-width: 1099px) {
+  body {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0));
+  }
+}
