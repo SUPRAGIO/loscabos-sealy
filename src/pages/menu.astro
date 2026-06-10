@@ -2,8 +2,8 @@
 import Base from "@/layouts/Base.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 
-// Each section has either {price} simple items or {variants: [{label, price}]} multi-price items.
-// "$—" means price wasn't specified in the source menu — replace before launch.
+// Each section has menu items with optional descriptions.
+// Prices and variants previously existed in data but are no longer rendered.
 const menu = [
   {
     id: "appetizers",
@@ -32,38 +32,20 @@ const menu = [
       },
       {
         name: "Supreme Nachos",
-        desc: "Cheddar cheese, ground beef, beans, lettuce, tomatoes, sour cream, guacamole, and sliced jalapeños.",
-        variants: [
-          { label: "Small", price: "$9.55" },
-          { label: "Large", price: "$13.15" },
-        ],
-      },
+        desc: "Cheddar cheese, ground beef, beans, lettuce, tomatoes, sour cream, guacamole, and sliced jalapeños. Available in small or large.",
+        },
       {
         name: "El Campo Nachos",
-        desc: "Topped with chicken or beef fajitas, Monterey Jack cheese, beans, guacamole, lettuce, and tomatoes.",
-        variants: [
-          { label: "Small", price: "$10.75" },
-          { label: "Large", price: "$13.95" },
-          { label: "Shrimp Small", price: "$11.95" },
-          { label: "Shrimp Large", price: "$15.95" },
-        ],
-      },
+        desc: "Topped with chicken or beef fajitas, Monterey Jack cheese, beans, guacamole, lettuce, and tomatoes. Available in small or large, with or without shrimp.",
+        },
       {
         name: "Chile con Queso Dip",
-        desc: "Smooth, melty, fan favorite.",
-        variants: [
-          { label: "Small", price: "$7.85" },
-          { label: "Large", price: "$9.25" },
-        ],
-      },
+        desc: "Smooth, melty, fan favorite. Available in small or large.",
+        },
       {
         name: "Tex Mex Chile con Queso",
-        desc: "Chile con queso and ground beef, topped with pico de gallo and guacamole.",
-        variants: [
-          { label: "Small", price: "$8.35" },
-          { label: "Large", price: "$10.75" },
-        ],
-      },
+        desc: "Chile con queso and ground beef, topped with pico de gallo and guacamole. Available in small or large.",
+        },
       {
         name: "Jalapeños del Monte",
         price: "$10.75",
@@ -71,12 +53,8 @@ const menu = [
       },
       {
         name: "Queso Flameado",
-        desc: "A casserole dish of deliciously melted Monterey Jack cheese.",
-        variants: [
-          { label: "Beef, Chicken, or Combo Fajita", price: "$9.55" },
-          { label: "Mexican Sausage", price: "$9.55" },
-        ],
-      },
+        desc: "A casserole dish of deliciously melted Monterey Jack cheese. Choose beef, chicken, combo fajita, or Mexican sausage.",
+        },
       {
         name: "Mixed Queso Flameado",
         price: "$13.95",
@@ -107,14 +85,8 @@ const menu = [
       },
       {
         name: "Quesadillas",
-        desc: "Grilled flour tortilla stuffed with Monterey Jack cheese.",
-        variants: [
-          { label: "Beef or Chicken Fajita / Spinach", price: "$16.75" },
-          { label: "Half", price: "$13.43" },
-          { label: "Shrimp", price: "$17.99" },
-          { label: "Shrimp Half", price: "$14.83" },
-        ],
-      },
+        desc: "Grilled flour tortilla stuffed with Monterey Jack cheese. Beef or chicken fajita, spinach, or shrimp. Available half or full.",
+        },
     ],
   },
 
@@ -127,82 +99,32 @@ const menu = [
     items: [
       {
         name: "Fajitas Mexicanas",
-        desc: "Sizzling fajitas topped with our marinated sauce of onions, tomatoes, jalapeños, cilantro, and mushrooms.",
-        variants: [
-          { label: "Beef Small", price: "$17.95" },
-          { label: "Beef Medium", price: "$19.50" },
-          { label: "Beef For Two", price: "$38.00" },
-          { label: "Chicken Small", price: "$16.95" },
-          { label: "Chicken Medium", price: "$18.99" },
-          { label: "Chicken For Two", price: "$36.00" },
-        ],
-      },
+        desc: "Sizzling fajitas topped with our marinated sauce of onions, tomatoes, jalapeños, cilantro, and mushrooms. Beef or chicken, available in small, medium, or for two.",
+        },
       {
         name: "Chipotle Fajitas",
-        desc: "Fajitas tossed in chipotle butter sauce, topped with Monterey Jack cheese.",
-        variants: [
-          { label: "Beef Small", price: "$17.95" },
-          { label: "Beef Medium", price: "$20.75" },
-          { label: "Beef For Two", price: "$39.95" },
-          { label: "Chicken Small", price: "$16.95" },
-          { label: "Chicken Medium", price: "$18.50" },
-          { label: "Chicken For Two", price: "$36.00" },
-        ],
-      },
+        desc: "Fajitas tossed in chipotle butter sauce, topped with Monterey Jack cheese. Beef or chicken, available in small, medium, or for two.",
+        },
       {
         name: "Fajitas Diablas",
-        desc: "Fajitas with diablo sauce of tomatoes, onions, jalapeños, and buttered wine sauce.",
-        variants: [
-          { label: "Beef Small", price: "$17.99" },
-          { label: "Beef Medium", price: "$20.75" },
-          { label: "Beef For Two", price: "$38.00" },
-          { label: "Chicken Small", price: "$16.50" },
-          { label: "Chicken Medium", price: "$19.50" },
-          { label: "Chicken For Two", price: "$36.00" },
-        ],
-      },
+        desc: "Fajitas with diablo sauce of tomatoes, onions, jalapeños, and buttered wine sauce. Beef or chicken, available in small, medium, or for two.",
+        },
       {
         name: "Trio Fajitas",
-        desc: "Beef, chicken, and shrimp fajitas with Veracruz sauce of onions, tomato juice, poblano peppers, bell peppers, and jalapeños.",
-        variants: [
-          { label: "Small", price: "$20.99" },
-          { label: "Medium", price: "$23.95" },
-          { label: "For Two", price: "$42.95" },
-        ],
-      },
+        desc: "Beef, chicken, and shrimp fajitas with Veracruz sauce of onions, tomato juice, poblano peppers, bell peppers, and jalapeños. Available in small, medium, or for two.",
+        },
       {
         name: "Fajitas Rellenas",
-        desc: "Beef and chicken fajitas topped with shrimp, mushrooms, pico, and buttered wine sauce.",
-        variants: [
-          { label: "Small", price: "$17.99" },
-          { label: "Medium", price: "$20.99" },
-          { label: "For Two", price: "$39.00" },
-        ],
-      },
+        desc: "Beef and chicken fajitas topped with shrimp, mushrooms, pico, and buttered wine sauce. Available in small, medium, or for two.",
+        },
       {
         name: "Fajitas al Carbon",
-        desc: "Charbroiled fajitas, the classic.",
-        variants: [
-          { label: "Beef Small", price: "$16.99" },
-          { label: "Beef Medium", price: "$19.95" },
-          { label: "Beef For Two", price: "$35.95" },
-          { label: "Chicken Small", price: "$15.99" },
-          { label: "Chicken Medium", price: "$18.50" },
-          { label: "Chicken For Two", price: "$32.95" },
-        ],
-      },
+        desc: "Charbroiled fajitas, the classic. Beef or chicken, available in small, medium, or for two.",
+        },
       {
         name: "Fajitas Poblanas",
-        desc: "Fajitas with poblano peppers, onions, mushrooms, cilantro, heavy cream, and parmesan cheese.",
-        variants: [
-          { label: "Beef Small", price: "$17.50" },
-          { label: "Beef Medium", price: "$20.75" },
-          { label: "Beef For Two", price: "$38.00" },
-          { label: "Chicken Small", price: "$16.50" },
-          { label: "Chicken Medium", price: "$19.50" },
-          { label: "Chicken For Two", price: "$36.00" },
-        ],
-      },
+        desc: "Fajitas with poblano peppers, onions, mushrooms, cilantro, heavy cream, and parmesan cheese. Beef or chicken, available in small, medium, or for two.",
+        },
     ],
   },
 
@@ -810,12 +732,8 @@ const menu = [
     items: [
       {
         name: "BBQ Baby Back Ribs",
-        desc: "Our fall off the bone, mouth watering tender ribs. Served with french fries or rice and beans.",
-        variants: [
-          { label: "Full Rack", price: "$19.95" },
-          { label: "Half Rack", price: "$16.75" },
-        ],
-      },
+        desc: "Our fall off the bone, mouth watering tender ribs. Served with french fries or rice and beans. Available full rack or half rack.",
+        },
       {
         name: "Plato de Carnitas",
         price: "$17.99",
@@ -868,7 +786,7 @@ const menu = [
       {
         name: "Nancy's Cheeseburger",
         price: "$11.95",
-        desc: "Fresh ground chuck with melted American cheese, lettuce, tomato, onions, pickles, and bacon. Add avocado slices for $1.95.",
+        desc: "Fresh ground chuck with melted American cheese, lettuce, tomato, onions, pickles, and bacon. Add avocado slices on request.",
       },
     ],
   },
@@ -951,12 +869,8 @@ const menu = [
     items: [
       {
         name: "Flavored Marg",
-        desc: "Pick your flavor. Frozen or on the rocks.",
-        variants: [
-          { label: "Regular", price: "$9.25" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Pick your flavor. Frozen or on the rocks. Regular or jumbo.",
+        },
     ],
   },
 
@@ -968,52 +882,28 @@ const menu = [
     items: [
       {
         name: "Ultimate Patrón",
-        desc: "Patrón Silver, Añejo, Reposado, and Cointreau with grenadine.",
-        variants: [
-          { label: "Regular", price: "$13.95" },
-          { label: "Jumbo", price: "$16.99" },
-        ],
-      },
+        desc: "Patrón Silver, Añejo, Reposado, and Cointreau with grenadine. Regular or jumbo.",
+        },
       {
         name: "Grand Gold Margarita",
-        desc: "Jose Cuervo Gold and Grand Marnier.",
-        variants: [
-          { label: "Regular", price: "$12.95" },
-          { label: "Jumbo", price: "$15.95" },
-        ],
-      },
+        desc: "Jose Cuervo Gold and Grand Marnier. Regular or jumbo.",
+        },
       {
         name: "Horseshoe Margarita",
-        desc: "Herradura Reposado and Grand Marnier.",
-        variants: [
-          { label: "Regular", price: "$12.95" },
-          { label: "Jumbo", price: "$15.95" },
-        ],
-      },
+        desc: "Herradura Reposado and Grand Marnier. Regular or jumbo.",
+        },
       {
         name: "El Maximo Patrón",
-        desc: "Patrón Silver tequila and Patrón Citrónge.",
-        variants: [
-          { label: "Regular", price: "$13.95" },
-          { label: "Jumbo", price: "$16.95" },
-        ],
-      },
+        desc: "Patrón Silver tequila and Patrón Citrónge. Regular or jumbo.",
+        },
       {
         name: "Platinum Margarita",
-        desc: "Patrón Silver tequila and Cointreau.",
-        variants: [
-          { label: "Regular", price: "$13.95" },
-          { label: "Jumbo", price: "$16.95" },
-        ],
-      },
+        desc: "Patrón Silver tequila and Cointreau. Regular or jumbo.",
+        },
       {
         name: "Skinny Margarita",
-        desc: "Patrón Silver, fresh lime juice, and agave nectar.",
-        variants: [
-          { label: "Regular", price: "$13.95" },
-          { label: "Jumbo", price: "$16.95" },
-        ],
-      },
+        desc: "Patrón Silver, fresh lime juice, and agave nectar. Regular or jumbo.",
+        },
     ],
   },
 
@@ -1025,68 +915,36 @@ const menu = [
     items: [
       {
         name: "The Original",
-        desc: "Our house tequila plus triple sec.",
-        variants: [
-          { label: "Regular", price: "$8.25" },
-          { label: "Jumbo", price: "$12.95" },
-        ],
-      },
+        desc: "Our house tequila plus triple sec. Regular or jumbo.",
+        },
       {
         name: "Sangria Margarita",
-        desc: "Cabos margarita mix and Spanish sangria wine.",
-        variants: [
-          { label: "Regular", price: "$10.75" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Cabos margarita mix and Spanish sangria wine. Regular or jumbo.",
+        },
       {
         name: "Italian Margarita",
-        desc: "Cabos margarita mix topped with Amaretto liqueur.",
-        variants: [
-          { label: "Regular", price: "$9.25" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Cabos margarita mix topped with Amaretto liqueur. Regular or jumbo.",
+        },
       {
         name: "Cancun Margarita",
-        desc: "Cabos margarita mix with coconut rum, piña colada mix, and blue curaçao.",
-        variants: [
-          { label: "Regular", price: "$10.95" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Cabos margarita mix with coconut rum, piña colada mix, and blue curaçao. Regular or jumbo.",
+        },
       {
         name: "Texas Two Step",
-        desc: "Half lime, half strawberry frozen margarita.",
-        variants: [
-          { label: "Regular", price: "$8.95" },
-          { label: "Jumbo", price: "$12.95" },
-        ],
-      },
+        desc: "Half lime, half strawberry frozen margarita. Regular or jumbo.",
+        },
       {
         name: "Stars Over Texas",
-        desc: "Blue curaçao and frozen margarita topped with grenadine.",
-        variants: [
-          { label: "Regular", price: "$8.50" },
-          { label: "Jumbo", price: "$16.95" },
-        ],
-      },
+        desc: "Blue curaçao and frozen margarita topped with grenadine. Regular or jumbo.",
+        },
       {
         name: "Hecho en Mexico",
-        desc: "Midori melon liqueur and frozen margarita topped with grenadine.",
-        variants: [
-          { label: "Regular", price: "$8.50" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Midori melon liqueur and frozen margarita topped with grenadine. Regular or jumbo.",
+        },
       {
         name: "Chambord Margarita",
-        desc: "Cabos margarita mix with Chambord raspberry liqueur.",
-        variants: [
-          { label: "Regular", price: "$9.95" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Cabos margarita mix with Chambord raspberry liqueur. Regular or jumbo.",
+        },
       {
         name: "Beer Rita",
         price: "$17.75",
@@ -1094,28 +952,16 @@ const menu = [
       },
       {
         name: "Blue Swirl Margarita",
-        desc: "Blue curaçao mixed with frozen margarita.",
-        variants: [
-          { label: "Regular", price: "$8.75" },
-          { label: "Jumbo", price: "$13.99" },
-        ],
-      },
+        desc: "Blue curaçao mixed with frozen margarita. Regular or jumbo.",
+        },
       {
         name: "Tito's Margarita",
-        desc: "Tito's vodka, Cointreau, lime juice, and agave. On the rocks only.",
-        variants: [
-          { label: "Regular", price: "$9.50" },
-          { label: "Jumbo", price: "$13.75" },
-        ],
-      },
+        desc: "Tito's vodka, Cointreau, lime juice, and agave. On the rocks only. Regular or jumbo.",
+        },
       {
         name: "Gin Margarita",
-        desc: "Bombay Sapphire gin, Cointreau, lime juice, and agave. On the rocks only.",
-        variants: [
-          { label: "Regular", price: "$9.75" },
-          { label: "Jumbo", price: "$13.95" },
-        ],
-      },
+        desc: "Bombay Sapphire gin, Cointreau, lime juice, and agave. On the rocks only. Regular or jumbo.",
+        },
     ],
   },
 
@@ -1181,12 +1027,8 @@ const menu = [
       },
       {
         name: "La Piña Royal",
-        desc: "Crown Royal Apple, agave nectar, pineapple juice, and fresh lime juice.",
-        variants: [
-          { label: "Regular", price: "$9.95" },
-          { label: "Jumbo", price: "$14.95" },
-        ],
-      },
+        desc: "Crown Royal Apple, agave nectar, pineapple juice, and fresh lime juice. Regular or jumbo.",
+        },
       {
         name: "Bahama Mama",
         price: "$10.95",
@@ -1232,20 +1074,12 @@ const menu = [
       },
       {
         name: "Kendall Jackson Cabernet Sauvignon",
-        desc: "California red.",
-        variants: [
-          { label: "Glass", price: "$9.00" },
-          { label: "Bottle", price: "$32.00" },
-        ],
-      },
+        desc: "California red. Available by the glass or bottle.",
+        },
       {
         name: "Roscato Rosso Dolce",
-        desc: "Italian red.",
-        variants: [
-          { label: "Glass", price: "$8.50" },
-          { label: "Bottle", price: "$28.00" },
-        ],
-      },
+        desc: "Italian red. Available by the glass or bottle.",
+        },
       {
         name: "Real Sangria",
         price: "$9.25 / glass",
@@ -1253,20 +1087,12 @@ const menu = [
       },
       {
         name: "Kendall Jackson Chardonnay",
-        desc: "California white.",
-        variants: [
-          { label: "Glass", price: "$9.00" },
-          { label: "Bottle", price: "$32.00" },
-        ],
-      },
+        desc: "California white. Available by the glass or bottle.",
+        },
       {
         name: "Ecco Domani Pinot Grigio",
-        desc: "Italian white.",
-        variants: [
-          { label: "Glass", price: "$8.50" },
-          { label: "Bottle", price: "$30.00" },
-        ],
-      },
+        desc: "Italian white. Available by the glass or bottle.",
+        },
     ],
   },
 
@@ -1327,21 +1153,12 @@ const menu = [
       { name: "Beans", price: "$2.99", desc: "" },
       {
         name: "Chips",
-        desc: "",
-        variants: [
-          { label: "Small", price: "$4.99" },
-          { label: "Large", price: "$5.99" },
-        ],
-      },
+        desc: "Available in small or large.",
+        },
       {
         name: "Green or Red Salsa",
-        desc: "",
-        variants: [
-          { label: "8 oz", price: "$3.99" },
-          { label: "12 oz", price: "$5.50" },
-          { label: "32 oz", price: "$14.25" },
-        ],
-      },
+        desc: "Available in 8 oz, 12 oz, or 32 oz.",
+        },
       { name: "Flour Tortillas", price: "$2.50", desc: "" },
       { name: "Sour Cream", price: "$1.25", desc: "" },
       { name: "Shredded Cheese", price: "$1.25", desc: "" },
@@ -1370,13 +1187,6 @@ const menuSchema = {
         name: item.name,
       };
       if (item.desc) m.description = item.desc;
-      if (item.price && item.price !== "$—") {
-        m.offers = {
-          "@type": "Offer",
-          price: item.price.replace("$", ""),
-          priceCurrency: "USD",
-        };
-      }
       return m;
     }),
   })),
@@ -1467,12 +1277,6 @@ const menuSchema = {
                     {item.name}
                     {item.tag && <span class="dish-tag">{item.tag}</span>}
                   </span>
-                  {item.price && (
-                    <>
-                      <span class="dots" aria-hidden="true" />
-                      <span class="dish-price">{item.price}</span>
-                    </>
-                  )}
                 </div>
                 {item.desc && <p class="dish-desc">{item.desc}</p>}
                 {item.variants && (
@@ -1480,7 +1284,6 @@ const menuSchema = {
                     {item.variants.map((v) => (
                       <li>
                         <span class="variant-label">{v.label}</span>
-                        <span class="variant-price">{v.price}</span>
                       </li>
                     ))}
                   </ul>
